@@ -20,7 +20,7 @@
             * @return void
         **/
         public function __destruct() {
-            unset( $observer );
+            unset( $this -> observer );
         }
 
         // ------------------------------------------------------------------------
@@ -30,7 +30,7 @@
             * @return void
         **/
         public function addObserver( Observer $observer ) {
-            $observers[] = $observer;
+            $this -> observers[] = $observer;
         }
 
         // ------------------------------------------------------------------------
@@ -40,7 +40,7 @@
             * @return void
         **/
         public function notify() {
-            foreach( $observers as $observer ) {
+            foreach( $this -> observers as $observer ) {
                 $observer -> update();
             }
         }
