@@ -11,3 +11,15 @@ CREATE TABLE IF NOT EXISTS `log`.`connexion` (
     KEY( `address` ),
     KEY( `date` )
 ) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `log`.`php-error` (
+
+) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `log`.`sql-error` (
+
+) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `log`.`js-error` (
+
+) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;

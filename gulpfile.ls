@@ -18,7 +18,6 @@ gulp.task 'default' ['browser-sync'] !->
         'views/ressources/less/**/*.less'
     ] ['lessify']
 
-
 gulp.task 'browser-sync' !->
     browser-sync {
         proxy: 'localhost'
