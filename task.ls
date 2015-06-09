@@ -33,8 +33,6 @@ commander.command 'exec <task> -- [args...]'
 
         call .= substr 0, call.length - 4
 
-        console.log( call );
-
         shelljs.exec call, {
             async: false
             silent: true
