@@ -8,8 +8,10 @@ const url = 'http://localhost/~florentin/framework/'
 commander.usage '[options] [command]'
     .version 'Version 0.0.1'
 
-commander.option '-h, --help', 'show information about this command', !->
-    commander.outputHelp!
+commander.command 'help'
+    .description 'show usage information'
+    .action !->
+        commander.outputHelp!
 
 commander.command 'do [tasks...]'
     .description 'execute task given by the framework without argument'
