@@ -14,11 +14,6 @@
             self::get( DIR_MODELS );
             self::get( DIR_CONTROLLERS );
 
-            $url = '/';
-            if( !empty( $_GET['url'] )) {
-                $url = $_GET['url'];
-            }
-
             // ------------------------------------------------------------------------
             // load external librairies
             Server::loadLibs();
@@ -37,7 +32,21 @@
 
             // ------------------------------------------------------------------------
             // launch controller
-            Route::run( $url );
+            if( !empty( $_GET['task'] )) {
+                try {
+                    Task::exec( $_GET['task'], $_GET );
+                } catch( Exception $e ) {
+                    echo $e -> getMessage();
+                }
+            } else {
+                if( empty( $_GET['url'] )) {
+                    $_GET['url'] = '/';
+                }
+
+                Route::run( $_GET['url'] );
+            }
+
+
         }
 
         // ------------------------------------------------------------------------

@@ -7,6 +7,7 @@ require! 'gulp-autoprefixer'
 require! 'browser-sync'
 
 gulp.task 'default' ['browser-sync'] !->
+    gulp.watch ['task.ls'] ['taskify']
     gulp.watch [
         'views/ressources/ls/*.ls'
         'views/ressources/ls/**/*.ls'
@@ -16,6 +17,7 @@ gulp.task 'default' ['browser-sync'] !->
         'views/ressources/less/*.less'
         'views/ressources/less/**/*.less'
     ] ['lessify']
+
 
 gulp.task 'browser-sync' !->
     browser-sync {
