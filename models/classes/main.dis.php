@@ -34,7 +34,7 @@
             // launch controller
             if( !empty( $_GET['task'] )) {
                 try {
-                    Task::exec( $_GET['task'], $_GET );
+                    Task::exec( $_GET['task'], $_POST );
                 } catch( Exception $e ) {
                     echo $e -> getMessage();
                 }
@@ -43,7 +43,11 @@
                     $_GET['url'] = '/';
                 }
 
-                Route::run( $_GET['url'] );
+                try {
+                    Route::run( $_GET['url'] );
+                } catch( Exception $e ) {
+                    echo $e -> getMessage();
+                }
             }
 
 
@@ -56,8 +60,8 @@
             * @return void
         **/
         private static function get( $path ) {
-            $dir          = opendir( $path );
-            $dirs         = array();
+            $dir         = opendir( $path );
+            $dirs        = array();
             while( $file = readdir( $dir )) {
                 if( $file == '.' || $file == '..' ) {
                     continue;
