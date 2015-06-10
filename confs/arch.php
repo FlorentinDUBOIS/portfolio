@@ -25,5 +25,4 @@
             define( 'DIR_IMAGES', DIR_RESSOURCES.'/images' );
             define( 'DIR_JS', DIR_RESSOURCES.'/js' );
             define( 'DIR_LIVESCRIPT', DIR_RESSOURCES.'/ls' );
-            define( 'DIR_DART', DIR_RESSOURCES.'/dart' );
 ?>
