@@ -20,6 +20,8 @@
         define( 'DIR_LANGUAGES', DIR_VIEWS.'/languages' );
         define( 'DIR_RESSOURCES', DIR_VIEWS.'/ressources' );
             define( 'DIR_LESS', DIR_RESSOURCES.'/less' );
+            define( 'DIR_SCSS', DIR_RESSOURCES.'/scss');
+            define( 'DIR_SASS', DIR_RESSOURCES.'/sass' );
             define( 'DIR_CSS', DIR_RESSOURCES.'/css' );
             define( 'DIR_FONTS', DIR_RESSOURCES.'/fonts' );
             define( 'DIR_IMAGES', DIR_RESSOURCES.'/images' );
