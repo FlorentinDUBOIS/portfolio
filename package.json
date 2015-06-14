@@ -6,7 +6,6 @@
     "url": "git+https://FlorentinDUBOIS@bitbucket.org/FlorentinDUBOIS/framework.php.git"
   },
   "devDependencies": {
-    "LiveScript": "^1.3.1",
     "browser-sync": "^2.7.1",
     "bs-html-injector": "^2.0.4",
     "commander": "^2.8.1",
@@ -18,7 +17,7 @@
     "gulp-sass": "^2.0.1",
     "livescript": "^1.4.0",
     "shelljs": "^0.5.1"
-    },
-    "author": "FlorentinDUBOIS",
-    "homepage": "https://bitbucket.org/FlorentinDUBOIS/framework.php#readme"
+  },
+  "author": "FlorentinDUBOIS",
+  "homepage": "https://bitbucket.org/FlorentinDUBOIS/framework.php#readme"
 }
