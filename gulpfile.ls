@@ -4,12 +4,13 @@ require! 'gulp-livescript'
 require! 'gulp-concat'
 require! 'gulp-autoprefixer'
 require! 'gulp-sass'
+require! 'gulp-coffee'
 
 require! 'browser-sync'
 require! 'bs-html-injector'
 
 gulp.task 'default' ['browser-sync'] !->
-    languages = ['ls' 'js' 'less' 'css' 'scss' 'sass']
+    languages = ['ls' 'js' 'less' 'css' 'scss' 'sass' 'coffee']
 
     for language in languages
         gulp.watch [
@@ -85,3 +86,11 @@ gulp.task 'lessify' ->
         .pipe gulp-less!
         .pipe gulp-autoprefixer!
         .pipe gulp.dest 'views/ressources/less/'
+
+gulp.task 'coffeeify' ->
+    gulp.src [
+        'views/ressources/coffee/*.coffee'
+        'views/ressources/coffee/**/*.coffee'
+    ]
+        .pipe gulp-coffee bare: true
+        .pipe gulp.dest 'views/ressources/coffee/'
