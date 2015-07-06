@@ -41,13 +41,13 @@
             return FALSE;
         }
 
-        private static $Typehints = array(
+        private static $Typehints = [
             'boolean'   => 'is_bool',
             'integer'   => 'is_int',
             'float'     => 'is_float',
             'string'    => 'is_string',
             'resource'  => 'is_resource'
-        );
+        ];
     }
 
     Typehint::initializeHandler();

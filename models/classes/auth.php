@@ -17,12 +17,12 @@
             if( !isset( $user['password'] ))     throw new Exception( 'No password given' );
             if( !isset( $user['email'] ))        throw new Exception( 'No email given' );
 
-            $query = Database::query( TABLE_USER, array( 'username' ), '`username` = "'.$user['username'].'"' );
+            $query = Database::query( TABLE_USER, ['username'], '`username` = "'.$user['username'].'"' );
             if( !empty( $query )) {
                 return false;
             }
 
-            Database::perform( TABLE_USER, array(
+            Database::perform( TABLE_USER, [
                   'username'    => $user['username'],
                   'groupid'     => 3,
                   'firstname'   => $user['firstname'],
@@ -30,7 +30,7 @@
                   'password'    => self::encrypt( $user['password'] ),
                   'email'       => $user['email'],
                   'blacklist'   => 0
-            ));
+            ]);
 
             return true;
         }
@@ -42,7 +42,7 @@
             * @return boolean
         **/
         public static function signout( string $username ) {
-            $query = Database::query( TABLE_USER, array( 'username' ), '`username` = '.$username );
+            $query = Database::query( TABLE_USER, ['username'], '`username` = '.$username );
             if( empty( $query )) {
                 return false;
             }
@@ -63,11 +63,10 @@
         public static function login( array $user = null ) {
             if( !isset( $user )) {
                 if( !empty( Storage::get( 'username' )) && !empty( Storage::get( 'password' ))) {
-
-                    $user = array(
+                    $user = [
                         'username' => Storage::get( 'username' ),
                         'password' => Storage::get( 'password' )
-                    );
+                    ];
 
                     return self::login( $user );
                 }
@@ -78,13 +77,13 @@
             if( !isset( $user['username'] )) throw new Exception( 'No username given' );
             if( !isset( $user['password'] )) throw new Exception( 'No password given' );
 
-            $data = Database::query( TABLE_USER, array( '*' ), '`username` = "'.$user['username'].'"' );
+            $data = Database::query( TABLE_USER, ['*'], '`username` = "'.$user['username'].'"' );
             if( empty( $data )) {
                 return false;
             }
 
 
-            $group = Database::query( TABLE_GROUP, array( '*' ), '`groupid` = '.$data[0]['groupid'] );
+            $group = Database::query( TABLE_GROUP, ['*'], '`groupid` = '.$data[0]['groupid'] );
             if( $group[0]['blacklist'] == 1 || $data[0]['blacklist'] == 1 ) {
                 return false;
             }
@@ -101,11 +100,11 @@
 
             Storage::store( $data[0] );
             Storage::store( $group[0] );
-            Database::perform( TABLE_CONNEXION, array(
+            Database::perform( TABLE_CONNEXION, [
                 'username'  => $user['username'],
                 'address'   => Client::ip(),
                 'date'      => date( 'Y-m-d H:i:s' )
-            ));
+            ]);
 
             Package::load((integer) $data[0]['groupid'] );
 
@@ -119,24 +118,24 @@
             * @return void
         **/
         public static function guest() {
-            $user = Database::query( TABLE_USER, array( '*' ), '`username` = "guest"' );
+            $user = Database::query( TABLE_USER, ['*'], '`username` = "guest"' );
 
             if( empty( $user )) {
-                self::signin( array(
+                self::signin([
                     'username'  => 'guest',
                     'firstname' => '',
                     'lastname'  => '',
-                    'password'  => array(),
+                    'password'  => [],
                     'email'     => ''
-                ));
+                ]);
 
-                Database::perform( TABLE_USER, array( 'groupid' => 4 ), 'update', '`username` = "guest"' );
+                Database::perform( TABLE_USER, ['groupid' => 4], 'update', '`username` = "guest"' );
             }
 
-            $user = array(
+            $user = [
                 'username' => 'guest',
-                'password' => array()
-            );
+                'password' => []
+            ];
 
             return self::login( $user );
         }

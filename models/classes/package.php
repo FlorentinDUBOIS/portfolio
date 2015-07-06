@@ -10,16 +10,16 @@
             * @return void
         **/
         public static function load( integer $group ) {
-            $packages = Database::query( TABLE_PACKAGE_TO_GROUP, array( 'packageid' ), '`groupid` = '.$group );
-            $list     = array();
-            $store    = array();
+            $packages = Database::query( TABLE_PACKAGE_TO_GROUP, ['packageid'], '`groupid` = '.$group );
+            $list     = [];
+            $store    = [];
 
             foreach( $packages as $package ) {
                 $list[]  = $package['packageid'];
             }
 
             if( !empty( $list )) {
-                $packages = Database::query( TABLE_PACKAGE, array( '*' ), '`packageid` IN ( '.implode( ', ', $list ).' )' );
+                $packages = Database::query( TABLE_PACKAGE, ['*'], '`packageid` IN ( '.implode( ', ', $list ).' )' );
                 foreach( $packages as $package ) {
                     if( file_exists( DIR_PACKAGES.'/'.$package['repertory'].'/confs.php' )) {
                         require( DIR_PACKAGES.'/'.$package['repertory'].'/confs.php' );
@@ -37,9 +37,9 @@
                 }
             }
 
-            Storage::store( array(
+            Storage::store([
                'packages'   => $store
-            ));
+            ]);
         }
     }
 ?>

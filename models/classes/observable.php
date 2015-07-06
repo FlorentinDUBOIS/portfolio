@@ -45,6 +45,6 @@
             }
         }
 
-        private $observers = array();
+        private $observers = [];
     }
 ?>

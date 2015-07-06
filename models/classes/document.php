@@ -92,8 +92,8 @@
             * @return void
         **/
         public static function get( string $path ) {
-            $dir          = opendir( $path );
-            $dirs         = array();
+            $dir         = opendir( $path );
+            $dirs        = [];
             while( $file = readdir( $dir )) {
                 if( $file == '.' || $file == '..' ) {
                     continue;

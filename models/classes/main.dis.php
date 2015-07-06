@@ -61,7 +61,7 @@
         **/
         private static function get( $path ) {
             $dir         = opendir( $path );
-            $dirs        = array();
+            $dirs        = [];
             while( $file = readdir( $dir )) {
                 if( $file == '.' || $file == '..' ) {
                     continue;

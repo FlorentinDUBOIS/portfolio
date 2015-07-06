@@ -56,12 +56,12 @@
                         defined(  'DB_'.$base.'_PSWD' ) &&
                         constant( 'DB_'.$base.'_AUTOCONNECT' ) == true
                     ) {
-                        Database::connect( array(
+                        Database::connect([
                             'host' => constant( 'DB_'.$base.'_HOST' ),
                             'name' => constant( 'DB_'.$base.'_NAME' ),
                             'user' => constant( 'DB_'.$base.'_USER' ),
                             'pswd' => constant( 'DB_'.$base.'_PSWD' )
-                        ));
+                        ]);
                     }
                 }
             }
@@ -142,7 +142,7 @@
                     }
 
                     $request = 'UPDATE `'.$base.'`.`'.$table.'` SET ';
-                    $data    = array();
+                    $data    = [];
                     foreach( $columns as $name => $value ) {
                         $data[':'.trim( $name )] = $value;
                         $request .= trim( $name ).' = :'.trim( $name ).', ';
@@ -165,7 +165,7 @@
 
                 case 'insert': case null: {
                     $request = 'INSERT INTO `'.$base.'`.`'.$table.'` ';
-                    $data    = array();
+                    $data    = [];
                     $names   = '';
                     $values  = '';
                     foreach( $columns as $name => $value ) {
@@ -243,6 +243,6 @@
             return $statement -> fetchAll( PDO::FETCH_ASSOC );
         }
 
-        private static $databases = array();
+        private static $databases = [];
     }
 ?>

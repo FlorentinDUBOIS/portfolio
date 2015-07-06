@@ -25,7 +25,7 @@
         public static function run( string $url ) {
             foreach( self::$routes as $key => $func ) {
                 if( preg_match( '#^'.$key.'$#', $url )) {
-                    return $func( array( 'url' => $url ));
+                    return $func(['url' => $url]);
                 }
             }
 
@@ -53,11 +53,11 @@
                         continue;
                     }
 
-                    $args       = array();
+                    $args        = [];
                     $args['url'] = $url;
                     for( $i = 0; $i < count( $urls ); ++$i ) {
                         if( preg_match( '#:#', $keys[$i] )) {
-                            $args[ str_replace( array( ':', '\\' ), '', $keys[$i] )] = $urls[$i];
+                            $args[ str_replace([':', '\\'], '', $keys[$i] )] = $urls[$i];
                         }
                     }
 
@@ -68,7 +68,7 @@
             if( !empty( self::$routes['404'] )) {
                 $func = self::$routes['404'];
 
-                return $func( array( 'url' => '404' ));
+                return $func(['url' => '404']);
             }
         }
 
@@ -85,6 +85,6 @@
             exit();
         }
 
-        private static $routes   = array();
+        private static $routes   = [];
     }
 ?>
