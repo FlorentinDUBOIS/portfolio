@@ -27,4 +27,5 @@
             define( 'DIR_IMAGES', DIR_RESSOURCES.'/images' );
             define( 'DIR_JS', DIR_RESSOURCES.'/js' );
             define( 'DIR_LIVESCRIPT', DIR_RESSOURCES.'/ls' );
+            define( 'DIR_COFFEESCRIPT', DIR_RESSOURCES.'/coffee' );
 ?>
