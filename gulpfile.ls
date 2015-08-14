@@ -6,10 +6,7 @@ require! 'gulp-autoprefixer'
 require! 'gulp-sass'
 require! 'gulp-coffee'
 
-require! 'browser-sync'
-require! 'bs-html-injector'
-
-gulp.task 'default' ['browser-sync'] !->
+gulp.task 'default' [] !->
     languages = ['ls' 'js' 'less' 'css' 'scss' 'sass' 'coffee']
 
     for language in languages
@@ -17,25 +14,6 @@ gulp.task 'default' ['browser-sync'] !->
             'views/ressources/' + language + '/*.' + language
             'views/ressources/' + language + '/**/*.' + language
         ] [language + 'ify']
-
-    gulp.watch [
-        'views/*.php'
-        'views/**.php'
-    ] [bs-html-injector]
-
-gulp.task 'browser-sync' !->
-    browser-sync.use bs-html-injector, {
-        files: [
-            'views/*.php'
-            'views/**.php'
-        ]
-    }
-
-    browser-sync {
-        proxy: 'localhost'
-        files: 'views/ressources/less/*.css'
-        browser: []
-    }
 
 gulp.task 'sassify' ->
     gulp.src [
