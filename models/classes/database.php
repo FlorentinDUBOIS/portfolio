@@ -11,10 +11,10 @@
             * @return void
         **/
         public static function connect( array $args ) {
-            if( empty( $args['host'] )) throw new Exception( 'No host given' );
-            if( empty( $args['name'] )) throw new Exception( 'No name given' );
-            if( empty( $args['user'] )) throw new Exception( 'No user given' );
-            if( empty( $args['pswd'] )) throw new Exception( 'No password given' );
+            if( !isset( $args['host'] )) throw new Exception( 'No host given' );
+            if( !isset( $args['name'] )) throw new Exception( 'No name given' );
+            if( !isset( $args['user'] )) throw new Exception( 'No user given' );
+            if( !isset( $args['pswd'] )) throw new Exception( 'No password given' );
 
             try {
                 self::$databases[ $args['name']] = new PDO(

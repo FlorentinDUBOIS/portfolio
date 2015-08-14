@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `docs`.`function` (
 
     FOREIGN KEY ( `type` )
         REFERENCES `docs`.`type` ( `type` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `docs`.`f-parameter` (
@@ -37,9 +38,11 @@ CREATE TABLE IF NOT EXISTS `docs`.`f-parameter` (
 
     PRIMARY KEY ( `function`, `name` ),
     FOREIGN KEY ( `function` )
-        REFERENCES `docs`.`function` ( `name` ),
+        REFERENCES `docs`.`function` ( `name` )
+            ON DELETE CASCADE,
     FOREIGN KEY ( `type` )
         REFERENCES `docs`.`type` ( `type` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `docs`.`object` (
@@ -49,6 +52,7 @@ CREATE TABLE IF NOT EXISTS `docs`.`object` (
 
     FOREIGN KEY ( `name` )
         REFERENCES `docs`.`type` ( `type` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `docs`.`inheritance` (
@@ -57,9 +61,11 @@ CREATE TABLE IF NOT EXISTS `docs`.`inheritance` (
 
     PRIMARY KEY ( `parent`, `children` ),
     FOREIGN KEY ( `parent` )
-        REFERENCES `docs`.`object` ( `name` ),
+        REFERENCES `docs`.`object` ( `name` )
+            ON DELETE CASCADE,
     FOREIGN KEY ( `children` )
         REFERENCES `docs`.`object` ( `name` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `docs`.`attribute` (
@@ -73,11 +79,14 @@ CREATE TABLE IF NOT EXISTS `docs`.`attribute` (
 
     PRIMARY KEY ( `object`, `name` ),
     FOREIGN KEY ( `object` )
-        REFERENCES `docs`.`object` ( `name` ),
+        REFERENCES `docs`.`object` ( `name` )
+            ON DELETE CASCADE,
     FOREIGN KEY ( `type` )
-        REFERENCES `docs`.`type` ( `type` ),
+        REFERENCES `docs`.`type` ( `type` )
+            ON DELETE CASCADE,
     FOREIGN KEY ( `scope` )
         REFERENCES `docs`.`scope` ( `scope` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `docs`.`method` (
@@ -88,9 +97,11 @@ CREATE TABLE IF NOT EXISTS `docs`.`method` (
     `static`        tinyint( 1 ) NOT NULL,
 
     FOREIGN KEY ( `type` )
-        REFERENCES `docs`.`type` ( `type` ),
+        REFERENCES `docs`.`type` ( `type` )
+            ON DELETE CASCADE,
     FOREIGN KEY ( `scope` )
         REFERENCES `docs`.`scope` ( `scope` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `docs`.`m-parameter` (
@@ -103,7 +114,9 @@ CREATE TABLE IF NOT EXISTS `docs`.`m-parameter` (
 
     PRIMARY KEY ( `method`, `name` ),
     FOREIGN KEY ( `method` )
-        REFERENCES `docs`.`method` ( `name` ),
+        REFERENCES `docs`.`method` ( `name` )
+            ON DELETE CASCADE,
     FOREIGN KEY ( `type` )
         REFERENCES `docs`.`type` ( `type` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;

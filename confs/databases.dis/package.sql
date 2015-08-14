@@ -13,7 +13,9 @@ CREATE TABLE IF NOT EXISTS `package`.`package-to-group` (
 
     PRIMARY KEY( `packageid`, `groupid` ),
     FOREIGN KEY( `packageid` )
-        REFERENCES `package`.`package` ( `packageid` ),
+        REFERENCES `package`.`package` ( `packageid` )
+            ON DELETE CASCADE,
     FOREIGN KEY( `groupid` )
         REFERENCES `auth`.`group` ( `groupid` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;

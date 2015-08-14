@@ -29,11 +29,11 @@
         /**
             * function that declare a task
             * @param string
+            * @param array
             * @param callable
-            * @param [array]
             * @return void
         **/
-        public static function on( string $task, callable $func, array $depens = null ) {
+        public static function on( string $task, array $depens, callable $func ) {
             if( !empty( self::$tasks[ $task] )) {
                 throw new Exception( 'Task already exists : '.$task );
             }

@@ -26,7 +26,8 @@ CREATE TABLE IF NOT EXISTS `auth`.`user` (
     `blacklist`     tinyint( 1 )    NOT NULL DEFAULT '0',
 
     FOREIGN KEY ( `groupid` )
-        REFERENCES `auth`.`group` ( `groupid` ),
+        REFERENCES `auth`.`group` ( `groupid` )
+            ON DELETE CASCADE,
     KEY( `email` ),
     KEY( `blacklist` )
 ) ENGINE = InnoDB, DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;

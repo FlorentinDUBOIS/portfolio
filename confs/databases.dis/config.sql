@@ -26,9 +26,11 @@ CREATE TABLE IF NOT EXISTS `config`.`navbar-btn-to-group` (
 
     PRIMARY KEY( `btnid`, `groupid` ),
     FOREIGN KEY( `btnid` )
-        REFERENCES `config`.`navbar-btn` ( `btnid` ),
+        REFERENCES `config`.`navbar-btn` ( `btnid` )
+            ON DELETE CASCADE,
     FOREIGN KEY( `groupid` )
         REFERENCES `auth`.`group` ( `groupid` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `config`.`navbar-menu` (
@@ -58,9 +60,11 @@ CREATE TABLE IF NOT EXISTS `config`.`item-to-menu` (
 
     PRIMARY KEY( `menuid`, `itemid` ),
     FOREIGN KEY( `menuid` )
-        REFERENCES `config`.`navbar-menu` ( `menuid` ),
+        REFERENCES `config`.`navbar-menu` ( `menuid` )
+            ON DELETE CASCADE,
     FOREIGN KEY( `itemid` )
         REFERENCES `config`.`navbar-item` ( `itemid` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `config`.`navbar-menu-to-group` (
@@ -69,7 +73,9 @@ CREATE TABLE IF NOT EXISTS `config`.`navbar-menu-to-group` (
 
     PRIMARY KEY( `menuid`, `groupid` ),
     FOREIGN KEY( `menuid` )
-        REFERENCES `config`.`navbar-menu` ( `menuid` ),
+        REFERENCES `config`.`navbar-menu` ( `menuid` )
+            ON DELETE CASCADE,
     FOREIGN KEY( `groupid` )
         REFERENCES `auth`.`group` ( `groupid` )
+            ON DELETE CASCADE
 ) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;

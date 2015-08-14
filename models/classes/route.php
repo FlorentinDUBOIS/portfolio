@@ -10,10 +10,13 @@
             * @param callable
             * @return void
         **/
-        public static function on( string $url, callable $func ) {
+        public static function on( string $url, array $depens, callable $func ) {
             $url = str_replace( '/', '\/', $url );
 
-            self::$routes[$url] = $func;
+            self::$routes[$url] = [
+                'depens' => $depens,
+                'func'   => $func
+            ];
         }
 
         // ------------------------------------------------------------------------
@@ -23,13 +26,17 @@
             * @return void
         **/
         public static function run( string $url ) {
-            foreach( self::$routes as $key => $func ) {
+            foreach( self::$routes as $key => $route ) {
                 if( preg_match( '#^'.$key.'$#', $url )) {
-                    return $func(['url' => $url]);
+                    foreach( $route['depens'] as $depen ) {
+                        Task::exec( $depen, ['url' => $url]);
+                    }
+
+                    return $route['func'](['url' => $url]);
                 }
             }
 
-            foreach( self::$routes as $key => $func ) {
+            foreach( self::$routes as $key => $route ) {
                 if( preg_match( '#:#', $key )) {
                     $urls  = explode( '/', $url );
                     $keys  = explode( '/', $key );
@@ -61,7 +68,11 @@
                         }
                     }
 
-                    return $func( $args );
+                    foreach( $route['depens'] as $depen ) {
+                        Task::exec( $depen, ['url' => $url]);
+                    }
+
+                    return $route['func']( $args );
                 }
             }
 
@@ -79,12 +90,12 @@
             * @param string
             * @return void
         **/
-        public static function redirect( string $url ) {
-            header( 'Location: '.Document::rewrite( $url ));
+        public static function redirect( string $url, array $args = null ) {
+            header( 'Location: '.Document::rewrite( $url, $args ));
 
             exit();
         }
 
-        private static $routes   = [];
+        private static $routes = [];
     }
 ?>
