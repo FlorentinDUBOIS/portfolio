@@ -6,8 +6,8 @@
     });
 
     Route::on( '/', ['login'], function( array $args = null ) : bool {
-        var_dump( $_SESSION );
-
+        View::make( 'root', $args, 'html' );
+        
         return true;
     });
 ?>
