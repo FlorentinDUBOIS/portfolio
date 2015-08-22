@@ -7,10 +7,12 @@
         /**
             * function that change the mime of document
             * @param string
-            * @return void
+            * @return bool
         **/
-        public static function mime( string $contentType ) {
+        public static function mime( string $contentType ) : bool {
             header( 'Content-Type: '.$contentType );
+
+            return true;
         }
 
 
@@ -20,7 +22,7 @@
             * @param string
             * @return string
         **/
-        public static function file( string $file ) {
+        public static function file( string $file ) : string {
             if( file_exists( $file )) {
                 $file .= '?v='.filemtime( $file );
             }
@@ -35,7 +37,7 @@
             * @param array
             * @return string
         **/
-        public static function rewrite( string $url, array $args = null ) {
+        public static function rewrite( string $url, array $args = null ) : string {
             if( !empty( $args )) {
                 foreach( $args as $name => $arg ) {
                     $url = preg_replace( '#:'.$name.'#', trim( $arg ), $url );
@@ -49,23 +51,15 @@
         /**
             * function that load the language
             * @param string
-            * @return string
+            * @return bool
         **/
-        public static function language( string $language, string $file = null ) {
+        public static function language( string $language, string $file = null ) : bool {
             if( file_exists( DIR_LANGUAGES.'/'.$language.'.php' )) {
                 require( DIR_LANGUAGES.'/'.$language.'.php' );
             }
 
             if( file_exists( DIR_LANGUAGES.'/'.$language.'/packages.php' )) {
                 require( DIR_LANGUAGES.'/'.$language.'/packages.php' );
-            }
-
-            if( file_exists( DIR_LANGUAGES.'/'.$language.'/navbar-btn.php' )) {
-                require( DIR_LANGUAGES.'/'.$language.'/navbar-btn.php' );
-            }
-
-            if( file_exists( DIR_LANGUAGES.'/'.$language.'/navbar-menu.php' )) {
-                require( DIR_LANGUAGES.'/'.$language.'/navbar-menu.php' );
             }
 
             if( file_exists( DIR_LANGUAGES.'/'.$language.'/'.$file.'.php' ) && !empty( $file )) {
@@ -83,15 +77,17 @@
                     }
                 }
             }
+
+            return true;
         }
 
         // ------------------------------------------------------------------------
         /**
             * function that get all in the directory
             * @param string
-            * @return void
+            * @return bool
         **/
-        public static function get( string $path ) {
+        public static function get( string $path ) : bool {
             $dir         = opendir( $path );
             $dirs        = [];
             while( $file = readdir( $dir )) {
@@ -110,6 +106,8 @@
                     self::get( $dirpath );
                 }
             }
+
+            return true;
         }
 
         const HTML    = 'text/html';
@@ -117,6 +115,10 @@
         const TEXT    = 'text/plain';
         const JS      = 'application/javascript';
         const JSON    = 'application/json';
+        const LS      = 'text/livescript';
+        const LSON    = 'text/lson';
+        const COFFEE  = 'text/coffescript';
+        const CSON    = 'text/cson';
 
         const CHARSET = DEFAULT_CHARSET;
     }

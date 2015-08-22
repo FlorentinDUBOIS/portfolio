@@ -9,7 +9,7 @@
             * @param string
             * @return string
         **/
-        public static function curl( string $url ) {
+        public static function curl( string $url ) : string {
             $curl = curl_init( $url );
 
             curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );

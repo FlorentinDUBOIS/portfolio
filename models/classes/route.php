@@ -8,24 +8,26 @@
             * function that append a controller to an url
             * @param string
             * @param callable
-            * @return void
+            * @return bool
         **/
-        public static function on( string $url, array $depens, callable $func ) {
+        public static function on( string $url, array $depens, callable $func ) : bool {
             $url = str_replace( '/', '\/', $url );
 
             self::$routes[$url] = [
                 'depens' => $depens,
                 'func'   => $func
             ];
+
+            return true;
         }
 
         // ------------------------------------------------------------------------
         /**
             * function that launch the controller associate to the url
             * @param string
-            * @return void
+            * @return bool
         **/
-        public static function run( string $url ) {
+        public static function run( string $url ) : bool {
             foreach( self::$routes as $key => $route ) {
                 if( preg_match( '#^'.$key.'$#', $url )) {
                     foreach( $route['depens'] as $depen ) {
@@ -69,7 +71,7 @@
                     }
 
                     foreach( $route['depens'] as $depen ) {
-                        Task::exec( $depen, ['url' => $url]);
+                        Task::exec( $depen, $args );
                     }
 
                     return $route['func']( $args );
@@ -77,7 +79,7 @@
             }
 
             if( !empty( self::$routes['404'] )) {
-                $func = self::$routes['404'];
+                $func = self::$routes['404']['func'];
 
                 return $func(['url' => '404']);
             }

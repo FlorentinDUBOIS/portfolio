@@ -17,25 +17,27 @@
         /**
             * function that load librairies
             * @param void
-            * @return void
+            * @return bool
         **/
-        public static function loadLibs() {
-            $libs   = array();
+        public static function loadLibs() : bool {
+            $libs   = [];
 
             foreach( get_defined_constants() as $constant => $value ) {
                 if( preg_match( '#^LIB_[A-Z_]+$#', $constant )) {
                     require_once( constant( $constant ));
 
-                    $libs[] = array(
+                    $libs[] = [
                         'name'      => constant( $constant ),
                         'realname'  => $constant
-                    );
+                    ];
                 }
             }
 
-            Storage::store( array(
+            Storage::store([
                'libs'   => $libs
-            ));
+            ]);
+
+            return true;
         }
     }
 ?>

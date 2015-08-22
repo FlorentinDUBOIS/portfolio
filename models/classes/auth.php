@@ -8,9 +8,9 @@
             * function that sign in a user
             * @throw Exception
             * @param array
-            * @return boolean
+            * @return bool
         **/
-        public static function signin( array $user ) {
+        public static function signin( array $user ) : bool {
             if( !isset( $user['username'] ))     throw new Exception( 'No username given' );
             if( !isset( $user['firstname'] ))    throw new Exception( 'No firstname given' );
             if( !isset( $user['lastname'] ))     throw new Exception( 'No lastname given' );
@@ -39,15 +39,14 @@
         /**
             * function that sign out an user
             * @param array
-            * @return boolean
+            * @return bool
         **/
-        public static function signout( string $username ) {
+        public static function signout( string $username ) : bool {
             $query = Database::query( TABLE_USER, ['username'], '`username` = '.$username );
             if( empty( $query )) {
                 return false;
             }
 
-            Database::delete( TABLE_CONNEXION, '`username` = "'.$username.'"' );
             Database::delete( TABLE_USER, '`username` = "'.$username.'"' );
 
             return true;
@@ -58,9 +57,9 @@
             * function that login user give in parameter
             * @throw Exception
             * @param array
-            * @return boolean
+            * @return bool
         **/
-        public static function login( array $user = null ) {
+        public static function login( array $user = null ) : bool {
             if( !isset( $user )) {
                 if( !empty( Storage::get( 'username' )) && !empty( Storage::get( 'password' ))) {
                     $user = [
@@ -106,7 +105,7 @@
                 'date'      => date( 'Y-m-d H:i:s' )
             ]);
 
-            Package::load((integer) $data[0]['groupid'] );
+            Package::load( $data[0]['groupid'] );
 
             return true;
         }
@@ -115,9 +114,9 @@
         /**
             * function that login you in guest
             * @param void
-            * @return void
+            * @return bool
         **/
-        public static function guest() {
+        public static function guest() : bool {
             $user = Database::query( TABLE_USER, ['*'], '`username` = "guest"' );
 
             if( empty( $user )) {
@@ -156,7 +155,7 @@
             * @param array
             * @return string (512)
         **/
-        public static function encrypt( array $data ) {
+        public static function encrypt( array $data ) : string {
             return hash( 'sha512', implode( ':', $data ));
         }
     }

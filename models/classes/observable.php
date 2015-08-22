@@ -27,22 +27,26 @@
         /**
             * function that add observer
             * @param Observer
-            * @return void
+            * @return bool
         **/
-        public function addObserver( Observer $observer ) {
+        public function addObserver( Observer $observer ) : bool {
             $this -> observers[] = $observer;
+
+            return true;
         }
 
         // ------------------------------------------------------------------------
         /**
             * function that notify to observer
             * @param void
-            * @return void
+            * @return bool
         **/
-        public function notify() {
+        public function notify() : bool {
             foreach( $this -> observers as $observer ) {
                 $observer -> update();
             }
+
+            return true;
         }
 
         private $observers = [];

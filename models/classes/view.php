@@ -40,9 +40,9 @@
             * @param string
             * @param array
             * @param string
-            * @return void
+            * @return string
         **/
-        public static function template( string $name, array $args ) {
+        public static function template( string $name, array $args ) : string {
             if( file_exists( DIR_TEMPLATES.'/'.$name.'.php' )) {
                 ob_start();
                     require( DIR_TEMPLATES.'/'.$name.'.php' );

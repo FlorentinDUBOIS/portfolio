@@ -9,7 +9,7 @@
             * @param integer
             * @return void
         **/
-        public static function load( integer $group ) {
+        public static function load( int $group ) : bool {
             $packages = Database::query( TABLE_PACKAGE_TO_GROUP, ['packageid'], '`groupid` = '.$group );
             $list     = [];
             $store    = [];
@@ -40,6 +40,8 @@
             Storage::store([
                'packages'   => $store
             ]);
+
+            return true;
         }
     }
 ?>

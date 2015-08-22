@@ -42,7 +42,7 @@
         }
 
         private static $Typehints = [
-            'boolean'   => 'is_bool',
+            'bool'   => 'is_bool',
             'integer'   => 'is_int',
             'float'     => 'is_float',
             'string'    => 'is_string',

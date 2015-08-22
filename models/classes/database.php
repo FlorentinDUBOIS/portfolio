@@ -6,34 +6,32 @@
         // ------------------------------------------------------------------------
         /**
             * function that connect to one database
-            * @throw Exception
+            * @throw PDOException
             * @param array
-            * @return void
+            * @return bool
         **/
-        public static function connect( array $args ) {
+        public static function connect( array $args ) : bool {
             if( !isset( $args['host'] )) throw new Exception( 'No host given' );
             if( !isset( $args['name'] )) throw new Exception( 'No name given' );
             if( !isset( $args['user'] )) throw new Exception( 'No user given' );
             if( !isset( $args['pswd'] )) throw new Exception( 'No password given' );
 
-            try {
-                self::$databases[ $args['name']] = new PDO(
-                    'mysql:dbname='.$args['name'].';host:'.$args['host'],
-                    $args['user'],
-                    $args['pswd']
-                );
-            } catch( PDOException $e ) {
-                throw new Exception( $e -> getMessage());
-            }
+            self::$databases[ $args['name']] = new PDO(
+                'mysql:dbname='.$args['name'].';host:'.$args['host'],
+                $args['user'],
+                $args['pswd']
+            );
+
+            return true;
         }
 
         // ------------------------------------------------------------------------
         /**
-            * function that return a boolean for know if you are connect to a database
+            * function that return a bool for know if you are connect to a database
             * @param string
-            * @return boolean
+            * @return bool
         **/
-        public static function isConnected( string $base ) {
+        public static function isConnected( string $base ) : bool {
             return isset( self::$databases[$base] );
         }
 
@@ -43,7 +41,7 @@
             * @param void
             * @return void
         **/
-        public static function autoConnect() {
+        public static function autoConnect() : bool {
             foreach( get_defined_constants() as $constant => $value ) {
                 if( preg_match( '#^DB_[A-Z]+_AUTOCONNECT$#', $constant )) {
                     $base =  explode( '_', $constant );
@@ -65,6 +63,8 @@
                     }
                 }
             }
+
+            return true;
         }
 
         // ------------------------------------------------------------------------
@@ -76,7 +76,7 @@
             * @param [string]
             * @return array
         **/
-        public static function query( string $table, array $columns, string $cond = null ) {
+        public static function query( string $table, array $columns, string $cond = null ) : array {
             if( empty( $table ))   throw new Exception( 'No table given' );
             if( empty( $columns )) throw new Exception( 'No columns given' );
             if( empty( $cond )) {
@@ -121,9 +121,9 @@
             * @param array
             * @param [string]
             * @param [string]
-            * @return void
+            * @return bool
         **/
-        public static function perform( string $table, array $columns, string $type = null, string $cond = null ) {
+        public static function perform( string $table, array $columns, string $type = null, string $cond = null ) : bool {
             if( empty( $table ))    throw new Exception( 'No table given' );
             if( empty( $columns ))  throw new Exception( 'No data given' );
 
@@ -160,7 +160,7 @@
                         throw new Exception( 'Query failed on base '.$base.' in table '.$table.' with request: '.$request );
                     }
 
-                    return;
+                    return true;
                 }
 
                 case 'insert': case null: {
@@ -186,11 +186,11 @@
                         throw new Exception( 'Query failed on base '.$base.' in table '.$table.' with request: '.$request );
                     }
 
-                    return;
+                    return true;
                 }
 
                 default: {
-                    break;
+                    return false;
                 }
             }
         }
@@ -203,7 +203,7 @@
             * @param string
             * @return void
         **/
-        public static function delete( string $table, string $cond ) {
+        public static function delete( string $table, string $cond ) : bool {
             if( empty( $table ))   throw new Exception( 'No table given' );
             if( !isset( $cond ) || empty( trim( $cond )) || trim( $cond ) == '1' ) {
                 throw new Exception( 'No condition given' );
@@ -231,6 +231,8 @@
             if( $back === FALSE ) {
                 throw new Exception( 'Query failed on base '.$base.' in table '.$table.' with request: '.$query );
             }
+
+            return true;
         }
 
         // ------------------------------------------------------------------------
@@ -239,7 +241,7 @@
             * @param PDOStatement
             * @return array
         **/
-        public static function format( PDOStatement $statement ) {
+        public static function format( PDOStatement $statement ) : array {
             return $statement -> fetchAll( PDO::FETCH_ASSOC );
         }
 

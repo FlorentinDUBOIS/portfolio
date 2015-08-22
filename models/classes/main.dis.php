@@ -7,9 +7,9 @@
         /**
             * function that launch the framework
             * @param void
-            * @return void
+            * @return bool
         **/
-        public static function render() {
+        public static function render() : bool {
             self::get( 'confs' );
             self::get( DIR_MODELS );
             self::get( DIR_CONTROLLERS );
@@ -50,16 +50,17 @@
                 }
             }
 
-
+            return true;
         }
 
         // ------------------------------------------------------------------------
         /**
             * function that get all in the directory
+            * @see Document::get
             * @param string
-            * @return void
+            * @return bool
         **/
-        private static function get( $path ) {
+        private static function get( $path ) : bool {
             $dir         = opendir( $path );
             $dirs        = [];
             while( $file = readdir( $dir )) {
@@ -78,6 +79,8 @@
                     self::get( $dirpath );
                 }
             }
+
+            return true;
         }
     }
 ?>

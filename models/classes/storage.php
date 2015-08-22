@@ -7,26 +7,30 @@
         /**
             * function that init session
             * @param array
-            * @return void
+            * @return bool
         **/
-        public static function init( array $data = null ) {
+        public static function init( array $data = null ) : bool {
             session_start();
 
             if( !empty( $data )) {
                 self::store( $data );
             }
+
+            return true;
         }
 
         // ------------------------------------------------------------------------
         /**
             * function that store variable
             * @param array
-            * @return void
+            * @return bool
         **/
-        public static function store( array $data ) {
+        public static function store( array $data ) : bool {
             foreach( $data as $name => $value ) {
                 $_SESSION[$name] = $value;
             }
+
+            return true;
         }
 
         // ------------------------------------------------------------------------
@@ -43,10 +47,12 @@
         /**
             * function that destroy session
             * @param void
-            * @return void
+            * @return bool
         **/
-        public static function destroy() {
+        public static function destroy() : bool {
             session_destroy();
+
+            return true;
         }
     }
 ?>
