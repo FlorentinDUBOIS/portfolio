@@ -23,11 +23,10 @@ This framework is base on route object that use route to access on a specific co
 
 Create a route is easy :
 
-    ```php
     Route::on( 'url', [], function( array $args = null ) {
         # do stuff here
     });
-    ```
+
 
 url can be pcre expression, but slash are automaticly backslash.
 
@@ -37,9 +36,7 @@ View
 
 To show a view the php file must be in views directory. Call a view it is easy :
 
-    ```php
     View::make( filename, arguments, layout );
-    ```
 
 Models
 -------
