@@ -24,15 +24,6 @@
     define( 'DB_CONFIG_PSWD', PSWD );
 
     // ------------------------------------------------------------------------
-    // package database
-    // ------------------------------------------------------------------------
-    define( 'DB_PACKAGE_AUTOCONNECT', true );
-    define( 'DB_PACKAGE_HOST', '127.0.0.1' );
-    define( 'DB_PACKAGE_NAME', 'package' );
-    define( 'DB_PACKAGE_USER', USER );
-    define( 'DB_PACKAGE_PSWD', PSWD );
-
-    // ------------------------------------------------------------------------
     // log database
     // ------------------------------------------------------------------------
     define( 'DB_LOG_AUTOCONNECT', true );
@@ -44,7 +35,7 @@
     // ------------------------------------------------------------------------
     // docs database
     // ------------------------------------------------------------------------
-    define( 'DB_DOCS_AUTOCONNECT', true );
+    define( 'DB_DOCS_AUTOCONNECT', false );
     define( 'DB_DOCS_HOST', '127.0.0.1' );
     define( 'DB_DOCS_NAME', 'docs' );
     define( 'DB_DOCS_USER', USER );

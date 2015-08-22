@@ -6,6 +6,9 @@ DROP TABLE IF EXISTS `config`.`item-to-menu`;
 DROP TABLE IF EXISTS `config`.`navbar-item`;
 DROP TABLE IF EXISTS `config`.`navbar-menu`;
 
+DROP TABLE IF EXISTS `config`.`package-to-group`;
+DROP TABLE IF EXISTS `config`.`package`;
+
 CREATE TABLE IF NOT EXISTS `config`.`navbar-btn` (
     `btnid`       int( 12 )       NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `file`        varchar( 255 )  NOT NULL,
@@ -74,6 +77,25 @@ CREATE TABLE IF NOT EXISTS `config`.`navbar-menu-to-group` (
     PRIMARY KEY( `menuid`, `groupid` ),
     FOREIGN KEY( `menuid` )
         REFERENCES `config`.`navbar-menu` ( `menuid` )
+            ON DELETE CASCADE,
+    FOREIGN KEY( `groupid` )
+        REFERENCES `auth`.`group` ( `groupid` )
+            ON DELETE CASCADE
+) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `config`.`package` (
+    `packageid`     int( 12 )       NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name`          varchar( 255 )  NOT NULL,
+    `repertory`     varchar( 255 )  NOT NULL
+) ENGINE = InnoDB, CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `config`.`package-to-group` (
+    `packageid`     int( 12 )       NOT NULL,
+    `groupid`       int( 12 )       NOT NULL,
+
+    PRIMARY KEY( `packageid`, `groupid` ),
+    FOREIGN KEY( `packageid` )
+        REFERENCES `config`.`package` ( `packageid` )
             ON DELETE CASCADE,
     FOREIGN KEY( `groupid` )
         REFERENCES `auth`.`group` ( `groupid` )

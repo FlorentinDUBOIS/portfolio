@@ -16,11 +16,8 @@
     define( 'TABLE_NAVBAR_ITEM', '`config`.`navbar-item`' );
     define( 'TABLE_NAVBAR_MENU', '`config`.`navbar-menu`' );
 
-    // ------------------------------------------------------------------------
-    // package database
-    // ------------------------------------------------------------------------
-    define( 'TABLE_PACKAGE_TO_GROUP', '`package`.`package-to-group`' );
-    define( 'TABLE_PACKAGE', '`package`.`package`' );
+    define( 'TABLE_PACKAGE_TO_GROUP', '`config`.`package-to-group`' );
+    define( 'TABLE_PACKAGE', '`config`.`package`' );
 
     // ------------------------------------------------------------------------
     // log database
