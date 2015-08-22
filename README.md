@@ -19,13 +19,15 @@ Languages support by the framework :
 Route - Controller
 -------
 
-This framework is base on route object that use route to access on a specific controller. That create the view using some models objects and functions. Before controller execute, execution task can be execute. 
+This framework is base on route object that use route to access on a specific controller. That create the view using some models objects and functions. Before controller execute, execution task can be execute.
 
 Create a route is easy :
 
+    ```php
     Route::on( 'url', [], function( array $args = null ) {
         # do stuff here
     });
+    ```
 
 url can be pcre expression, but slash are automaticly backslash.
 
@@ -35,8 +37,9 @@ View
 
 To show a view the php file must be in views directory. Call a view it is easy :
 
-    echo View::make( filename, arguments, layout );
-
+    ```php
+    View::make( filename, arguments, layout );
+    ```
 
 Models
 -------
