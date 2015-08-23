@@ -32,19 +32,20 @@
 
             // ------------------------------------------------------------------------
             // launch controller
-            if( !empty( $_GET['task'] )) {
+            $args = array_merge( $_GET, $_POST );
+            if( !empty( $args['task'] )) {
                 try {
-                    Task::exec( $_GET['task'], $_POST );
+                    Task::exec( $args['task'], $args );
                 } catch( Exception $e ) {
                     echo $e -> getMessage();
                 }
             } else {
-                if( empty( $_GET['url'] )) {
-                    $_GET['url'] = '/';
+                if( empty( $args['url'] )) {
+                    $args['url'] = '/';
                 }
 
                 try {
-                    Route::run( $_GET['url'] );
+                    Route::run( $args['url'], $args );
                 } catch( Exception $e ) {
                     echo $e -> getMessage();
                 }

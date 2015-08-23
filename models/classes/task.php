@@ -17,7 +17,7 @@
 
             if( !empty( self::$depens[ $task] )) {
                 foreach( self::$depens[ $task] as $depen ) {
-                    self::exec( $depen );
+                    self::exec( $depen, $args );
                 }
             }
 

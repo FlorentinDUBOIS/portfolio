@@ -25,16 +25,19 @@
         /**
             * function that launch the controller associate to the url
             * @param string
+            * @param array
             * @return bool
         **/
-        public static function run( string $url ) : bool {
+        public static function run( string $url, array $args ) : bool {
             foreach( self::$routes as $key => $route ) {
                 if( preg_match( '#^'.$key.'$#', $url )) {
+
+                    $args['url'] = $url;
                     foreach( $route['depens'] as $depen ) {
-                        Task::exec( $depen, ['url' => $url]);
+                        Task::exec( $depen, $args );
                     }
 
-                    return $route['func'](['url' => $url]);
+                    return $route['func']( $args );
                 }
             }
 
@@ -79,9 +82,10 @@
             }
 
             if( !empty( self::$routes['404'] )) {
-                $func = self::$routes['404']['func'];
+                $args['url'] = '404';
+                $func        = self::$routes['404']['func'];
 
-                return $func(['url' => '404']);
+                return $func( $args );
             }
         }
 
