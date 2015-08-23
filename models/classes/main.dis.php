@@ -14,41 +14,37 @@
             self::get( DIR_MODELS );
             self::get( DIR_CONTROLLERS );
 
-            // ------------------------------------------------------------------------
-            // load external librairies
-            Server::loadLibs();
+            try {
+                // ------------------------------------------------------------------------
+                // load external librairies
+                Server::loadLibs();
 
-            // ------------------------------------------------------------------------
-            // allow storage for all applications
-            Storage::init();
+                // ------------------------------------------------------------------------
+                // allow storage for all applications
+                Storage::init();
 
-            // ------------------------------------------------------------------------
-            // allow access to database
-            Database::autoConnect();
+                // ------------------------------------------------------------------------
+                // allow access to database
+                Database::autoConnect();
 
-            // ------------------------------------------------------------------------
-            // authenfication
-            Auth::login();
+                // ------------------------------------------------------------------------
+                // authenfication
+                Auth::login();
 
-            // ------------------------------------------------------------------------
-            // launch controller
-            $args = array_merge( $_GET, $_POST );
-            if( !empty( $args['task'] )) {
-                try {
-                    Task::exec( $args['task'], $args );
-                } catch( Exception $e ) {
-                    echo $e -> getMessage();
-                }
-            } else {
+                // ------------------------------------------------------------------------
+                // launch controller
+                $args = array_merge( $_GET, $_POST );
                 if( empty( $args['url'] )) {
                     $args['url'] = '/';
                 }
 
-                try {
+                if( !empty( $args['task'] )) {
+                    Task::exec( $args['task'], $args );
+                } else {
                     Route::run( $args['url'], $args );
-                } catch( Exception $e ) {
-                    echo $e -> getMessage();
                 }
+            } catch( Exception $e ) {
+                echo( $e -> getMessage());
             }
 
             return true;
