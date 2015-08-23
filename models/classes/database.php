@@ -52,7 +52,7 @@
                         defined(  'DB_'.$base.'_NAME' ) &&
                         defined(  'DB_'.$base.'_USER' ) &&
                         defined(  'DB_'.$base.'_PSWD' ) &&
-                        constant( 'DB_'.$base.'_AUTOCONNECT' ) == true
+                        constant( 'DB_'.$base.'_AUTOCONNECT' ) === true
                     ) {
                         Database::connect([
                             'host' => constant( 'DB_'.$base.'_HOST' ),

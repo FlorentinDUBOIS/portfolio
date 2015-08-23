@@ -14,6 +14,13 @@
             self::get( DIR_MODELS );
             self::get( DIR_CONTROLLERS );
 
+            // ------------------------------------------------------------------------
+            // get arguments
+            $args = array_merge( $_GET, $_POST );
+            if( empty( $args['url'] )) {
+                $args['url'] = '/';
+            }
+
             try {
                 // ------------------------------------------------------------------------
                 // load external librairies
@@ -33,11 +40,6 @@
 
                 // ------------------------------------------------------------------------
                 // launch controller
-                $args = array_merge( $_GET, $_POST );
-                if( empty( $args['url'] )) {
-                    $args['url'] = '/';
-                }
-
                 if( !empty( $args['task'] )) {
                     Task::exec( $args['task'], $args );
                 } else {
