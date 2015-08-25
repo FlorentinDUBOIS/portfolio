@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS `config`.`navbar-btn` (
     `name`        varchar( 255 )  NOT NULL,
     `icon`        varchar( 255 )  NOT NULL,
     `link`        varchar( 255 )  NOT NULL,
-    `side`        varchar( 30 )   NOT NULL,
     `active`      tinyint( 1 )    NOT NULL DEFAULT '0',
 
     KEY( `file` ),
@@ -41,7 +40,6 @@ CREATE TABLE IF NOT EXISTS `config`.`navbar-menu` (
     `file`        varchar( 255 )  NOT NULL,
     `name`        varchar( 255 )  NOT NULL,
     `icon`        varchar( 255 )  NOT NULL,
-    `side`        varchar( 60 )   NOT NULL,
 
     KEY( `file` ),
     KEY( `side` )

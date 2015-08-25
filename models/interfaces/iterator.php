@@ -1,8 +1,10 @@
 <?php
     // ------------------------------------------------------------------------
-    // Observer interface
+    // Iterator interface
     // ------------------------------------------------------------------------
-    interface Observer {
-        public function update();
+    interface Iterator {
+        public function next();
+        public function hasNext() : bool;
+        public function &current();
     }
 ?>
