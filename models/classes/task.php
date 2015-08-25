@@ -29,7 +29,7 @@
             * function that declare a task
             * @param string
             * @param array
-            * @param callable
+            * @param callable( array = null ) : bool
             * @return void
         **/
         public static function on( string $task, array $depens, callable $func ) : bool {

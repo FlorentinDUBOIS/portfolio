@@ -7,7 +7,7 @@
         /**
             * function that append a controller to an url
             * @param string
-            * @param callable
+            * @param callable( array = null ) : bool
             * @return bool
         **/
         public static function on( string $url, array $depens, callable $func ) : bool {
