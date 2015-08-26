@@ -11,10 +11,11 @@
         **/
         public function __construct( int $groupid ) {
             $this -> groupid = $groupid;
+            $this -> buttons = [];
             $query = Database::query( TABLE_NAVBAR_BTN_TO_GROUP, ['btnid'], '`groupid` = '.$this -> groupid );
 
             foreach( $query as $value ) {
-                $buttons[] = new Button( $value['btnid'] );
+                $this -> buttons[] = new Button( $value['btnid'] );
             }
         }
 
@@ -40,7 +41,11 @@
             * @return Button
         **/
         public function &get( int $index ) : Button {
-            return $this -> buttons[ $index];
+            if( isset( $this -> buttons[ $index] )) {
+                return $this -> buttons[ $index];
+            }
+
+            return null;
         }
 
         // ------------------------------------------------------------------------

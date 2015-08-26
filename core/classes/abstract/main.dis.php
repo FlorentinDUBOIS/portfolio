@@ -11,6 +11,7 @@
         **/
         public static function render() : bool {
             self::get( 'confs' );
+            self::get( DIR_CORE );
             self::get( DIR_MODELS );
             self::get( DIR_CONTROLLERS );
 

@@ -1,5 +1,5 @@
 <?php
-    require_once( 'models/classes/abstract/main.dis.php' );
+    require_once( 'core/classes/abstract/main.dis.php' );
 
     Controller::render();
 ?>

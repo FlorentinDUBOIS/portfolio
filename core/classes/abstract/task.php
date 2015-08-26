@@ -43,7 +43,7 @@
             return true;
         }
 
-        private static $tasks  = array();
-        private static $depens = array();
+        private static $tasks  = [];
+        private static $depens = [];
     }
 ?>

@@ -32,7 +32,7 @@
             * @return mixed
         **/
         public function get( string $name ) {
-            return $this -> attrs[$name];
+            return ifindexsetor( $this -> attrs, $name, null );
         }
 
         // ------------------------------------------------------------------------
