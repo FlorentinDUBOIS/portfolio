@@ -9,7 +9,7 @@
             * @param int
             * @return MenuGroup
         **/
-        public static function getMenus( int $groupid ) : MenuGroup {
+        public static function &getMenus( int $groupid ) : MenuGroup {
             if( isset( self::$menugroups[ $groupid] )) {
                 return self::$menugroups[ $groupid];
             }
@@ -23,7 +23,7 @@
             * @param int
             * @return ButtonGroup
         **/
-        public static function getButtons( int $groupid ) : ButtonGroup {
+        public static function &getButtons( int $groupid ) : ButtonGroup {
             if( isset( self::$buttongroups[ $groupid] )) {
                 return self::$buttongroups[ $groupid];
             }

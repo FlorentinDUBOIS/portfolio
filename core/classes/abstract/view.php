@@ -50,5 +50,49 @@
                 return ob_get_clean();
             }
         }
+
+        // ------------------------------------------------------------------------
+        /**
+            * function that return the script of the page
+            * @param void
+            * @return array
+        **/
+        public static function scripts() : array {
+            $scripts = array();
+
+            if( file_exists( DIR_JS.'/load.json' )) {
+                $scripts = json_decode( file_get_contents( DIR_JS.'/load.json' ), true );
+
+                foreach( $scripts as $key => $script ) {
+                    $scripts[ DIR_JS.'/'.$key] = $script;
+
+                    unset( $scripts[ $key] );
+                }
+            }
+
+            return $scripts;
+        }
+
+        // ------------------------------------------------------------------------
+        /**
+            * function that return the link of the page
+            * @param void
+            * @return array
+        **/
+        public static function links() : array {
+            $links = array();
+
+            if( file_exists( DIR_CSS.'/load.json' )) {
+                $links = json_decode( file_get_contents( DIR_CSS.'/load.json' ), true );
+
+                foreach( $links as $key => $link ) {
+                    $links[ DIR_CSS.'/'.$key] = $link;
+
+                    unset( $links[ $key] );
+                }
+            }
+
+            return $links;
+        }
     }
 ?>

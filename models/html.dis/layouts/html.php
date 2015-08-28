@@ -19,6 +19,22 @@
         <meta name="revisit-after"    lang="<?= ifindexsetor( $args, 'lang', DEFAULT_LANGUAGE ) ?>" content="<?= APPLICATION_REVISIT_AFTER ?>" />
 
         <title><?= ifindexsetor( $args, 'title', APPLICATION_NAME ) ?></title>
+
+        <?php
+            $links = View::links();
+            foreach( $links as $path => $link ) {
+                foreach( $link as $file ) {
+                    echo '<link rel="stylesheet" type="'.Document::CSS.'" href="'.Document::file( $path.'/'.$file ).'" ></link>'.PHP_EOL;
+                }
+            }
+
+            $scripts = View::scripts();
+            foreach( $scripts as $path => $script ) {
+                foreach( $script as $file ) {
+                    echo '<script type="'.Document::JS.'" src="'.Document::file( $path.'/'.$file ).'" ></script>'.PHP_EOL;
+                }
+            }
+        ?>
     </head>
 
     <body>
