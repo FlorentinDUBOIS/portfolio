@@ -63,17 +63,21 @@
             if( file_exists( DIR_JS.'/load.json' )) {
                 $temp = json_decode( file_get_contents( DIR_JS.'/load.json' ), true );
 
-                foreach( $temp as $key => $script ) {
-                    $scripts[ DIR_JS.'/'.$key] = $script;
+                if( !empty( $temp )) {
+                    foreach( $temp as $key => $script ) {
+                        $scripts[ DIR_JS.'/'.$key] = $script;
+                    }
                 }
             }
 
             if( file_exists( DIR_ASSETS_JS.'/load.json' ) && !empty( $url )) {
-                $temp = json_encode( DIR_ASSETS_JS.'/load.json', true );
+                $temp = json_decode( DIR_ASSETS_JS.'/load.json', true );
 
-                foreach( $temp as $key => $link ) {
-                    if( $url == $key ) {
-                        $scripts[ DIR_ASSETS_JS.'/'.$key] = $link;
+                if( !empty( $temp )) {
+                    foreach( $temp as $key => $link ) {
+                        if( $url == $key ) {
+                            $scripts[ DIR_ASSETS_JS.'/'.$key] = $link;
+                        }
                     }
                 }
             }
@@ -93,17 +97,19 @@
             if( file_exists( DIR_CSS.'/load.json' )) {
                 $temp = json_decode( file_get_contents( DIR_CSS.'/load.json' ), true );
 
-                foreach( $temp as $key => $link ) {
-                    $links[ DIR_CSS.'/'.$key] = $link;
+                if( !empty( $temp )) {
+                    foreach( $temp as $key => $link ) {
+                        $links[ DIR_CSS.'/'.$key] = $link;
+                    }
                 }
             }
 
             if( file_exists( DIR_ASSETS_CSS.'/load.json' ) && !empty( $url )) {
-                $temp = json_encode( DIR_ASSETS_CSS.'/load.json', true );
-
-                foreach( $temp as $key => $link ) {
-                    if( $url == $key ) {
-                        $links[ DIR_ASSETS_CSS.'/'.$key] = $link;
+                if( !empty( $temp )) {
+                    foreach( $temp as $key => $link ) {
+                        if( $url == $key ) {
+                            $links[ DIR_ASSETS_CSS.'/'.$key] = $link;
+                        }
                     }
                 }
             }
