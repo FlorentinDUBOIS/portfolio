@@ -54,19 +54,27 @@
         // ------------------------------------------------------------------------
         /**
             * function that return the script of the page
-            * @param void
+            * @param string
             * @return array
         **/
-        public static function scripts() : array {
-            $scripts = array();
+        public static function scripts( string $url ) : array {
+            $scripts = [];
 
             if( file_exists( DIR_JS.'/load.json' )) {
-                $scripts = json_decode( file_get_contents( DIR_JS.'/load.json' ), true );
+                $temp = json_decode( file_get_contents( DIR_JS.'/load.json' ), true );
 
-                foreach( $scripts as $key => $script ) {
+                foreach( $temp as $key => $script ) {
                     $scripts[ DIR_JS.'/'.$key] = $script;
+                }
+            }
 
-                    unset( $scripts[ $key] );
+            if( file_exists( DIR_ASSETS_JS.'/load.json' ) && !empty( $url )) {
+                $temp = json_encode( DIR_ASSETS_JS.'/load.json', true );
+
+                foreach( $temp as $key => $link ) {
+                    if( $url == $key ) {
+                        $scripts[ DIR_ASSETS_JS.'/'.$key] = $link;
+                    }
                 }
             }
 
@@ -76,19 +84,27 @@
         // ------------------------------------------------------------------------
         /**
             * function that return the link of the page
-            * @param void
+            * @param string
             * @return array
         **/
-        public static function links() : array {
-            $links = array();
+        public static function links( string $url = null ) : array {
+            $links = [];
 
             if( file_exists( DIR_CSS.'/load.json' )) {
-                $links = json_decode( file_get_contents( DIR_CSS.'/load.json' ), true );
+                $temp = json_decode( file_get_contents( DIR_CSS.'/load.json' ), true );
 
-                foreach( $links as $key => $link ) {
+                foreach( $temp as $key => $link ) {
                     $links[ DIR_CSS.'/'.$key] = $link;
+                }
+            }
 
-                    unset( $links[ $key] );
+            if( file_exists( DIR_ASSETS_CSS.'/load.json' ) && !empty( $url )) {
+                $temp = json_encode( DIR_ASSETS_CSS.'/load.json', true );
+
+                foreach( $temp as $key => $link ) {
+                    if( $url == $key ) {
+                        $links[ DIR_ASSETS_CSS.'/'.$key] = $link;
+                    }
                 }
             }
 
