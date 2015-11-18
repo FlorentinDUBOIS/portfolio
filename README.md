@@ -13,8 +13,8 @@ Languages support by the framework :
 
     JavaScript preprocessor :
 
-    - LiveScript
     - CoffeeScript
+    - ECMAScript 2015
 
 Route - Controller
 -------
@@ -23,7 +23,7 @@ This framework is base on route object that use route to access on a specific co
 
 Create a route is easy :
 
-    Route::on( 'url', [], function( array $args = null ) {
+    Route::on( 'url', [/* here depens also tasks */], function( array $args = null ) {
         # do stuff here
     });
 
@@ -36,9 +36,9 @@ View
 
 To show a view the php file must be in views directory. Call a view it is easy :
 
-    View::make( filename, arguments, layout );
+    echo View::make( filename, arguments, layout );
 
 Models
 -------
 
-Classes and functions are on models directory. Html layout and templates are in models directory too, can be call by the object view.
+Classes and functions are on models directory.
