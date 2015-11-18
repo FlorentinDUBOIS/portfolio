@@ -1,6 +1,6 @@
 # file to hidden
-.hidden
+/.hidden
 
 # directory for node_modules
-assets/node_modules
-assets/node_modules/*
+/node_modules
+/node_modules/*
