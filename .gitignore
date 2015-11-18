@@ -2,5 +2,8 @@
 /.hidden
 
 # directory for node_modules
-/node_modules
+/node_modules/
 /node_modules/*
+
+# directory building
+/assets/build/

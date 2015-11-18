@@ -73,7 +73,7 @@ gulp.task( "build:js", [], () => {
         .pipe( gulp.dest( "assets/build/javascripts" ).on( "error", gutil.log ))
         .pipe( jsmin().on( "error", gutil.log ))
         .pipe( rename({ suffix: ".min" }).on( "error", gutil.log ))
-        .pipe( vifs.dest( "assets/build/javascripts" ).on( "error", gutil.log ))
+        .pipe( vifs.dest( "assets/build/javascripts" ).on( "error", gutil.log ));
 });
 
 // -----------------------------------------------------------------------------
@@ -86,7 +86,7 @@ gulp.task( "build:es6", [], () => {
         .pipe( gulp.dest( "assets/build/javascripts" ).on( "error", gutil.log ))
         .pipe( jsmin().on( "error", gutil.log ))
         .pipe( rename({ suffix: ".min" }).on( "error", gutil.log ))
-        .pipe( vifs.dest( "assets/build/javascripts" ).on( "error", gutil.log ))
+        .pipe( vifs.dest( "assets/build/javascripts" ).on( "error", gutil.log ));
 });
 
 // -----------------------------------------------------------------------------
@@ -98,7 +98,7 @@ gulp.task( "build:css", [], () => {
         .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ))
         .pipe( cssmin().on( "error", gutil.log ))
         .pipe( rename({ suffix: ".min" }).on( "error", gutil.log ))
-        .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ))
+        .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ));
 });
 
 // -----------------------------------------------------------------------------
@@ -111,7 +111,7 @@ gulp.task( "build:less", [], () => {
         .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ))
         .pipe( cssmin().on( "error", gutil.log ))
         .pipe( rename({ suffix: ".min" }).on( "error", gutil.log ))
-        .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ))
+        .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ));
 });
 
 // -----------------------------------------------------------------------------
@@ -124,7 +124,7 @@ gulp.task( "build:sass", [], () => {
         .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ))
         .pipe( cssmin().on( "error", gutil.log ))
         .pipe( rename({ suffix: ".min" }).on( "error", gutil.log ))
-        .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ))
+        .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ));
 });
 
 // -----------------------------------------------------------------------------
@@ -137,7 +137,7 @@ gulp.task( "build:scss", [], () => {
         .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ))
         .pipe( cssmin().on( "error", gutil.log ))
         .pipe( rename({ suffix: ".min" }).on( "error", gutil.log ))
-        .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ))
+        .pipe( gulp.dest( "assets/build/stylesheets" ).on( "error", gutil.log ));
 });
 
 // -----------------------------------------------------------------------------
