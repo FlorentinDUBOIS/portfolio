@@ -23,15 +23,37 @@
         <title><?= ifindexsetor( $args, 'title', APPLICATION_NAME ) ?></title>
 
         <!-- link materialize -->
-        <link rel="stylesheet"  type="text/css" href="assets/extern/materialize/css/materialize.min.css" />
+        <link rel="stylesheet"  type="text/css" href="<?= Document::file( 'assets/extern/materialize/css/materialize.min.css' ); ?>" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" >
+        <style type="text/css">
+            h1, h2, h3, h4, h5, h6 {
+                font-weight: 300;
+                line-height: 110%;
+                color: rgb( 238, 110, 115 );
+            }
+
+            h1 { font-size: 2.875rem; }
+            h2 { font-size: 2.875rem; }
+            h3 { font-size: 2.25rem; }
+            h4 { font-size: 1.625rem; }
+            h5 { font-size: 1rem; }
+            h6 { font-size: 0.9rem; }
+
+            footer.page-footer {
+                margin-top: 0;
+            }
+
+            ul#mobile-nav > li {
+                width: 100%;
+            }
+        </style>
 
         <!-- script materialize -->
-        <script type="application/javascript" src="assets/extern/jquery/2.1.4/jquery.js"></script>
-        <script type="application/javascript" src="assets/extern/materialize/js/materialize.min.js" ></script>
+        <script type="application/javascript" src="<?= Document::file( 'assets/extern/jquery/2.1.4/jquery.js' ); ?>"></script>
+        <script type="application/javascript" src="<?= Document::file( 'assets/extern/materialize/js/materialize.min.js' ); ?>" ></script>
 
         <!-- script angular -->
-        <script type="application/javascript" src="assets/extern/angular/1.4.7/angular.min.js" ></script>
+        <script type="application/javascript" src="<?= Document::file( 'assets/extern/angular/1.4.7/angular.min.js' ); ?>" ></script>
     </head>
 
     <body>
