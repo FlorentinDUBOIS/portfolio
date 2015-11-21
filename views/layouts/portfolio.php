@@ -23,8 +23,8 @@
         <title><?= ifindexsetor( $args, 'title', APPLICATION_NAME ) ?></title>
 
         <!-- link materialize -->
-        <link rel="stylesheet"  type="text/css" href="<?= Document::file( 'assets/extern/materialize/css/materialize.min.css' ); ?>" />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" >
+        <link rel="stylesheet" type="text/css" href="<?= Document::file( 'assets/extern/materialize/css/materialize.min.css' ); ?>" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <style type="text/css">
             h1, h2, h3, h4, h5, h6 {
                 font-weight: 300;
@@ -38,6 +38,20 @@
             h4 { font-size: 1.625rem; }
             h5 { font-size: 1rem; }
             h6 { font-size: 0.9rem; }
+            .text-high { font-size: 1.3125rem; }
+
+            .color-pink {
+                color: rgb( 238, 110, 115 );
+            }
+
+            .card-content h1,
+            .card-content h2,
+            .card-content h3,
+            .card-content h4,
+            .card-content h5,
+            .card-content h6 {
+                margin: 0;
+            }
 
             footer.page-footer {
                 margin-top: 0;
@@ -45,6 +59,17 @@
 
             ul#mobile-nav > li {
                 width: 100%;
+            }
+
+            header {
+                position: fixed;
+
+                width: 100%;
+                height: 100%;
+
+                background-color: rgb( 238, 110, 115 );
+
+                z-index: 100;
             }
         </style>
 
