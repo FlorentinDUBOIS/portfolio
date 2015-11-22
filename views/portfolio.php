@@ -1,7 +1,7 @@
 <header class="valign-wrapper" style="justify-content: center;" >
         <div class="valign">
             <div class="row valign-wrapper">
-                <div class="col s4 m4 l2 offset-s4 offset-m4 offset-l4" id="bonjour-img" style="opacity: 0;" >
+                <div class="col s4 m4 l2 offset-m4 offset-l4" id="bonjour-img" style="opacity: 0;" >
                     <img src="<?= Document::file( 'assets/images/florentin.png' ) ?>" class="circle responsive-img" />
                 </div>
 
@@ -18,21 +18,21 @@
             <a class="button-collapse" data-activates="mobile-nav" ><i class="material-icons">menu</i></a>
 
             <ul class="left hide-on-med-and-down" >
-                <li class="waves-effect waves-light" ><a href="#me" ><i class="left material-icons">perm_identity</i>A propos de moi</a></li>
-                <li class="waves-effect waves-light" ><a href="#skills" ><i class="left material-icons">settings</i>Mes compétences</a></li>
-                <li class="waves-effect waves-light" ><a href="#experiences" ><i class="left material-icons">work</i>Mes expériences</a></li>
-                <li class="waves-effect waves-light" ><a href="#projects" ><i class="left material-icons">code</i>Projets</a></li>
-                <li class="waves-effect waves-light" ><a href="#formation" ><i class="left material-icons">done</i>Formations</a></li>
-                <li class="waves-effect waves-light" ><a href="#contact" ><i class="left material-icons">forum</i>Me contacter</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#me" ><i class="left material-icons">perm_identity</i>A propos de moi</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#skills" ><i class="left material-icons">settings</i>Mes compétences</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#experiences" ><i class="left material-icons">work</i>Mes expériences</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#projects" ><i class="left material-icons">code</i>Projets</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#formation" ><i class="left material-icons">done</i>Formations</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#contact" ><i class="left material-icons">forum</i>Me contacter</a></li>
             </ul>
 
             <ul class="side-nav" id="mobile-nav">
-                <li class="waves-effect waves-light" ><a href="#me" ><i class="left material-icons">perm_identity</i>A propos de moi</a></li>
-                <li class="waves-effect waves-light" ><a href="#skills" ><i class="left material-icons">settings</i>Mes compétences</a></li>
-                <li class="waves-effect waves-light" ><a href="#experiences" ><i class="left material-icons">work</i>Mes expériences</a></li>
-                <li class="waves-effect waves-light" ><a href="#projects" ><i class="left material-icons">code</i>Projets</a></li>
-                <li class="waves-effect waves-light" ><a href="#formation" ><i class="left material-icons">done</i>Formations</a></li>
-                <li class="waves-effect waves-light" ><a href="#contact" ><i class="left material-icons">forum</i>Me contacter</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#me" ><i class="left material-icons">perm_identity</i>A propos de moi</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#skills" ><i class="left material-icons">settings</i>Mes compétences</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#experiences" ><i class="left material-icons">work</i>Mes expériences</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#projects" ><i class="left material-icons">code</i>Projets</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#formation" ><i class="left material-icons">done</i>Formations</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#contact" ><i class="left material-icons">forum</i>Me contacter</a></li>
             </ul>
         </div>
     </nav>
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="col s12 m8 l10">
-                    <p class="text-high grey-text darken-1">Salut !</p>
+                    <p class="text-high grey-text darken-1">Bonjour !</p>
                 </div>
             </div>
         </div>
@@ -238,7 +238,7 @@
             <div class="row">
                 <div class="col s12 m4 l4">
                     <div class="collection">
-                        <a href="#contact" class="collection-item active">Portfolio</a>
+                        <a data-href="#contact" class="collection-item active">Portfolio</a>
                         <a href="https://github.com/FlorentinDUBOIS" class="collection-item">Github - FlorentinDUBOIS</a>
                         <a href="https://twitter.com/FlorentinDUBOIS" class="collection-item">Twitter - @FlorentinDUBOIS</a>
                     </div>
@@ -296,12 +296,12 @@
         <div class="row">
             <div class="col l3 m4 s12">
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="#me" >A propos</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#skills" >Mes compétences</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#experiences" >Mes expériences</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#projects" >Projets</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#formation" >Formations</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#contact" >Me contacter</a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#me" >A propos</a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#skills" >Mes compétences</a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#experiences" >Mes expériences</a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#projects" >Projets</a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#formation" >Formations</a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#contact" >Me contacter</a></li>
                 </ul>
             </div>
 
@@ -329,6 +329,8 @@
     // ----------------------------------------------------------------------------
     // when document is ready
     $( window.document ).on( 'ready', function() {
+        // ----------------------------------------------------------------------------
+        // materialize
         $( '.button-collapse' ).sideNav();
         $( '.parallax' ).parallax();
         $( 'form[name=contact]' ).on( 'submit', function() {
@@ -350,6 +352,14 @@
             return false;
         });
 
+        // ----------------------------------------------------------------------------
+        // jquery animate scroll
+        $( window.document ).on( 'click', 'a[data-href]', function() {
+            $( $( this ).attr( 'data-href' )).animatescroll();
+        });
+
+        // ----------------------------------------------------------------------------
+        // animation at start up
         setTimeout( function() {
             $( '#bonjour-img' ).animate({
                 opacity: '1'
@@ -376,7 +386,7 @@
 
     // ----------------------------------------------------------------------------
     // declaration of module
-    var app = angular.module( 'app', []);
+    var app = angular.module( 'app', ['ngSanitize']);
 
     // ----------------------------------------------------------------------------
     // declare controller for languages

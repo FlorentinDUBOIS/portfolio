@@ -75,10 +75,12 @@
 
         <!-- script materialize -->
         <script type="application/javascript" src="<?= Document::file( 'assets/extern/jquery/2.1.4/jquery.js' ); ?>"></script>
+        <script type="application/javascript" src="<?= Document::file( 'assets/extern/jquery/2.1.4/jquery-animatescroll.min.js' ); ?>"></script>
         <script type="application/javascript" src="<?= Document::file( 'assets/extern/materialize/js/materialize.min.js' ); ?>" ></script>
 
         <!-- script angular -->
         <script type="application/javascript" src="<?= Document::file( 'assets/extern/angular/1.4.7/angular.min.js' ); ?>" ></script>
+        <script type="application/javascript" src="<?= Document::file( 'assets/extern/angular/1.4.7/angular-sanitize.min.js' ); ?>" ></script>
     </head>
 
     <body>

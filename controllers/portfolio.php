@@ -69,6 +69,14 @@
             'image'   => Document::file( 'assets/images/coffeescript.png' ),
             'comment' => ''
         ], [
+            'header'  => 'Angular JS',
+            'image'   => Document::file( 'assets/images/angularjs.png' ),
+            'comment' => ''
+        ], [
+            'header'  => 'jQuery',
+            'image'   => Document::file( 'assets/images/jquery.png' ),
+            'comment' => ''
+        ],  [
             'header'  => 'Node JS',
             'image'   => Document::file( 'assets/images/nodejs.png' ),
             'comment' => ''
@@ -91,14 +99,6 @@
         ], [
             'header'  => 'PHP',
             'image'   => Document::file( 'assets/images/php.png' ),
-            'comment' => ''
-        ], [
-            'header'  => 'Angular JS',
-            'image'   => Document::file( 'assets/images/angularjs.png' ),
-            'comment' => ''
-        ], [
-            'header'  => 'jQuery',
-            'image'   => Document::file( 'assets/images/jquery.png' ),
             'comment' => ''
         ], [
             'header'  => 'Materialize',
@@ -125,15 +125,15 @@
         echo json_encode([[
             'header'  => 'Arch Linux',
             'image'   => Document::file( 'assets/images/arch.png' ),
-            'comment' => ''
+            'comment' => 'Ma distribution Linux préféré elle m\'offre toujours les nouveautés dés que possible (rolling release). <br /><br />Elle suit aussi un de mes principes "KISS" (Keep It Simple, Stupid).'
         ], [
             'header'  => 'Ubuntu',
             'image'   => Document::file( 'assets/images/ubuntu.png' ),
-            'comment' => ''
+            'comment' => 'Comment passé à côté la distribution Linux la plus "friendly-user".'
         ], [
             'header'  => 'Windows',
             'image'   => Document::file( 'assets/images/windows.png' ),
-            'comment' => ''
+            'comment' => 'Dure de ne pas connaître, le système d\'exploitation le plus utilisé sur les ordinateurs.'
         ]]);
 
         return true;
@@ -147,15 +147,19 @@
         echo json_encode([[
             'header'  => 'MongoDB',
             'image'   => Document::file( 'assets/images/mongodb.png' ),
-            'comment' => ''
+            'comment' => 'MongoDB est un projet NoSQL, auquelle je me suis intérréssé lorsque je découvrit l\'environnement Node.'
         ], [
             'header'  => 'MySQL',
             'image'   => Document::file( 'assets/images/mysql.png' ),
-            'comment' => ''
+            'comment' => 'Principal Base de données utilisé, notamment pour sa gratuité'
+        ], [
+            'header'  => 'MariaDB',
+            'image'   => Document::file( 'assets/images/mariadb.png' ),
+            'comment' => 'Base de données sur laquel je fais la plupart de mes projets'
         ], [
             'header'  => 'Git',
             'image'   => Document::file( 'assets/images/git.png' ),
-            'comment' => ''
+            'comment' => 'Gestionnaire de version bien utile pour retracer tout ce qui est fait, utilisé en adéquation avec <a href="http://github.com/FlorentinDUBOIS" >github</a>'
         ]]);
 
         return true;
