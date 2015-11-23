@@ -53,12 +53,20 @@
                 margin: 0;
             }
 
+            a[data-href] {
+                cursor: pointer;
+            }
+
             footer.page-footer {
                 margin-top: 0;
             }
 
             ul#mobile-nav > li {
                 width: 100%;
+            }
+
+            .fixed-action-btn a.btn-floating.btn-large {
+                top: -15px;
             }
 
             header {
@@ -69,7 +77,7 @@
 
                 background-color: rgb( 238, 110, 115 );
 
-                z-index: 100;
+                z-index: 1000;
             }
         </style>
 

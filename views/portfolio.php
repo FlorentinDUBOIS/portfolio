@@ -6,13 +6,13 @@
                 </div>
 
                 <div class="col s4 m4 l4" id="bonjour-text" style="opacity: 0;" >
-                    <h1 class="white-text" style="width: 100%;">Bonjour !</h1>
+                    <h1 class="white-text" style="width: 100%;">Bienvenue !</h1>
                 </div>
             </div>
         </div>
 </header>
 
-<div> <!-- class="navbar-fixed" | & décider si le menu doit etre fixe -->
+<div class="navbar-fixed" >
     <nav>
         <div class="nav-wrapper">
             <a class="button-collapse" data-activates="mobile-nav" ><i class="material-icons">menu</i></a>
@@ -36,6 +36,17 @@
             </ul>
         </div>
     </nav>
+</div>
+
+<div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;" >
+    <div class="btn-floating btn-large red">
+        <i class="material-icons large">translate</i>
+    </div>
+
+    <ul>
+        <li><a href="" class="btn-floating btn-large green">En</a></li>
+        <li><a href="" class="btn-floating btn-large blue">Fr</a></li>
+    </ul>
 </div>
 
 <main data-ng-app="app" >
@@ -181,7 +192,9 @@
                     <h4>{{ experience.name }} <span class="right grey-text darken-1">{{ experience.date }}</span></h4>
                 </div>
 
-                <div class="card-action" data-ng-bind-html="experience.description" ></div>
+                <div class="card-action" >
+                    <p class="text-high" data-ng-bind-html="experience.description" ></p>
+                </div>
             </div>
         </div>
     </div>
@@ -199,7 +212,9 @@
             <ul class="collapsible popout" data-collapsible="expandable" >
                 <li data-ng-repeat="project in projects" >
                     <div class="collapsible-header">{{ project.name }} <span class="right">{{ project.date }}</span></div>
-                    <div class="collapsible-body" data-ng-bind-html="project.description" ></div>
+                    <div class="collapsible-body" >
+                        <p class="text-high" data-ng-bind-html="project.description" ></p>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -220,7 +235,9 @@
                     <h4>{{ formation.name }} <span class="right grey-text darken-1">{{ formation.date }}</span></h4>
                 </div>
 
-                <div class="card-action" data-ng-bind-html="formation.description" ></div>
+                <div class="card-action" >
+                    <p class="text-high" data-ng-bind-html="formation.description" ></p>
+                </div>
             </div>
         </div>
     </div>
@@ -355,7 +372,11 @@
         // ----------------------------------------------------------------------------
         // jquery animate scroll
         $( window.document ).on( 'click', 'a[data-href]', function() {
-            $( $( this ).attr( 'data-href' )).animatescroll();
+            $( $( this ).attr( 'data-href' )).animatescroll({
+                padding: $( 'nav' ).height() -1,
+                scrollSpeed: 2000,
+                easing: 'easeOutExpo'
+            });
         });
 
         // ----------------------------------------------------------------------------
@@ -378,7 +399,6 @@
                             display: 'none'
                         });
                     });
-
                 }, 1500 );
             }, 500 );
         }, 500 );
