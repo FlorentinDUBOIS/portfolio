@@ -6,7 +6,7 @@
                 </div>
 
                 <div class="col s4 m4 l4" id="bonjour-text" style="opacity: 0;" >
-                    <h1 class="white-text" style="width: 100%;">Bienvenue !</h1>
+                    <h1 class="white-text" style="width: 100%;"><?= WELCOME ?></h1>
                 </div>
             </div>
         </div>
@@ -15,24 +15,24 @@
 <div class="navbar-fixed" >
     <nav>
         <div class="nav-wrapper">
-            <a class="button-collapse" data-activates="mobile-nav" ><i class="material-icons">menu</i></a>
+            <a class="button-collapse"  data-activates="mobile-nav" ><i class="material-icons">menu</i></a>
 
             <ul class="left hide-on-med-and-down" >
-                <li class="waves-effect waves-light" ><a data-href="#me" ><i class="left material-icons">perm_identity</i>A propos de moi</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#skills" ><i class="left material-icons">settings</i>Mes compétences</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#experiences" ><i class="left material-icons">work</i>Mes expériences</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#projects" ><i class="left material-icons">code</i>Projets</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#formation" ><i class="left material-icons">done</i>Formations</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#contact" ><i class="left material-icons">forum</i>Me contacter</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#me" ><i class="left material-icons">perm_identity</i><?= ABOUT_ME ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#skills" ><i class="left material-icons">settings</i><?= SKILLS ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#experiences" ><i class="left material-icons">work</i><?= EXPERIENCES ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#projects" ><i class="left material-icons">code</i><?= PROJECTS ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#formation" ><i class="left material-icons">done</i><?= EDUCATIONS ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#contact" ><i class="left material-icons">forum</i><?= CONTACT_ME ?></a></li>
             </ul>
 
             <ul class="side-nav" id="mobile-nav">
-                <li class="waves-effect waves-light" ><a data-href="#me" ><i class="left material-icons">perm_identity</i>A propos de moi</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#skills" ><i class="left material-icons">settings</i>Mes compétences</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#experiences" ><i class="left material-icons">work</i>Mes expériences</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#projects" ><i class="left material-icons">code</i>Projets</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#formation" ><i class="left material-icons">done</i>Formations</a></li>
-                <li class="waves-effect waves-light" ><a data-href="#contact" ><i class="left material-icons">forum</i>Me contacter</a></li>
+                <li class="waves-effect waves-light" ><a data-href="#me" ><i class="left material-icons">perm_identity</i><?= ABOUT_ME ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#skills" ><i class="left material-icons">settings</i><?= SKILLS ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#experiences" ><i class="left material-icons">work</i><?= EXPERIENCES ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#projects" ><i class="left material-icons">code</i><?= PROJECTS ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#formation" ><i class="left material-icons">done</i><?= EDUCATIONS ?></a></li>
+                <li class="waves-effect waves-light" ><a data-href="#contact" ><i class="left material-icons">forum</i><?= CONTACT_ME ?></a></li>
             </ul>
         </div>
     </nav>
@@ -44,8 +44,8 @@
     </div>
 
     <ul>
-        <li><a href="<?= Document::rewrite( '/en-US/portfolio/index.html' ) ?>" class="btn-floating btn-large green">En</a></li>
-        <li><a href="<?= Document::rewrite( '/fr-FR/portfolio/index.html' ) ?>" class="btn-floating btn-large blue">Fr</a></li>
+        <li><a href="<?= Document::rewrite( '/portfolio/en-US/index.html' ) ?>" class="btn-floating btn-large green">En</a></li>
+        <li><a href="<?= Document::rewrite( '/portfolio/fr-FR/index.html' ) ?>" class="btn-floating btn-large blue">Fr</a></li>
     </ul>
 </div>
 
@@ -56,7 +56,7 @@
 
     <div class="section white" id="me" >
         <div class="container">
-            <h1 class="header" >A propos de moi</h1>
+            <h1 class="header" ><?= ABOUT_ME ?></h1>
 
             <br>
 
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="col s12 m8 l10">
-                    <p class="text-high grey-text darken-1">Bonjour !</p>
+                    <p class="text-high grey-text darken-1"><?= ME ?></p>
                 </div>
             </div>
         </div>
@@ -78,10 +78,10 @@
 
     <div class="section white" id="skills" data-ng-controller="languages" >
         <div class="container">
-            <h2 class="header" >Mes compétences</h2>
+            <h2 class="header" ><?= SKILLS ?></h2>
             <br />
 
-            <h3>Logiciel</h3>
+            <h3><?= SOFTWARE ?></h3>
             <div class="divider"></div>
 
             <div class="row">
@@ -105,7 +105,7 @@
 
             <br />
 
-            <h3>Web</h3>
+            <h3><?= WEB ?></h3>
             <div class="divider"></div>
 
             <div class="row">
@@ -129,7 +129,7 @@
 
             <br />
 
-            <h3>Système d'exploitation</h3>
+            <h3><?= OPERATING_SYSTEM ?></h3>
             <div class="divider"></div>
 
             <div class="row">
@@ -153,7 +153,7 @@
 
             <br />
 
-            <h3>Base de données et autres</h3>
+            <h3><?= DATABASE_OTHERS ?></h3>
             <div class="divider"></div>
 
             <div class="row">
@@ -183,7 +183,7 @@
 
     <div class="section white" id="experiences" data-ng-controller="experiences" >
         <div class="container">
-            <h2 class="header" >Mes expériences</h2>
+            <h2 class="header" ><?= EXPERIENCES ?></h2>
 
             <br />
 
@@ -205,7 +205,7 @@
 
     <div class="section white" id="projects" data-ng-controller="project" >
         <div class="container">
-            <h2 class="header" >Projets</h2>
+            <h2 class="header" ><?= PROJECTS ?></h2>
 
             <br>
 
@@ -226,7 +226,7 @@
 
     <div class="section white" id="formation" data-ng-controller="formation" >
         <div class="container">
-            <h2 class="header" >Formations</h2>
+            <h2 class="header" ><?= EDUCATIONS ?></h2>
 
             <br>
 
@@ -248,16 +248,16 @@
 
     <div class="section white" id="contact" >
         <div class="container">
-            <h2 class="header" >Me contacter</h2>
+            <h2 class="header" ><?= CONTACT_ME ?></h2>
 
             <br>
 
             <div class="row">
                 <div class="col s12 m4 l4">
                     <div class="collection">
-                        <a data-href="#contact" class="collection-item active">Portfolio</a>
-                        <a href="https://github.com/FlorentinDUBOIS" class="collection-item">Github - FlorentinDUBOIS</a>
-                        <a href="https://twitter.com/FlorentinDUBOIS" class="collection-item">Twitter - @FlorentinDUBOIS</a>
+                        <a data-href="#contact" class="collection-item active"><?= PORTFOLIO ?></a>
+                        <a href="https://github.com/FlorentinDUBOIS" class="collection-item"><?= GITHUB_ME ?></a>
+                        <a href="https://twitter.com/FlorentinDUBOIS" class="collection-item"><?= TWITTER_ME ?></a>
                     </div>
                 </div>
 
@@ -266,33 +266,33 @@
                         <div class="row">
                             <div class="col s12 m6 l6 input-field">
                                 <input type="text" id="firstname" name="firstname" required="required" pattern="[\w\- ]+" />
-                                <label for="firstname">Prénom</label>
+                                <label for="firstname"><?= FIRSTNAME ?></label>
                             </div>
 
                             <div class="col s12 m6 l6 input-field">
                                 <input type="text" id="lastname" name="lastname" required="required" pattern="[\w\- ]+" />
-                                <label for="lastname">Nom</label>
+                                <label for="lastname"><?= LASTNAME ?></label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col s12 m12 l12 input-field">
                                 <input type="email" id="mail" name="mail" required="required" pattern="[\w\-\.]+@[\w\-]+\.[\w]{2,}" />
-                                <label for="mail">Votre courriel</label>
+                                <label for="mail"><?= OUR_MAIL ?></label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col s12 m12 l12 input-field">
                                 <textarea name="mail-content" id="mail-content" class="materialize-textarea" required="required" ></textarea>
-                                <label for="mail-content">Laissez-moi un message</label>
+                                <label for="mail-content"><?= TOOK_MESSAGE ?></label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col s12 m4 l2 offset-m8 offset-l10">
                                 <button class="btn-large waves-effect waves-light" type="submit" >
-                                    Envoyer
+                                    <?= SEND ?>
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
@@ -313,31 +313,31 @@
         <div class="row">
             <div class="col l3 m4 s12">
                 <ul>
-                    <li><a class="grey-text text-lighten-3" data-href="#me" >A propos</a></li>
-                    <li><a class="grey-text text-lighten-3" data-href="#skills" >Mes compétences</a></li>
-                    <li><a class="grey-text text-lighten-3" data-href="#experiences" >Mes expériences</a></li>
-                    <li><a class="grey-text text-lighten-3" data-href="#projects" >Projets</a></li>
-                    <li><a class="grey-text text-lighten-3" data-href="#formation" >Formations</a></li>
-                    <li><a class="grey-text text-lighten-3" data-href="#contact" >Me contacter</a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#me" ><?= ABOUT_ME ?></a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#skills" ><?= SKILLS ?></a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#experiences" ><?= EXPERIENCES ?></a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#projects" ><?= PROJECTS ?></a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#formation" ><?= EDUCATIONS ?></a></li>
+                    <li><a class="grey-text text-lighten-3" data-href="#contact" ><?= CONTACT_ME ?></a></li>
                 </ul>
             </div>
 
             <div class="col l3 m4 s12">
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="<?= Document::rewrite( '/portfolio/sitemap.xml', $args ); ?>" >Carte du site</a></li>
-                    <li><a class="grey-text text-lighten-3" href="<?= Document::rewrite( '/portfolio/mentions', $args ); ?>" >Mentions légales</a></li>
+                    <li><a class="grey-text text-lighten-3" href="<?= Document::rewrite( '/portfolio/sitemap.xml', $args ); ?>" ><?= SITEMAP ?></a></li>
+                    <li><a class="grey-text text-lighten-3" href="<?= Document::rewrite( '/portfolio/mentions', $args ); ?>" ><?= LICENCE ?></a></li>
                 </ul>
             </div>
 
             <div class="col l6 m4 s12">
-                <p class="white-text" >Je vous souhaite une bonne visite sur mon portfolio.<br />N'hésitez pas à me laisser un message</p>
+                <p class="white-text" ><?= GOOD_VISIT ?></p>
             </div>
         </div>
     </div>
 
     <div class="footer-copyright" >
         <div class="container">
-            © <?= date( 'Y' ) ?> Copyright Florentin DUBOIS
+            <?= COPYRIGHT ?>
         </div>
     </div>
 </footer>
@@ -418,19 +418,19 @@
         $scope.OSs       = [];
         $scope.Others    = [];
 
-        $http.get( '<?= Document::rewrite( '/:lang/portfolio/languages', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/portfolio/:lang/languages', $args ); ?>' ).then( function( response ) {
             $scope.languages = response.data;
         });
 
-        $http.get( '<?= Document::rewrite( '/:lang/portfolio/webs', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/portfolio/:lang/webs', $args ); ?>' ).then( function( response ) {
             $scope.webs = response.data;
         });
 
-        $http.get( '<?= Document::rewrite( '/:lang/portfolio/OSs', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/portfolio/:lang/OSs', $args ); ?>' ).then( function( response ) {
             $scope.OSs = response.data;
         });
 
-        $http.get( '<?= Document::rewrite( '/:lang/portfolio/others', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/portfolio/:lang/others', $args ); ?>' ).then( function( response ) {
             $scope.Others = response.data;
         });
     }]);
@@ -440,7 +440,7 @@
     app.controller( 'experiences', ['$scope', '$http', function( $scope, $http ) {
         $scope.experiences = [];
 
-        $http.get( '<?= Document::rewrite( '/:lang/portfolio/experiences', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/portfolio/:lang/experiences', $args ); ?>' ).then( function( response ) {
             $scope.experiences = response.data;
         });
     }]);
@@ -450,7 +450,7 @@
     app.controller( 'formation', ['$scope', '$http', function( $scope, $http ) {
         $scope.formations = [];
 
-        $http.get( '<?= Document::rewrite( '/:lang/portfolio/formations', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/portfolio/:lang/formations', $args ); ?>' ).then( function( response ) {
             $scope.formations = response.data;
         });
     }]);
@@ -460,7 +460,7 @@
     app.controller( 'project', ['$scope', '$http', function( $scope, $http ) {
         $scope.projects = [];
 
-        $http.get( '<?= Document::rewrite( '/:lang/portfolio/projects', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/portfolio/:lang/projects', $args ); ?>' ).then( function( response ) {
             $scope.projects = response.data;
         });
     }]);
