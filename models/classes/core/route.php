@@ -32,7 +32,7 @@
             // ------------------------------------------------------------------------
             // match with no parameter(s)
             foreach( self::$routes as $key => $route ) {
-                if( preg_match( '#'.$key.'#', $url )) {
+                if( preg_match( '#^'.$key.'$#', $url )) {
                     $args['url'] = $url;
                     foreach( $route['depens'] as $depen ) {
                         if( icontain( $depen, 'before:' )) {
@@ -75,7 +75,7 @@
                     $urlbuild = substr( $urlbuild, 0, -1 );
                     $urlbuild = str_replace( '\\', '', $urlbuild );
 
-                    if( !preg_match( '#'.$key.'#', $urlbuild )) {
+                    if( !preg_match( '#^'.$key.'$#', $urlbuild )) {
                         continue;
                     }
 
