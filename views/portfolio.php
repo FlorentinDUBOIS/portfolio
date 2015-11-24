@@ -44,8 +44,8 @@
     </div>
 
     <ul>
-        <li><a href="" class="btn-floating btn-large green">En</a></li>
-        <li><a href="" class="btn-floating btn-large blue">Fr</a></li>
+        <li><a href="<?= Document::rewrite( '/en-US/portfolio/index.html' ) ?>" class="btn-floating btn-large green">En</a></li>
+        <li><a href="<?= Document::rewrite( '/fr-FR/portfolio/index.html' ) ?>" class="btn-floating btn-large blue">Fr</a></li>
     </ul>
 </div>
 
@@ -324,7 +324,7 @@
 
             <div class="col l3 m4 s12">
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="<?= Document::rewrite( '/portfolio/sitemap', $args ); ?>" >Carte du site</a></li>
+                    <li><a class="grey-text text-lighten-3" href="<?= Document::rewrite( '/portfolio/sitemap.xml', $args ); ?>" >Carte du site</a></li>
                     <li><a class="grey-text text-lighten-3" href="<?= Document::rewrite( '/portfolio/mentions', $args ); ?>" >Mentions légales</a></li>
                 </ul>
             </div>
@@ -381,27 +381,29 @@
 
         // ----------------------------------------------------------------------------
         // animation at start up
-        setTimeout( function() {
-            $( '#bonjour-img' ).animate({
-                opacity: '1'
-            });
-
+        $( window.document ).one( 'focus', function() {
             setTimeout( function() {
-                $( '#bonjour-text' ).animate({
+                $( '#bonjour-img' ).animate({
                     opacity: '1'
                 });
 
                 setTimeout( function() {
-                    $( 'header' ).animate({
-                        top: '-100%'
-                    }, 1000, 'swing', function() {
-                        $( 'header' ).css({
-                            display: 'none'
-                        });
+                    $( '#bonjour-text' ).animate({
+                        opacity: '1'
                     });
-                }, 1500 );
+
+                    setTimeout( function() {
+                        $( 'header' ).animate({
+                            top: '-100%'
+                        }, 1000, 'swing', function() {
+                            $( 'header' ).css({
+                                display: 'none'
+                            });
+                        });
+                    }, 1500 );
+                }, 500 );
             }, 500 );
-        }, 500 );
+        });
     });
 
     // ----------------------------------------------------------------------------
@@ -416,19 +418,19 @@
         $scope.OSs       = [];
         $scope.Others    = [];
 
-        $http.get( '<?= Document::rewrite( '/portfolio/languages', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/:lang/portfolio/languages', $args ); ?>' ).then( function( response ) {
             $scope.languages = response.data;
         });
 
-        $http.get( '<?= Document::rewrite( '/portfolio/webs', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/:lang/portfolio/webs', $args ); ?>' ).then( function( response ) {
             $scope.webs = response.data;
         });
 
-        $http.get( '<?= Document::rewrite( '/portfolio/OSs', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/:lang/portfolio/OSs', $args ); ?>' ).then( function( response ) {
             $scope.OSs = response.data;
         });
 
-        $http.get( '<?= Document::rewrite( '/portfolio/others', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/:lang/portfolio/others', $args ); ?>' ).then( function( response ) {
             $scope.Others = response.data;
         });
     }]);
@@ -438,7 +440,7 @@
     app.controller( 'experiences', ['$scope', '$http', function( $scope, $http ) {
         $scope.experiences = [];
 
-        $http.get( '<?= Document::rewrite( '/portfolio/experiences', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/:lang/portfolio/experiences', $args ); ?>' ).then( function( response ) {
             $scope.experiences = response.data;
         });
     }]);
@@ -448,7 +450,7 @@
     app.controller( 'formation', ['$scope', '$http', function( $scope, $http ) {
         $scope.formations = [];
 
-        $http.get( '<?= Document::rewrite( '/portfolio/formations', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/:lang/portfolio/formations', $args ); ?>' ).then( function( response ) {
             $scope.formations = response.data;
         });
     }]);
@@ -458,7 +460,7 @@
     app.controller( 'project', ['$scope', '$http', function( $scope, $http ) {
         $scope.projects = [];
 
-        $http.get( '<?= Document::rewrite( '/portfolio/projects', $args ); ?>' ).then( function( response ) {
+        $http.get( '<?= Document::rewrite( '/:lang/portfolio/projects', $args ); ?>' ).then( function( response ) {
             $scope.projects = response.data;
         });
     }]);

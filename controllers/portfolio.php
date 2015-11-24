@@ -1,20 +1,32 @@
 <?php
     // ----------------------------------------------------------------------------
     // create the view
-    Route::on( '/', [], function( array $args = null ) : bool {
-        Document::mime( Document::HTML );
+    Route::on( '/', [], 'root' );
+    Route::on( '/:lang/(index\.\w{3,})?', [], 'root' );
+    Route::on( '/:lang/(portfolio/index\.\w{3,})?', [], 'root' );
 
+    function root( array $args = null ) : bool {
         $args['title'] = 'Florentin DUBOIS - Portfolio';
+        $args['lang']  = $args['lang'] ?? DEFAULT_LANGUAGE;
+
+        Document::mime( Document::HTML );
+        Document::language( $args['lang'], 'portfolio' );
 
         echo View::make( 'portfolio', $args, 'portfolio' );
 
         return true;
-    });
+    }
 
     // ----------------------------------------------------------------------------
     // respond json
-    Route::on( '/portfolio/languages', [], function( $args ) {
+    Route::on( '/portfolio/languages', [], 'languages' );
+    Route::on( '/:lang/portfolio/languages', [], 'languages' );
+
+    function languages( array $args = null ) : bool {
+        $args['lang']  = $args['lang'] ?? DEFAULT_LANGUAGE;
+
         Document::mime( Document::JSON );
+        Document::language( $args['lang'], 'portfolio' );
 
         echo json_encode([[
             'header'  => 'C / C++',
@@ -47,12 +59,18 @@
         ]]);
 
         return true;
-    });
+    }
 
     // ----------------------------------------------------------------------------
     // respond json
-    Route::on( '/portfolio/webs', [], function( array $args = null ) : bool {
+    Route::on( '/portfolio/webs', [], 'webs' );
+    Route::on( '/:lang/portfolio/webs', [], 'webs' );
+
+    function webs( array $args = null ) : bool {
+        $args['lang']  = $args['lang'] ?? DEFAULT_LANGUAGE;
+
         Document::mime( Document::JSON );
+        Document::language( $args['lang'], 'portfolio' );
 
         echo json_encode([[
             'header'  => 'HTML',
@@ -125,12 +143,18 @@
         ]]);
 
         return true;
-    });
+    }
 
     // ----------------------------------------------------------------------------
     // respond json
-    Route::on( '/portfolio/OSs', [], function( array $args = null ) : bool {
+    Route::on( '/portfolio/OSs', [], 'OSs' );
+    Route::on( '/:lang/portfolio/OSs', [], 'OSs' );
+
+    function OSs( array $args = null ) : bool {
+        $args['lang']  = $args['lang'] ?? DEFAULT_LANGUAGE;
+
         Document::mime( Document::JSON );
+        Document::language( $args['lang'], 'portfolio' );
 
         echo json_encode([[
             'header'  => 'Arch Linux',
@@ -147,12 +171,18 @@
         ]]);
 
         return true;
-    });
+    }
 
     // ----------------------------------------------------------------------------
     // respond json
-    Route::on( '/portfolio/others', [], function( array $args = null ) : bool {
+    Route::on( '/portfolio/others', [], 'others' );
+    Route::on( '/:lang/portfolio/others', [], 'others' );
+
+    function others( array $args = null ) : bool {
+        $args['lang']  = $args['lang'] ?? DEFAULT_LANGUAGE;
+
         Document::mime( Document::JSON );
+        Document::language( $args['lang'], 'portfolio' );
 
         echo json_encode([[
             'header'  => 'MongoDB',
@@ -173,12 +203,18 @@
         ]]);
 
         return true;
-    });
+    }
 
     // ----------------------------------------------------------------------------
     // respond json
-    Route::on( '/portfolio/experiences', [], function( array $args = null ) : bool {
+    Route::on( '/portfolio/experiences', [], 'experiences' );
+    Route::on( '/:lang/portfolio/experiences', [], 'experiences' );
+
+    function experiences( array $args = null ) : bool {
+        $args['lang']  = $args['lang'] ?? DEFAULT_LANGUAGE;
+
         Document::mime( Document::JSON );
+        Document::language( $args['lang'], 'portfolio' );
 
         echo json_encode([[
             'name'        => 'Alternance à aC3',
@@ -191,12 +227,18 @@
         ]]);
 
         return true;
-    });
+    }
 
     // ----------------------------------------------------------------------------
     // respond json
-    Route::on( '/portfolio/formations', [], function( array $args = null ) : bool {
+    Route::on( '/portfolio/formations', [], 'formations' );
+    Route::on( '/:lang/portfolio/formations', [], 'formations' );
+
+    function formations( array $args = null ) : bool {
+        $args['lang']  = $args['lang'] ?? DEFAULT_LANGUAGE;
+
         Document::mime( Document::JSON );
+        Document::language( $args['lang'], 'portfolio' );
 
         echo json_encode([[
             'name'        => 'Diplôme d\'ingénieur',
@@ -217,12 +259,18 @@
         ]]);
 
         return true;
-    });
+    }
 
     // ----------------------------------------------------------------------------
     // respond json
-    Route::on( '/portfolio/projects', [], function( array $args = null ) : bool {
+    Route::on( '/portfolio/projects', [], 'projects' );
+    Route::on( '/:lang/portfolio/projects', [], 'projects' );
+
+    function projects( array $args = null ) : bool {
+        $args['lang']  = $args['lang'] ?? DEFAULT_LANGUAGE;
+
         Document::mime( Document::JSON );
+        Document::language( $args['lang'], 'portfolio' );
 
         echo json_encode([[
             'name'        => 'Festigeek',
@@ -243,7 +291,7 @@
         ]]);
 
         return true;
-    });
+    }
 
     // ----------------------------------------------------------------------------
     // envoie du message
