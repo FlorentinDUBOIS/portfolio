@@ -5,11 +5,12 @@
     Route::on( '/portfolio/:lang/(index\.\w{3,})?', [], 'root' );
 
     function root( array $args = null ) : bool {
-        $args['title'] = PORTFOLIO_TITLE;
         $args['lang']  = $args['lang'] ?? DEFAULT_LANGUAGE;
 
         Document::mime( Document::HTML );
         Document::language( $args['lang'], 'portfolio' );
+
+        $args['title'] = PORTFOLIO_TITLE;
 
         echo View::make( 'portfolio', $args, 'portfolio' );
 
@@ -272,21 +273,21 @@
         Document::language( $args['lang'], 'portfolio' );
 
         echo json_encode([[
-            'name'        => 'Festigeek',
-            'date'        => 'Prévu Décembre 2015',
-            'description' => ''
+            'name'        => NAME_FESTIGEEK,
+            'date'        => DATE_FESTIGEEK,
+            'description' => DESC_FESTIGEEK
         ], [
-            'name'        => 'Portfolio',
-            'date'        => 'Novembre 2015',
-            'description' => ''
+            'name'        => NAME_PORTFOLIO,
+            'date'        => DATE_PORTFOLIO,
+            'description' => DESC_PORTFOLIO
         ], [
-            'name'        => 'ShellChooser',
-            'date'        => 'Juillet 2015',
-            'description' => ''
+            'name'        => NAME_SHELLCHOOSER,
+            'date'        => DATE_SHELLCHOOSER,
+            'description' => DESC_SHELLCHOOSER
         ], [
-            'name'        => 'Framework PHP',
-            'date'        => 'Âout 2014',
-            'description' => ''
+            'name'        => NAME_FRAMEWORK,
+            'date'        => DATE_FRAMEWORK,
+            'description' => DESC_FRAMEWORK
         ]]);
 
         return true;

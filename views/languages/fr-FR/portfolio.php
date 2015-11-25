@@ -79,4 +79,17 @@
     define( 'NAME_BAC', 'Baccalauréat scientifique' );
     define( 'DATE_BAC', 'Juillet 2012' );
     define( 'DESC_BAC', 'Baccalauréat scientifique obtenue, avec l\'option science de l\'ingénieur et la spécialité mathématiques' );
+
+    define( 'NAME_FESTIGEEK', 'Festigeek' );
+    define( 'DATE_FESTIGEEK', 'Prévu Décembre 2015' );
+    define( 'DESC_FESTIGEEK', '' );
+    define( 'NAME_PORTFOLIO', 'Portfolio' );
+    define( 'DATE_PORTFOLIO', 'Novembre 2015' );
+    define( 'DESC_PORTFOLIO', '' );
+    define( 'NAME_SHELLCHOOSER', 'ShellChooser' );
+    define( 'DATE_SHELLCHOOSER', 'Juillet 2015' );
+    define( 'DESC_SHELLCHOOSER', '' );
+    define( 'NAME_FRAMEWORK', 'Framework PHP' );
+    define( 'DATE_FRAMEWORK', 'Âout 2014' );
+    define( 'DESC_FRAMEWORK', '' );
 ?>
