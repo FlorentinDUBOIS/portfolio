@@ -324,8 +324,8 @@
 
             <div class="col l3 m4 s12">
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="<?= Document::rewrite( '/portfolio/sitemap.xml', $args ); ?>" ><?= SITEMAP ?></a></li>
-                    <li><a class="grey-text text-lighten-3" href="<?= Document::rewrite( '/portfolio/mentions', $args ); ?>" ><?= LICENCE ?></a></li>
+                    <li><a class="grey-text text-lighten-3" href="sitemap.xml" ><?= SITEMAP ?></a></li>
+                    <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal-mentions" ><?= LICENCE ?></a></li>
                 </ul>
             </div>
 
@@ -342,6 +342,17 @@
     </div>
 </footer>
 
+<div class="modal" id="modal-mentions" >
+    <div class="modal-content" >
+        <h4><?= MENTIONS_LEGALES_HEADING ?></h4>
+        <p><?= MENTIONS_LEGALES_CONTENT ?></p>
+    </div>
+
+    <div class="modal-footer" >
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn btn-flat"><?= MENTIONS_LEGALES_OK ?></a>
+    </div>
+</div>
+
 <script type="application/javascript">
     // ----------------------------------------------------------------------------
     // when document is ready
@@ -350,6 +361,7 @@
         // materialize
         $( '.button-collapse' ).sideNav();
         $( '.parallax' ).parallax();
+        $( '.modal-trigger' ).leanModal();
         $( 'form[name=contact]' ).on( 'submit', function() {
             Materialize.toast( 'Envoie du message', 4000 );
 
@@ -381,29 +393,27 @@
 
         // ----------------------------------------------------------------------------
         // animation at start up
-        $( window.document ).one( 'focus', function() {
+        setTimeout( function() {
+            $( '#bonjour-img' ).animate({
+                opacity: '1'
+            });
+
             setTimeout( function() {
-                $( '#bonjour-img' ).animate({
+                $( '#bonjour-text' ).animate({
                     opacity: '1'
                 });
 
                 setTimeout( function() {
-                    $( '#bonjour-text' ).animate({
-                        opacity: '1'
-                    });
-
-                    setTimeout( function() {
-                        $( 'header' ).animate({
-                            top: '-100%'
-                        }, 1000, 'swing', function() {
-                            $( 'header' ).css({
-                                display: 'none'
-                            });
+                    $( 'header' ).animate({
+                        top: '-100%'
+                    }, 1000, 'swing', function() {
+                        $( 'header' ).css({
+                            display: 'none'
                         });
-                    }, 1500 );
-                }, 500 );
+                    });
+                }, 1500 );
             }, 500 );
-        });
+        }, 500 );
     });
 
     // ----------------------------------------------------------------------------

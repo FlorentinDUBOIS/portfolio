@@ -92,4 +92,8 @@
     define( 'NAME_FRAMEWORK', 'Framework PHP' );
     define( 'DATE_FRAMEWORK', 'Âout 2014' );
     define( 'DESC_FRAMEWORK', '' );
+
+    define( 'MENTIONS_LEGALES_HEADING', '' );
+    define( 'MENTIONS_LEGALES_CONTENT', '' );
+    define( 'MENTIONS_LEGALES_OK', '' ); 
 ?>
