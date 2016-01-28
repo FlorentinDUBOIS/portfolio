@@ -161,6 +161,10 @@
             'image'   => Document::file( 'assets/images/arch.png' ),
             'comment' => ARCHLINUX
         ], [
+            'header'  => 'Debian',
+            'image'   => Document::file( 'assets/images/debian.png' ),
+            'comment' => DEBIAN
+        ], [
             'header'  => 'Ubuntu',
             'image'   => Document::file( 'assets/images/ubuntu.png' ),
             'comment' => UBUNTU
@@ -168,6 +172,10 @@
             'header'  => 'Windows',
             'image'   => Document::file( 'assets/images/windows.png' ),
             'comment' => WINDOWS
+        ], [
+            'header'  => 'Fedora',
+            'image'   => Document::file( 'assets/images/fedora.png' ),
+            'comment' => FEDORA
         ]]);
 
         return true;

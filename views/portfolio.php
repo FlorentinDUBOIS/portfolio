@@ -324,7 +324,7 @@
 
             <div class="col l3 m4 s12">
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="sitemap.xml" ><?= SITEMAP ?></a></li>
+                    <!-- <li><a class="grey-text text-lighten-3" href="sitemap.xml" ><?= SITEMAP ?></a></li> -->
                     <li><a class="grey-text text-lighten-3 modal-trigger" href="#modal-mentions" ><?= LICENCE ?></a></li>
                 </ul>
             </div>

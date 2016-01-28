@@ -52,7 +52,9 @@
     define( 'BOOTSTRAP', 'Plus besoin de le présenter ^^' );
 
     define( 'ARCHLINUX', 'Ma distribution Linux préféré elle m\'offre toujours les nouveautés dés que possible (rolling release) <br /><br />Elle suit aussi un de mes principes "KISS" (Keep It Simple, Stupid)' );
+    define( 'DEBIAN', '' );
     define( 'UBUNTU', 'Comment passé à côté la distribution Linux la plus connu' );
+    define( 'FEDORA', '' );
     define( 'WINDOWS', 'Dure de ne pas connaître, le système d\'exploitation le plus utilisé sur les ordinateurs' );
 
     define( 'MONGODB', 'MongoDB est un projet NoSQL, auquelle je me suis intérréssé lorsque je découvrit l\'environnement Node.' );
@@ -93,7 +95,9 @@
     define( 'DATE_FRAMEWORK', 'Âout 2014' );
     define( 'DESC_FRAMEWORK', '' );
 
-    define( 'MENTIONS_LEGALES_HEADING', '' );
-    define( 'MENTIONS_LEGALES_CONTENT', '' );
-    define( 'MENTIONS_LEGALES_OK', '' ); 
+    define( 'MENTIONS_LEGALES_HEADING', 'Mentions légales' );
+    define( 'MENTIONS_LEGALES_CONTENT', 'Copyright (c) 2015(s), Florentin DUBOIS<br /><br />
+                                         Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.<br /><br />
+                                         THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.' );
+    define( 'MENTIONS_LEGALES_OK', 'Fermer' );
 ?>

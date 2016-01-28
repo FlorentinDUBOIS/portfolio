@@ -25,39 +25,41 @@
     define( 'ME', 'Bonjour !' );
     define( 'PORTFOLIO_TITLE', 'Florentin DUBOIS - Portfolio' );
 
-    define( 'C_CPP', 'Ces deux langages sont ceux que je préfère avec le JavaScript, Ce sont aussi les premiers langages que j\'ai appris' );
-    define( 'QT', 'Une magnifique bibliothèque multi-platforme que j\'utilise pour mes projets ayant besoin d\'une IHM' );
-    define( 'SFML', 'Une autre bibliothèque multi-platforme que j\'utilise cette fois-ci avec la bibliothèque OpenGL' );
-    define( 'OPENGL', 'Une bibliothèque multi-platforme graphique qui me permet de faire plein de triangles ^^' );
-    define( 'JAVA', 'Langage sur lequel, j\'ai appris les design patterns notamment ceux du livre Gang of Four design patterns' );
-    define( 'ASSEMBLY', 'J\'ai fait de l\'assembleur pour une carte ST7 à l\'ISEN' );
+    define( 'C_CPP', 'Le C et le C++ sont deux languages qui me tienne à coeur. Ce sont les premiers langages informatiques que j\'ai appris. A ce jour, ce sont aussi ce que je préfère' );
+    define( 'QT', 'Bibliothèque que j\'ai découvert lors de mon apprentissage du C++, elle me permet de faire facilement des interfaces graphiques.' );
+    define( 'SFML', 'Une seconde bibliothèque qui quant à elle me permet de gérer plus facilement mes contextes pour l\'OpenGL' );
+    define( 'OPENGL', 'OpenGL est une bibliothèque graphique qui me permet de gérer un espace 2D ou 3D' );
+    define( 'JAVA', 'Langage sur lequel, j\'ai appris les design patterns notamment ceux du livre "Gang of Four design patterns". Je l\'utilise pour développer un "Candy Crush" Like dans le cadre de la formation de l\'ISEN Brest' );
+    define( 'ASSEMBLY', 'Dans le cadre de la formation ISEN Brest, j\'ai reçu des cours d\'assembleur pour piloter un carte ST7' );
     define( 'PYTHON', 'Découvert en cours de phyique, pour modéliser les principes de la magnétostatique' );
 
-    define( 'HTML', 'La base de n\'importe qu\'elle site web' );
+    define( 'HTML', 'Peu de chose à dire, la base de tout les sites web' );
     define( 'CSS', 'Sans le monde serai moin beau' );
     define( 'SASS', 'Langage de préprocessing vraiment très pratique et utile, personnellement je préfère son petit frère SCSS' );
-    define( 'LESS', 'Langage de préprocessing intérréssant concurrant de SASS' );
+    define( 'LESS', 'Langage de préprocessing intérréssant concurant de SASS' );
     define( 'JAVASCRIPT', 'Un de mes langage préféré vraiment très pratique avec des concepts très intérréssant' );
     define( 'COFFEESCRIPT', 'Pour ce simplifier la vie, cependant ECMAScript 2015 comprends la plupart des apports de ce langage de préprocessing' );
     define( 'ANGULAR', 'Un framework JavaScript qui me passionne' );
     define( 'JQUERY', 'Un autre framework JavaScript incontournable' );
     define( 'NODE', 'L\'environnement JavaScript le plus connu' );
-    define( 'EXPRESS', 'Un framework JavaScript pour Node' );
+    define( 'EXPRESS', 'Un framework JavaScript pour Node, qui permet de créer des routes intuitivements avec beaucoup de fonctionnnalité pouvant être ajouté' );
     define( 'JADE', 'Un langage de préprocessing html vraiment très pratique' );
-    define( 'GULP', 'Gestionnaire de tâches géniale' );
+    define( 'GULP', 'Gestionnaire de tâches géniale, basée sur les flux' );
     define( 'APACHE', 'Un vieux de la vieille' );
     define( 'PHP', 'Langage de préprocessing html très pratique, j\'affectionne beaucoup la version 7' );
     define( 'MATERIALIZE', 'Framework css basée sur le style material design que je trouve magnifique' );
     define( 'FOUNDATION', 'Framework css géniale comme base à un nouveau projet' );
-    define( 'BOOTSTRAP', 'Plus besoin de le présenter ^^' );
+    define( 'BOOTSTRAP', 'Plus besoin de le présenter, framework css crée par twitter.' );
 
     define( 'ARCHLINUX', 'Ma distribution Linux préféré elle m\'offre toujours les nouveautés dés que possible (rolling release) <br /><br />Elle suit aussi un de mes principes "KISS" (Keep It Simple, Stupid)' );
-    define( 'UBUNTU', 'Comment passé à côté la distribution Linux la plus connu' );
+    define( 'DEBIAN', 'Distribution que j\'ai utilisé, et c\'est la distribution mère de ubuntu' );
+    define( 'UBUNTU', 'Comment passé à côté la distribution Linux la plus connu. C\'est aussi ma première distribution Linux' );
+    define( 'FEDORA', 'Distribution que j\'ai testé supporté par redhat.' );
     define( 'WINDOWS', 'Dure de ne pas connaître, le système d\'exploitation le plus utilisé sur les ordinateurs' );
 
     define( 'MONGODB', 'MongoDB est un projet NoSQL, auquelle je me suis intérréssé lorsque je découvrit l\'environnement Node.' );
     define( 'MYSQL', 'Principal Base de données utilisé, notamment pour sa gratuité' );
-    define( 'MARIADB', 'Base de données sur laquel je fais la plupart de mes projets descendante de MySQL' );
+    define( 'MARIADB', 'Base de données sur laquel je fais la plupart de mes projets.' );
     define( 'GIT', 'Gestionnaire de version bien utile pour retracer tout ce qui est fait, utilisé en adéquation avec <a href="http://github.com/FlorentinDUBOIS" >github</a>' );
 
     define( 'NAME_SANDWICH', 'Alternance à aC3' );
@@ -95,5 +97,5 @@
 
     define( 'MENTIONS_LEGALES_HEADING', '' );
     define( 'MENTIONS_LEGALES_CONTENT', '' );
-    define( 'MENTIONS_LEGALES_OK', '' ); 
+    define( 'MENTIONS_LEGALES_OK', '' );
 ?>
