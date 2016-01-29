@@ -363,7 +363,7 @@
         $( '.parallax' ).parallax();
         $( '.modal-trigger' ).leanModal();
         $( 'form[name=contact]' ).on( 'submit', function() {
-            Materialize.toast( '<?= SEND ?>', 4000 );
+            Materialize.toast( '<?= SEND_MSG ?>', 4000 );
 
             $this = $( this );
             $.ajax({
