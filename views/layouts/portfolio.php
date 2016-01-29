@@ -95,6 +95,8 @@
         <!-- script angular -->
         <script type="application/javascript" src="<?= Document::file( 'assets/extern/angular/1.4.7/angular.min.js' ); ?>" ></script>
         <script type="application/javascript" src="<?= Document::file( 'assets/extern/angular/1.4.7/angular-sanitize.min.js' ); ?>" ></script>
+
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
 
     <body>

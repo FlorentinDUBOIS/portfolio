@@ -290,6 +290,8 @@
                             </div>
                         </div>
 
+                        <div class="g-recaptcha" data-sitekey="6Lc5zhYTAAAAAMj7TIKapvAP-fy2rOMLaIS4akb2"></div>
+
                         <div class="row">
                             <div class="col s12 m4 l2 offset-m8 offset-l10">
                                 <button class="btn-large waves-effect waves-light" type="submit" >

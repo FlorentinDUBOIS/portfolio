@@ -318,10 +318,41 @@
     Route::on( '/portfolio/message', [], function( array $args = null ) : bool {
         Document::mime( Document::JSON );
 
-        $send = mail( 'dubois.florentin@live.fr', 'Portfolio - Message de '.$args['firstname'].' '.$args['lastname'], $args['mail-content'] );
+        $url  = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = [
+            'secret'   => EMAIL_PRIVATE_KEY,
+            'response' => $args['g-recaptcha-response'],
+            'remoteip' => Client::ip()
+        ];
+
+        $options = array(
+            'https' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded;CHARSET=UTF-8\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data),
+            ),
+        );
+
+        $context  = stream_context_create($options);
+        $result = json_decode( file_get_contents($url, false, $context));
+
+        if ( $result['success'] == false  ) {
+            echo json_encode([ 'send' => false ]);
+
+            return true;
+        }
+
+        $headers  = 'From: '.$args['firstname'].' '.$args['lastname'].' <'.$args['mail'].">\r\n";
+        $headers .= 'Mime-Version: 1.0'."\r\n";
+        $headers .= 'Content-type: text/plain; charset=utf-8'."\r\n";
+        $headers .= 'Reply-To: webmaster@example.com'."\r\n";
+        $headers .= 'X-Mailer: PHP/'.phpversion()."\r\n";
+        $headers .= "\r\n";
+
+        $send = mail( 'dubois.florentin@live.fr', 'Portfolio - Message de '.$args['firstname'].' '.$args['lastname'], $args['mail-content'], $headers );
 
         echo json_encode([ 'send' => $send ]);
 
-        return $send;
+        return true;
     });
 ?>

@@ -7,3 +7,6 @@
 
 # directory building
 /assets/build/
+
+# it's a secret ;)
+/confs/keys.php
