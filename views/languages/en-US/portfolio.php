@@ -112,4 +112,6 @@
 
     define( 'SEND_MSG', 'Envoi du message' );
     define( 'SEND_OK', 'Message envoyé' );
+    define( 'SEND_CAPTCHA', 'Captcha invalide' );
+
 ?>

@@ -376,6 +376,12 @@
                 async: true,
 
                 success: function( data, status, jqxhr ) {
+                    if( data.send == false ) {
+                        Materialize.toast( '<?= SEND_CAPTCHA ?>', 4000 );
+
+                        return;
+                    }
+
                     Materialize.toast( '<?= SEND_OK ?>', 4000 );
                 },
 
