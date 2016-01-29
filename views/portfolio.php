@@ -375,9 +375,13 @@
                 dataType: 'json',
                 async: true,
 
-                complete: function( jqxhr, status ) {
+                success: function( data, status, jqxhr ) {
                     Materialize.toast( '<?= SEND_OK ?>', 4000 );
                 },
+
+                error: function( jqxhr, status, error ) {
+                    Materialize.toast( '<?= SEND_CAPTCHA ?>', 4000 );
+                }
             });
 
             return false;

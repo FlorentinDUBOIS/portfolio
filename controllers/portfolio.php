@@ -333,12 +333,8 @@
             ),
         );
 
-        var_dump($options);
-
         $context  = stream_context_create($options);
         $result = json_decode( file_get_contents($url, false, $context), true );
-
-        var_dump( $result );
 
         if ( $result['success'] == false  ) {
             echo json_encode([ 'send' => false ]);
