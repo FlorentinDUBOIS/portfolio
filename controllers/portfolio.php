@@ -261,6 +261,10 @@
             'date'        => DATE_CISCO,
             'description' => DESC_CISCO
         ], [
+            'name'        => NAME_CIR,
+            'date'        => DATE_CIR,
+            'description' => DESC_CIR
+        ], [
             'name'        => NAME_BAC,
             'date'        => DATE_BAC,
             'description' => DESC_BAC
@@ -281,6 +285,10 @@
         Document::language( $args['lang'], 'portfolio' );
 
         echo json_encode([[
+            'name'        => NAME_MONITEUR_OVH,
+            'date'        => DATE_MONITEUR_OVH,
+            'description' => DESC_MONITEUR_OVH
+        ], [
             'name'        => NAME_FESTIGEEK,
             'date'        => DATE_FESTIGEEK,
             'description' => DESC_FESTIGEEK
@@ -296,6 +304,10 @@
             'name'        => NAME_FRAMEWORK,
             'date'        => DATE_FRAMEWORK,
             'description' => DESC_FRAMEWORK
+        ], [
+            'name'        => NAME_FROST,
+            'date'        => DATE_FROST,
+            'description' => DESC_FROST
         ]]);
 
         return true;

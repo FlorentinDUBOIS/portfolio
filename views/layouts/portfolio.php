@@ -79,6 +79,12 @@
 
                 z-index: 1000;
             }
+
+            .card .card-action a {
+                text-transform: none !important;
+                color: rgb(3, 155, 229) !important;
+                margin-right: 0 !important;
+            }
         </style>
 
         <!-- script materialize -->

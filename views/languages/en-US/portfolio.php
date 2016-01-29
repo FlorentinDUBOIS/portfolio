@@ -22,14 +22,14 @@
     define( 'LICENCE', 'Mentions légales' );
     define( 'GOOD_VISIT', 'Je vous souhaite une bonne visite sur mon portfolio.<br />N\'hésitez pas à me laisser un message' );
     define( 'COPYRIGHT', '© '.date( 'Y' ).' Copyright Florentin DUBOIS ' );
-    define( 'ME', 'Bonjour !' );
     define( 'PORTFOLIO_TITLE', 'Florentin DUBOIS - Portfolio' );
+    define( 'ME', 'Bonjour ! Je m\'appelle Florentin DUBOIS, je suis actuellement étudiant à l\'ISEN Brest, école qui me permet d\'étudier une de mes passions l\'informatique.<br>J\'ai' );
 
     define( 'C_CPP', 'Ces deux langages sont ceux que je préfère avec le JavaScript, Ce sont aussi les premiers langages que j\'ai appris' );
     define( 'QT', 'Une magnifique bibliothèque multi-platforme que j\'utilise pour mes projets ayant besoin d\'une IHM' );
     define( 'SFML', 'Une autre bibliothèque multi-platforme que j\'utilise cette fois-ci avec la bibliothèque OpenGL' );
     define( 'OPENGL', 'Une bibliothèque multi-platforme graphique qui me permet de faire plein de triangles ^^' );
-    define( 'JAVA', 'Langage sur lequel, j\'ai appris les design patterns notamment ceux du livre Gang of Four design patterns' );
+    define( 'JAVA', 'Langage sur lequel, j\'ai appris les design patterns notamment ceux du livre Gang ofonjour ! je m\'appelle Florentin DUBOIS. <br><br> je suis étudiant en ingénierie à l\'ISEN Brest, je souhaite me spécialiser dans le domaine de l\'informatique, j\'ai Four design patterns' );
     define( 'ASSEMBLY', 'J\'ai fait de l\'assembleur pour une carte ST7 à l\'ISEN' );
     define( 'PYTHON', 'Découvert en cours de phyique, pour modéliser les principes de la magnétostatique' );
 
