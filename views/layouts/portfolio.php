@@ -19,6 +19,9 @@
         <meta name="robots"           lang="<?= ifindexsetor( $args, 'lang', DEFAULT_LANGUAGE ) ?>" content="<?= APPLICATION_ROBOT_INDEX ?>" />
         <meta name="revisit-after"    lang="<?= ifindexsetor( $args, 'lang', DEFAULT_LANGUAGE ) ?>" content="<?= APPLICATION_REVISIT_AFTER ?>" />
 
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
         <!-- title -->
         <title><?= ifindexsetor( $args, 'title', APPLICATION_NAME ) ?></title>
 
