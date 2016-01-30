@@ -69,9 +69,9 @@
     define( 'DATE_STAGE', '16 juin 2014 au 29 âout 2014' );
     define( 'DESC_STAGE', 'Stage dit "technicien" dans le cadre de la formation ISEN. <br /><br />Ce stage a duré tout l\'été 2014, dans l\'entreprise aC3 dans le service s\'occupant de la maintenance et le développement de nouvelles fonctionnalités du logiciel.' );
 
-    define( 'NAME_ENGINEER', 'Diplôme d\'ingénieur' );
+    define( 'NAME_ENGINEER', 'Cycle Ingénieur à l\'ISEN Brest' );
     define( 'DATE_ENGINEER', 'Aujourd\'hui - Octobre 2015' );
-    define( 'DESC_ENGINEER', 'Fin de mes études à l\'ISEN Brest prévu pour octobre 2017, j\'ai hâte ^^, je serai alors dôté d\'un diplôme d\'ingénieur généraliste. Cependant, je me spécialise vers le domaine de l\'informatique. Pour commencer par le Cycle Informatique et Réseau puis par ma majeure Génie Logiciel ainsi que par les différents projets que j\'accompli.' );
+    define( 'DESC_ENGINEER', 'Fin de mes études à l\'ISEN Brest prévu pour octobre 2017, je serai alors dôté d\'un diplôme d\'ingénieur généraliste. Cependant, je me spécialise vers le domaine de l\'informatique. Pour commencer par le Cycle Informatique et Réseau puis par ma majeure Génie Logiciel ainsi que par les différents projets que j\'accompli.' );
     define( 'NAME_CQPM', 'Certificat de Qualification Paritaire de la Métallurgie' );
     define( 'DATE_CQPM', 'Septembre 2015' );
     define( 'DESC_CQPM', 'Certificat délivré par l\'organisme "Union des Industries et Métiers de la Métallurgie" (abrégé UIMM) en fin du Cycle Informatique et Réseaux avec l\'intitulé "Chargé de projets informatiques et réseaux". Ce diplôme à été obtenu à la fin de mes trois ans de Cycle Informatique et Réseau qui m\'a permis de valider mon alternance.' );
@@ -81,7 +81,7 @@
     define( 'NAME_BAC', 'Baccalauréat scientifique' );
     define( 'DATE_BAC', 'Juillet 2012' );
     define( 'DESC_BAC', 'Baccalauréat scientifique obtenu, avec l\'option sciences de l\'ingénieur et la spécialité mathématiques.' );
-    define( 'NAME_CIR', 'Cycle Informatique et Réseau' );
+    define( 'NAME_CIR', 'Cycle Informatique et Réseau à l\'ISEN Brest' );
     define( 'DATE_CIR', 'Septembre 2012 - Septembre 2015' );
     define( 'DESC_CIR', 'Le Cycle Informatique et Réseau de l\'ISEN Brest est une prépa MPSI avec des cours d\'informatique et de réseaux. Ces cours traitent de différents aspects de ces domaines. Tout d\'abord, j\'ai appris ou continué a me perfectionner dans différents langages, mais c\'est surtout d\'un point de vue théorique que cela m\'a beaucoup apporté par les différents concepts qui existent (liste chainée, arbre, design pattern, ...). De plus, ces trois années m\'on permis de découvrir le monde du web grâce à la création de site web puis dans un second temps par les yeux de cisco.' );
 
