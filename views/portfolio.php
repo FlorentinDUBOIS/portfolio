@@ -38,7 +38,7 @@
     </nav>
 </div>
 
-<div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;" >
+<!-- <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;" >
     <div class="btn-floating btn-large red">
         <i class="material-icons large">translate</i>
     </div>
@@ -47,7 +47,7 @@
         <li><a href="<?= Document::rewrite( '/portfolio/en-US/index.html' ) ?>" class="btn-floating btn-large green">En</a></li>
         <li><a href="<?= Document::rewrite( '/portfolio/fr-FR/index.html' ) ?>" class="btn-floating btn-large blue">Fr</a></li>
     </ul>
-</div>
+</div> -->
 
 <main data-ng-app="app" >
     <div class="parallax-container">
