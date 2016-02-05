@@ -293,10 +293,10 @@
                         <div class="g-recaptcha" data-sitekey="<?= EMAIL_PUBLIC_KEY ?>"></div>
 
                         <div class="row">
-                            <div class="col s12 m4 l2 offset-m8 offset-l10">
-                                <button class="btn-large waves-effect waves-light" type="submit" >
-                                    <?= SEND ?>
+                            <div class="col s12 m6 l3 offset-m6 offset-l9" >
+                                <button class="waves-effect waves-light btn-large" type="submit" style="width: 100%;" >
                                     <i class="material-icons right">send</i>
+                                    <?= SEND ?>
                                 </button>
                             </div>
                         </div>
