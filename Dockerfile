@@ -1,7 +1,5 @@
-FROM tutum/apache-php
+FROM php:7.0.3-apache
 
-RUN rm -fr /app
-RUN npm install
-RUN cp -r . /app
+COPY . /var/www/html/
 
 EXPOSE 80
