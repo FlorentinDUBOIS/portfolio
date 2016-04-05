@@ -1,30 +1,22 @@
-// -----------------------------------------------------------------------------
-// configuration for gulp-webpack
+const path = require( 'path' );
+
 module.exports = {
-    // -----------------------------------------------------------------------------
-    // module of webpack
+    entry: path.join( __dirname, 'libs/react/sources/main.jsx' ),
+    output: {
+        path: path.join( __dirname, 'libs/react/compiled' ),
+        filename: "main.js"
+    },
+
     module: {
-        // -----------------------------------------------------------------------------
-        // allow use of ECMAScript 2015 ~ ES6
-        loaders: [{
-            // -----------------------------------------------------------------------------
-            // if file ending by .js
-            test: /(\.js)$/,
-
-            // -----------------------------------------------------------------------------
-            // not in dir node_modules
-            exclude: /node_modules|assets\/js/,
-
-            // -----------------------------------------------------------------------------
-            // use the loader babel
-            loader: 'babel',
-            query: {
-                // -----------------------------------------------------------------------------
-                // for compile ES6 -> ES5
-                presets: [
-                    'es2015'
-                ]
+        loaders: [
+            {
+                test: /\.jsx$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015', 'react']
+                }
             }
-        }]
+        ]
     }
 };
