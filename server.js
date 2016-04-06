@@ -61,7 +61,8 @@ let routes = [
     { real: 'node_modules/jquery/dist',          syml: '/libs/javascripts' },
     { real: 'libs/stylesheets/compiled',         syml: '/libs/stylesheets' },
     { real: 'node_modules/normalize.css',        syml: '/libs/stylesheets' },
-    { real: 'node_modules/materialize-css/dist', syml: '/libs/stylesheets/material' }
+    { real: 'node_modules/materialize-css/dist', syml: '/libs/stylesheets/material' },
+    { real: 'views/ressources/images',           syml: '/libs/images' }
 ];
 
 for( let route of routes ) {

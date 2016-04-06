@@ -1,0 +1,9 @@
+.overflow-parent {
+    position: relative;
+
+    & > * {
+        position: relative;
+
+        bottom: -6rem;
+    }
+}
