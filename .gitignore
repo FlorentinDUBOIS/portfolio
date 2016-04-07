@@ -1,2 +1,6 @@
 # directory for node_modules
 /node_modules/
+
+# compiled files
+/libs/react/compiled
+/libs/stylesheets/compiled

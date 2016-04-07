@@ -2,7 +2,11 @@ import React                    from "react";
 import PresentationName         from "./presentation-name.jsx";
 import PresentationImage        from "./presentation-image.jsx";
 import PresentationAutocomplete from "./presentation-autocomplete.jsx";
-import Icon                     from "./icon.jsx";
+import Card                     from "./card.jsx";
+import CardBody                 from "./card-body.jsx";
+import CardActions              from "./card-actions.jsx";
+import LinkImage                from "./link-image.jsx";
+import LinkIcon                 from "./link-icon.jsx";
 
 export default class Presentation extends React.Component {
     constructor( props ) {
@@ -12,40 +16,23 @@ export default class Presentation extends React.Component {
     render() {
         return <div className="blue darken-3" >
             <div className="row" >
-                <div className="col s10 m6 l4 offset-s1 offset-m3 offset-l4 overflow-parent" >
-                    <div className="card" >
-                        <div className="card-content" >
+                <div className="col s12 m6 l4 offset-m3 offset-l4 overflow-parent" >
+                    <Card>
+                        <CardBody>
                             <PresentationImage />
                             <PresentationName />
                             <PresentationAutocomplete />
-                        </div>
+                        </CardBody>
 
-                        <div className="card-action center-align" >
-                            <a href="https://www.linkedin.com/in/florentin-dubois-73b045114?trk=hp-identity-name" target="_blank" style={{ margin: "0 10px" }} >
-                                <img src="/libs/images/linkedin.svg" className="responsive-img" style={{ width: "36px" }} />
-                            </a>
-
-                            <a href="https://twitter.com/FlorentinDUBOIS" target="_blank" style={{ margin: "0 10px" }} >
-                                <img src="/libs/images/twitter.svg" className="responsive-img" style={{ width: "36px" }} />
-                            </a>
-
-                            <a href="https://github.com/FlorentinDUBOIS" target="_blank" style={{ margin: "0 10px" }} >
-                                <img src="/libs/images/github.svg" className="responsive-img" style={{ width: "36px" }} />
-                            </a>
-
-                            <a href="https://hub.docker.com/r/florentindubois" target="_blank" style={{ margin: "0 10px" }} >
-                                <img src="/libs/images/docker.svg" className="responsive-img" style={{ width: "36px" }} />
-                            </a>
-
-                            <a href="https://travis-ci.org/FlorentinDUBOIS" target="_blank" style={{ margin: "0 10px" }} >
-                                <img src="/libs/images/travis-ci.svg" className="responsive-img" style={{ width: "36px" }} />
-                            </a>
-
-                            <a href="mailto:contact@florentin-dubois.fr" style={{ margin: "0 10px" }} >
-                                <Icon className="black-text" icon="mail" style={{ fontSize: "26pt" }} />
-                            </a>
-                        </div>
-                    </div>
+                        <CardActions className="center-align" >
+                            <LinkImage href="https://www.linkedin.com/in/florentin-dubois-73b045114?trk=hp-identity-name" src="/libs/images/linkedin.svg" width="36px" />
+                            <LinkImage href="https://twitter.com/FlorentinDUBOIS" src="/libs/images/twitter.svg" width="36px" />
+                            <LinkImage href="https://github.com/FlorentinDUBOIS" src="/libs/images/github.svg" width="36px" />
+                            <LinkImage href="https://hub.docker.com/r/florentindubois" src="/libs/images/docker.svg" width="36px" />
+                            <LinkImage href="https://travis-ci.org/FlorentinDUBOIS" src="/libs/images/travis-ci.svg" width="36px" />
+                            <LinkIcon  href="mailto:contact@florentin-dubois.fr" icon="mail" width="36px" />
+                        </CardActions>
+                    </Card>
                 </div>
             </div>
         </div>;

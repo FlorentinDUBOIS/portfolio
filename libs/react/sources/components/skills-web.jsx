@@ -1,5 +1,8 @@
 import React from "react";
-import Icon from "./icon.jsx";
+import Card           from "./card.jsx";
+import CardBody       from "./card-body.jsx";
+import CardHeader     from "./card-header.jsx";
+import CardHeaderIcon from "./card-header-icon.jsx";
 
 export default class SkillsWeb extends React.Component {
     constructor( props ) {
@@ -7,14 +10,12 @@ export default class SkillsWeb extends React.Component {
     }
 
     render() {
-        return <div className="card" >
-            <div className="card-content" >
-                <div className="center-align" >
-                    <Icon icon="web" className="blue-text text-darken-3" style={{ fontSize: "6rem" }} />
-                </div>
+        return <Card>
+            <CardBody>
+                <CardHeaderIcon icon="web" className="blue-text text-darken-3" />
 
-                <h3 className="font-size-18 center-align" >“Front-end” coding</h3>
-            </div>
-        </div>;
+                <CardHeader>“Front-end”</CardHeader>
+            </CardBody>
+        </Card>;
     }
 }

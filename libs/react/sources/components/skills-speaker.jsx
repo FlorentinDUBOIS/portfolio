@@ -1,5 +1,8 @@
-import React from "react";
-import Icon from "./icon.jsx";
+import React          from "react";
+import Card           from "./card.jsx";
+import CardBody       from "./card-body.jsx";
+import CardHeader     from "./card-header.jsx";
+import CardHeaderIcon from "./card-header-icon.jsx";
 
 export default class SkillsSpeaker extends React.Component {
     constructor( props ) {
@@ -7,14 +10,12 @@ export default class SkillsSpeaker extends React.Component {
     }
 
     render() {
-        return <div className="card" >
-            <div className="card-content" >
-                <div className="center-align" >
-                    <Icon icon="forum" className="blue-text text-darken-3" style={{ fontSize: "6rem" }} />
-                </div>
+        return <Card>
+            <CardBody>
+                <CardHeaderIcon icon="chat" className="blue-text text-darken-3" />
 
-                <h3 className="font-size-18 center-align" >Speaking</h3>
-            </div>
-        </div>;
+                <CardHeader>Speaking</CardHeader>
+            </CardBody>
+        </Card>;
     }
 }

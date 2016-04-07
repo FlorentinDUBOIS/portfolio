@@ -1,6 +1,8 @@
 import React from "react";
+import PresentationAutocompleteCursor from "./presentation-autocomplete-cursor.jsx";
 
 const phrases = [
+    "Linux lover",
     "Arch Linux user",
     "Web developer",
     "Software developer",
@@ -10,14 +12,16 @@ const phrases = [
     "Travis CI user",
     "Awesome developer/engineer",
     "Plumber developer",
-    "ISEN Student"
+    "ISEN Student",
+    "Long-time system administrator",
+    "Open-Source contributor"
 ];
 
 export default class PresentationAutocomplete extends React.Component {
     constructor( props ) {
         super( props );
 
-        this.state ={
+        this.state = {
             phrase: parseInt( Math.random() * 100 ) % phrases.length,
             charat: 0,
             sens: 1,
@@ -55,6 +59,8 @@ export default class PresentationAutocomplete extends React.Component {
     }
 
     render() {
-        return <h2 className="center-align italic font-size-16" style={{ minHeight: "30px" }} ><span style={{ borderRight: "1px solid black", paddingRight: "2px" }} >{ this.state.text }</span></h2>;
+        return <h2 className="center-align italic font-size-16" style={{ minHeight: "30px" }} >
+            <PresentationAutocompleteCursor>{ this.state.text }</PresentationAutocompleteCursor>
+        </h2>;
     }
 }
