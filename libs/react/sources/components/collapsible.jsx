@@ -16,6 +16,8 @@ export default class Collapsible extends React.Component {
     }
 
     render() {
-        return <ul id={ this.state.identity } className="collapsible popout" dataCollapsible="accordion" >{ this.props.children }</ul>;
+        return(
+            <ul id={ this.state.identity } className="collapsible popout" dataCollapsible="accordion" >{ this.props.children }</ul>
+        );
     }
 }

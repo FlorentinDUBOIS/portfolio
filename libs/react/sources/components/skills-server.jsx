@@ -10,12 +10,14 @@ export default class SkillsServer extends React.Component {
     }
 
     render() {
-        return <Card>
-            <CardBody>
-                <CardHeaderIcon icon="code" className="blue-text text-darken-3" />
+        return(
+            <Card>
+                <CardBody>
+                    <CardHeaderIcon icon="code" className="blue-text text-darken-3" />
 
-                <CardHeader>“Back-end”</CardHeader>
-            </CardBody>
-        </Card>;
+                    <CardHeader>“Back-end”</CardHeader>
+                </CardBody>
+            </Card>
+        );
     }
 }

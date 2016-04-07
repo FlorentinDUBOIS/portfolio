@@ -7,6 +7,10 @@ export default class CardIcon extends React.Component {
     }
 
     render() {
-        return <h3 className="card-title center-align" {...this.props} >{this.props.children}</h3>;
+        return(
+            <h3 className="card-title center-align" >
+                <span {...this.props} >{this.props.children}</span>
+            </h3>
+        );
     }
 }

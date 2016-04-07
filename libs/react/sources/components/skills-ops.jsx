@@ -10,12 +10,14 @@ export default class SkillsOps extends React.Component {
     }
 
     render() {
-        return <Card>
-            <CardBody>
-                <CardHeaderIcon icon="dns" className="blue-text text-darken-3" />
+        return(
+            <Card>
+                <CardBody>
+                    <CardHeaderIcon icon="dns" className="blue-text text-darken-3" />
 
-                <CardHeader>Operating System</CardHeader>
-            </CardBody>
-        </Card>;
+                    <CardHeader>Operating System</CardHeader>
+                </CardBody>
+            </Card>
+        );
     }
 }

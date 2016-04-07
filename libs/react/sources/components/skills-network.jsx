@@ -10,12 +10,14 @@ export default class SkillsNetwork extends React.Component {
     }
 
     render() {
-        return <Card>
-            <CardBody>
-                <CardHeaderIcon icon="settings_ethernet" className="blue-text text-darken-3" />
+        return(
+            <Card>
+                <CardBody>
+                    <CardHeaderIcon icon="settings_ethernet" className="blue-text text-darken-3" />
 
-                <CardHeader>Network knowledge</CardHeader>
-            </CardBody>
-        </Card>;
+                    <CardHeader>Network knowledge</CardHeader>
+                </CardBody>
+            </Card>
+        );
     }
 }

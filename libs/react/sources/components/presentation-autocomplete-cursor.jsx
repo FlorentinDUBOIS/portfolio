@@ -39,6 +39,8 @@ export default class PresentationAutocompleteCursor extends React.Component {
     }
 
     render() {
-        return <span style={ this.state.style } >{ this.props.children }</span>;
+        return(
+            <span style={ this.state.style } >{ this.props.children }</span>
+        );
     }
 }

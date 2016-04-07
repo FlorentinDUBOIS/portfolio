@@ -7,8 +7,10 @@ export default class CardHeaderIcon extends React.Component {
     }
 
     render() {
-        return <div className="center-align" >
-            <Icon icon={this.props.icon} style={{ fontSize: "6rem" }} {...this.props} />
-        </div>
+        return(
+            <div className="center-align" >
+                <Icon icon={this.props.icon} style={{ fontSize: "6rem" }} {...this.props} />
+            </div>
+        );
     }
 }

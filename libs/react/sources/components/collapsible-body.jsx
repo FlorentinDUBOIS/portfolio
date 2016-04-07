@@ -6,6 +6,10 @@ export default class CollapsibleBody extends React.Component {
     }
 
     render() {
-        return <div className="collapsible-body" style={{ padding: "0 1rem" }} >{ this.props.children }</div>;
+        return(
+            <div className="collapsible-body" style={{ padding: "0 1rem" }} >
+                { this.props.children }
+            </div>
+        );
     }
 }

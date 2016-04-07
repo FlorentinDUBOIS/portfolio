@@ -12,34 +12,36 @@ export default class Projects extends React.Component {
     }
 
     render() {
-        return <div className="blue darken-3" style={{ padding: "7rem 0 2rem 0" }} >
-            <div className="container" >
-                <Collapsible>
-                    <CollapsibleItem>
-                        <CollapsibleHeader><Icon className="blue-text text-darken-3" icon="code" />Contributing</CollapsibleHeader>
+        return(
+            <div className="blue darken-3" style={{ padding: "8rem 0 2rem 0" }} >
+                <div className="container" >
+                    <Collapsible>
+                        <CollapsibleItem>
+                            <CollapsibleHeader><Icon className="blue-text text-darken-3" icon="code" />Contributing</CollapsibleHeader>
 
-                        <CollapsibleBody>
-                            <ProjectsContributions />
-                        </CollapsibleBody>
-                    </CollapsibleItem>
+                            <CollapsibleBody>
+                                <ProjectsContributions />
+                            </CollapsibleBody>
+                        </CollapsibleItem>
 
-                    <CollapsibleItem>
-                        <CollapsibleHeader><Icon className="blue-text text-darken-3" icon="people" />Community</CollapsibleHeader>
+                        <CollapsibleItem>
+                            <CollapsibleHeader><Icon className="blue-text text-darken-3" icon="people" />Community</CollapsibleHeader>
 
-                        <CollapsibleBody>
+                            <CollapsibleBody>
 
-                        </CollapsibleBody>
-                    </CollapsibleItem>
+                            </CollapsibleBody>
+                        </CollapsibleItem>
 
-                    <CollapsibleItem>
-                        <CollapsibleHeader><Icon className="blue-text text-darken-3" icon="chat" />Speaking</CollapsibleHeader>
+                        <CollapsibleItem>
+                            <CollapsibleHeader><Icon className="blue-text text-darken-3" icon="chat" />Speaking</CollapsibleHeader>
 
-                        <CollapsibleBody>
+                            <CollapsibleBody>
 
-                        </CollapsibleBody>
-                    </CollapsibleItem>
-                </Collapsible>
+                            </CollapsibleBody>
+                        </CollapsibleItem>
+                    </Collapsible>
+                </div>
             </div>
-        </div>;
+        );
     }
 }

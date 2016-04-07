@@ -10,12 +10,14 @@ export default class SkillsSpeaker extends React.Component {
     }
 
     render() {
-        return <Card>
-            <CardBody>
-                <CardHeaderIcon icon="chat" className="blue-text text-darken-3" />
+        return(
+            <Card>
+                <CardBody>
+                    <CardHeaderIcon icon="chat" className="blue-text text-darken-3" />
 
-                <CardHeader>Speaking</CardHeader>
-            </CardBody>
-        </Card>;
+                    <CardHeader>Speaking</CardHeader>
+                </CardBody>
+            </Card>
+        );
     }
 }

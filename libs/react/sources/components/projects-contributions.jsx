@@ -1,4 +1,10 @@
 import React from "react";
+import Card from "./card.jsx";
+import CardHeader from "./card-header.jsx";
+import CardBody from "./card-body.jsx";
+import CardActions from "./card-actions.jsx";
+import Github from "./github.jsx";
+import TravisCI from "./travis-ci.jsx";
 
 export default class ProjectsContributions extends React.Component {
     constructor( props ) {
@@ -6,28 +12,29 @@ export default class ProjectsContributions extends React.Component {
     }
 
     render() {
-        return <div>
-            <div className="row" >
-                <div className="col s12 m6 l6" >
-                    <div className="card" >
-                        <div className="card-content" >
-                            <p className="card-title center-align" >sqdq</p>
+        return(
+            <div>
+                <div className="row" >
+                    <div className="col s12 m6 l6" >
+                        <Card>
+                            <CardBody>
+                                <CardHeader className="bold" >OVH Monitor</CardHeader>
 
-                            <p className="justify-align" >qsfqgd</p>
-                        </div>
+                            </CardBody>
+
+                            <CardActions className="center-align" >
+                                <Github depot="ovh-monitor" >
+                                    View on Github
+                                </Github>
+                            </CardActions>
+                        </Card>
                     </div>
-                </div>
 
-                <div className="col s12 m6 l6" >
-                    <div className="card" >
-                        <div className="card-content" >
-                            <h3 className="card-title" >sqdq</h3>
+                    <div className="col s12 m6 l6" >
 
-                            <p>qsdqs</p>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>;
+        );
     }
 }

@@ -10,12 +10,14 @@ export default class SkillsCommunity extends React.Component {
     }
 
     render() {
-        return <Card>
-            <CardBody>
-                <CardHeaderIcon icon="people" className="blue-text text-darken-3" />
+        return(
+            <Card>
+                <CardBody>
+                    <CardHeaderIcon icon="people" className="blue-text text-darken-3" />
 
-                <CardHeader>Community</CardHeader>
-            </CardBody>
-        </Card>;
+                    <CardHeader>Community</CardHeader>
+                </CardBody>
+            </Card>
+        );
     }
 }

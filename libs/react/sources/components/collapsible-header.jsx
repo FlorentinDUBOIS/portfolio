@@ -6,6 +6,10 @@ export default class CollapsibleHeader extends React.Component {
     }
 
     render() {
-        return <div className="collapsible-header" >{ this.props.children }</div>;
+        return(
+            <div className="collapsible-header" >
+                { this.props.children }
+            </div>
+        );
     }
 }

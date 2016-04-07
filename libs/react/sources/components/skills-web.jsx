@@ -10,12 +10,14 @@ export default class SkillsWeb extends React.Component {
     }
 
     render() {
-        return <Card>
-            <CardBody>
-                <CardHeaderIcon icon="web" className="blue-text text-darken-3" />
+        return(
+            <Card>
+                <CardBody>
+                    <CardHeaderIcon icon="web" className="blue-text text-darken-3" />
 
-                <CardHeader>“Front-end”</CardHeader>
-            </CardBody>
-        </Card>;
+                    <CardHeader>“Front-end”</CardHeader>
+                </CardBody>
+            </Card>
+        );
     }
 }

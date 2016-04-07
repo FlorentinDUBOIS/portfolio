@@ -6,8 +6,10 @@ export default class CardActions extends React.Component {
     }
 
     render() {
-        return <div className="card-action" >
-            <div {...this.props} >{this.props.children}</div>
-        </div>;
+        return(
+            <div className="card-action" >
+                <div {...this.props} >{this.props.children}</div>
+            </div>
+        );
     }
 }

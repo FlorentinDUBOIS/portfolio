@@ -59,8 +59,10 @@ export default class PresentationAutocomplete extends React.Component {
     }
 
     render() {
-        return <h2 className="center-align italic font-size-16" style={{ minHeight: "30px" }} >
-            <PresentationAutocompleteCursor>{ this.state.text }</PresentationAutocompleteCursor>
-        </h2>;
+        return(
+            <h2 className="center-align italic font-size-16" style={{ minHeight: "30px" }} >
+                <PresentationAutocompleteCursor>{ this.state.text }</PresentationAutocompleteCursor>
+            </h2>
+        );
     }
 }

@@ -6,8 +6,10 @@ export default class CardBody extends React.Component {
     }
 
     render() {
-        return <div className="card-content" >
-            <div {...this.props} > {this.props.children}</div>
-        </div>;
+        return(
+            <div className="card-content" >
+                <div {...this.props} > {this.props.children}</div>
+            </div>
+        );
     }
 }
