@@ -1,10 +1,12 @@
-import React from "react";
-import SkillsServer from "./skills-server.jsx";
-import SkillsOps from "./skills-ops.jsx";
-import SkillsWeb from "./skills-web.jsx";
-import SkillsNetwork from "./skills-network.jsx";
-import SkillsSpeaker from "./skills-speaker.jsx";
+import React           from "react";
+import SkillsServer    from "./skills-server.jsx";
+import SkillsOps       from "./skills-ops.jsx";
+import SkillsWeb       from "./skills-web.jsx";
+import SkillsNetwork   from "./skills-network.jsx";
+import SkillsSpeaker   from "./skills-speaker.jsx";
 import SkillsCommunity from "./skills-community.jsx";
+import Container       from "./components/container.jsx";
+import Overflow        from "./components/overflow.jsx";
 
 export default class Skills extends React.Component {
     constructor( props ) {
@@ -13,8 +15,8 @@ export default class Skills extends React.Component {
 
     render() {
         return(
-            <div className="container" >
-                <div className="row overflow-parent" >
+            <Container>
+                <Overflow className="row" >
                     <div className="col s12 m6 l6" >
                         <SkillsWeb />
                     </div>
@@ -22,9 +24,9 @@ export default class Skills extends React.Component {
                     <div className="col s12 m6 l6" >
                         <SkillsServer />
                     </div>
-                </div>
+                </Overflow>
 
-                <div className="row overflow-parent" >
+                <Overflow className="row" >
                     <div className="col s12 m6 l6" >
                         <SkillsOps />
                     </div>
@@ -32,9 +34,9 @@ export default class Skills extends React.Component {
                     <div className="col s12 m6 l6" >
                         <SkillsNetwork />
                     </div>
-                </div>
+                </Overflow>
 
-                <div className="row overflow-parent" >
+                <Overflow className="row" >
                     <div className="col s12 m6 l6" >
                         <SkillsSpeaker />
                     </div>
@@ -42,8 +44,8 @@ export default class Skills extends React.Component {
                     <div className="col s12 m6 l6" >
                         <SkillsCommunity />
                     </div>
-                </div>
-            </div>
+                </Overflow>
+            </Container>
         );
     }
 }

@@ -1,10 +1,11 @@
 import React                 from "react";
-import Icon                  from "./icon.jsx";
-import Collapsible           from "./collapsible.jsx";
-import CollapsibleItem       from "./collapsible-item.jsx";
-import CollapsibleHeader     from "./collapsible-header.jsx";
-import CollapsibleBody       from "./collapsible-body.jsx";
+import Icon                  from "./components/icon.jsx";
+import Collapsible           from "./components/collapsible.jsx";
+import CollapsibleItem       from "./components/collapsible-item.jsx";
+import CollapsibleHeader     from "./components/collapsible-header.jsx";
+import CollapsibleBody       from "./components/collapsible-body.jsx";
 import ProjectsContributions from "./projects-contributions.jsx";
+import Container             from "./components/container.jsx";
 
 export default class Projects extends React.Component {
     constructor( props ) {
@@ -13,8 +14,8 @@ export default class Projects extends React.Component {
 
     render() {
         return(
-            <div className="blue darken-3" style={{ padding: "8rem 0 2rem 0" }} >
-                <div className="container" >
+            <div className="blue darken-3" style={{ padding: "10rem 0 8rem 0" }} >
+                <Container>
                     <Collapsible>
                         <CollapsibleItem>
                             <CollapsibleHeader><Icon className="blue-text text-darken-3" icon="code" />Contributing</CollapsibleHeader>
@@ -40,7 +41,7 @@ export default class Projects extends React.Component {
                             </CollapsibleBody>
                         </CollapsibleItem>
                     </Collapsible>
-                </div>
+                </Container>
             </div>
         );
     }

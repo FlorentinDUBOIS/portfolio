@@ -7,3 +7,13 @@
         bottom: -6rem;
     }
 }
+
+.overflow-reverse-parent {
+    position: relative;
+
+    & > * {
+        position: relative;
+
+        top: -6rem;
+    }
+}
