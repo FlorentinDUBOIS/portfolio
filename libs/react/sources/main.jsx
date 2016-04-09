@@ -7,12 +7,25 @@ import Experiences     from "./experiences.jsx";
 import Container       from "./components/container.jsx";
 import FooterCopyright from "./components/footer-copyright.jsx";
 import Github          from "./components/github.jsx";
+import Modal           from "./components/modal.jsx";
+import ModalBody       from "./components/modal-body.jsx";
+import ModalFooter     from "./components/modal-footer.jsx";
+import LegalMention    from "./legal-mention.jsx";
+import OpenModal       from "./open-modal-legal-mention.jsx";
 
 const main = <div style={{ width: "100%", height: "100%" }} >
     <Presentation />
     <Skills />
     <Projects />
     <Experiences />
+
+    <Modal id="legal-mention" >
+        <ModalBody>
+            <h4>Legal mention</h4>
+
+            <LegalMention />
+        </ModalBody>
+    </Modal>
 </div>;
 
 const footer = <div>
@@ -22,11 +35,11 @@ const footer = <div>
                 <h5 className="white-text" >Links</h5>
 
                 <ul>
-                    <li><a className="white-text" href="https://www.linkedin.com/in/florentin-dubois-73b045114?trk=hp-identity-name" >Linkedin</a></li>
-                    <li><a className="white-text" href="https://twitter.com/FlorentinDUBOIS" >Twitter</a></li>
-                    <li><a className="white-text" href="https://github.com/FlorentinDUBOIS" >Github</a></li>
-                    <li><a className="white-text" href="https://hub.docker.com/r/florentindubois" >Dockerhub</a></li>
-                    <li><a className="white-text" href="https://travis-ci.org/FlorentinDUBOIS" >Travis CI</a></li>
+                    <li><a target="_blank" className="white-text" href="https://www.linkedin.com/in/florentin-dubois-73b045114?trk=hp-identity-name" >Linkedin</a></li>
+                    <li><a target="_blank" className="white-text" href="https://twitter.com/FlorentinDUBOIS" >Twitter</a></li>
+                    <li><a target="_blank" className="white-text" href="https://github.com/FlorentinDUBOIS" >Github</a></li>
+                    <li><a target="_blank" className="white-text" href="https://hub.docker.com/r/florentindubois" >Dockerhub</a></li>
+                    <li><a target="_blank" className="white-text" href="https://travis-ci.org/FlorentinDUBOIS" >Travis CI</a></li>
                     <li><a className="white-text" href="mailto:contact@florentin-dubois.fr" >Contact me</a></li>
                 </ul>
             </div>
@@ -34,7 +47,9 @@ const footer = <div>
             <div className="col s12 m3 l3" >
                 <h5 className="white-text" >About</h5>
 
-                <p><a href="" className="white-text" >Legal mention</a></p>
+                <p>
+                    <OpenModal className="white-text" open="#legal-mention" >Legal mention</OpenModal>
+                </p>
             </div>
 
             <div className="col s12 m6 l6" >

@@ -7,7 +7,6 @@
     border-top-right-radius: 2px;
     background-color: white;
     color: #333;
-    margin: 50px auto;
     letter-spacing: 0.5px;
     position: relative;
     line-height: 1.4em;
@@ -38,8 +37,8 @@
         }
 
         &:before {
-            min-width: 120px;
-            left: -180px;
+            min-width: 280px;
+            left: -340px;
             top: -8px;
             color: white;
             content: attr(data-date);

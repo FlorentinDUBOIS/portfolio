@@ -14,7 +14,8 @@ const phrases = [
     "Plumber developer",
     "ISEN Student",
     "Long-time system administrator",
-    "Open-Source contributor"
+    "Open-Source contributor",
+    "@FlorentinDUBOIS"
 ];
 
 export default class PresentationAutocomplete extends React.Component {
