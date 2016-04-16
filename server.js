@@ -57,12 +57,10 @@ app.use( session({
 logger.info( 'Bind static routes' );
 
 let routes = [
-    { real: 'libs/react/compiled',               syml: '/libs/javascripts' },
-    { real: 'node_modules/jquery/dist',          syml: '/libs/javascripts' },
-    { real: 'libs/stylesheets/compiled',         syml: '/libs/stylesheets' },
-    { real: 'node_modules/normalize.css',        syml: '/libs/stylesheets' },
-    { real: 'node_modules/materialize-css/dist', syml: '/libs/stylesheets/material' },
-    { real: 'views/ressources/images',           syml: '/libs/images' }
+    { real: 'views',                             syml: '/views' },
+    { real: 'views/stylesheets/dist',            syml: '/stylesheets' },
+    { real: 'node_modules/materialize-css/dist', syml: '/materialize' },
+    { real: 'node_modules/jquery/dist',          syml: '/javascripts' }
 ];
 
 for( let route of routes ) {

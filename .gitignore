@@ -2,5 +2,6 @@
 /node_modules/
 
 # compiled files
-/libs/react/compiled
-/libs/stylesheets/compiled
+/views/main.js
+/views/main.min.js
+/views/stylesheets/dist

@@ -10,8 +10,8 @@ i, .italic {
     text-align: justify;
 }
 
-@for $i from 0 through 30 {
-    .font-size-#{$i} {
-        font-size: #{$i}pt;
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: #{ ( 1 / $i ) * 2 }rem;
     }
 }
