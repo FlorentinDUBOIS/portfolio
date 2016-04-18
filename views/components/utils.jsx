@@ -93,14 +93,25 @@ export function suffix(...args) {
     return attributes;
 }
 
-export function remove( object, properties ) {
-    let o = {};
-    for( let property in object ) {
-        if( property.indexOf( properties ) == -1 ) {
-            o[property] = object[property];
+export function contain( needle, haystack ) {
+    for( let value of haystack ) {
+        if( value == needle ) {
+            return true;            
         }
     }
+    
+    return false;
+}
 
+export function remove( object, properties ) {
+    let o = {};
+    
+    for( let method in object ) {
+        if( !contain( method, properties )) {
+            o[method] = object[method];
+        }
+    }
+    
     return o;
 }
 

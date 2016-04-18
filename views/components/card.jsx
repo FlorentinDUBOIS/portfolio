@@ -22,7 +22,7 @@ export class CardTitle extends React.Component {
 
     render() {
         return(
-            <span className={merge('card-title', this.props.className).join( ' ' )} {...remove(this.props, ['className'])}>{this.props.children}</span>
+            <h2 className={merge('card-title', this.props.className).join( ' ' )} {...remove(this.props, ['className'])}>{this.props.children}</h2>
         );
     }
 }

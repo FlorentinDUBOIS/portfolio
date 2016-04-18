@@ -8,7 +8,7 @@ export class Overflow extends React.Component {
 
     render() {
         return(
-            <div className={merge(`overflow${ this.props.reverse? '-reverse': '' }`, this.props.className)} {...remove(this.props, ['className', 'reverse'])} >{this.props.children}</div>
+            <div className={merge(`overflow${ this.props.reverse? '-reverse': '' }`, this.props.className).join( ' ' )} {...remove(this.props, ['className', 'reverse'])} >{this.props.children}</div>
         );
     }
 }

@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.0.1",
-  "description": "",
+  "description": "This is my portfolio !",
   "main": "server.js",
   "scripts": {
     "start": "node --use_strict --harmony server.js",
