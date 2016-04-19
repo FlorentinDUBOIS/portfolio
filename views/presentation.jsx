@@ -21,11 +21,11 @@ const sentences = [
 ];
 
 const contacts = [
-    { href: "https://www.linkedin.com/in/florentin-dubois-73b045114?trk=hp-identity-name", src: "/libs/images/linkedin.svg" },
-    { href: "https://twitter.com/FlorentinDUBOIS",                                         src: "/libs/images/twitter.svg" },
-    { href: "https://github.com/FlorentinDUBOIS",                                          src: "/libs/images/github.svg" },
-    { href: "https://hub.docker.com/r/florentindubois",                                    src: "/libs/images/docker.svg" },
-    { href: "https://travis-ci.org/FlorentinDUBOIS",                                       src: "/libs/images/travis-ci.svg" }
+    { href: "https://www.linkedin.com/in/florentin-dubois-73b045114", src: "/libs/images/linkedin.svg" },
+    { href: "https://twitter.com/FlorentinDUBOIS",                    src: "/libs/images/twitter.svg" },
+    { href: "https://github.com/FlorentinDUBOIS",                     src: "/libs/images/github.svg" },
+    { href: "https://hub.docker.com/r/florentindubois",               src: "/libs/images/docker.svg" },
+    { href: "https://travis-ci.org/FlorentinDUBOIS",                  src: "/libs/images/travis-ci.svg" }
 ];
 
 export class Presentation extends React.Component {
