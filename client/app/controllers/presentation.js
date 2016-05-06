@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // angular controller
-app.controller( 'presentation', ['$scope', '$window', function( $scope, $window ) {
+app.controller( 'presentation', ['$scope', '$window', '$interval', function( $scope, $window, $interval ) {
     $scope.icons = [
         { path: 'assets/github.svg',    link: 'https://github.com/FlorentinDUBOIS' },
         { path: 'assets/google+.svg',   link: 'https://plus.google.com/100395044725382027486' },

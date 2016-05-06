@@ -20,7 +20,7 @@ html( ng-app="florentindubois.portfolio" )
     body
         main
             section.fheight( flex layout="row" )
-                md-sidenav.md-sidenav-left.md-whiteframe-z2.fheight( md-is-locked-open="$mdMedia( 'gt-md' )" )
+                md-sidenav.md-sidenav-left.md-whiteframe-z2.fheight( md-is-locked-open="$mdMedia( 'gt-md' )" ng-controller="navigation" )
                     header.indigo.text-center( layout-padding )
                         img.rounded( src="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=128" alt="avatar" )
 
@@ -30,14 +30,14 @@ html( ng-app="florentindubois.portfolio" )
 
                 md-content( flex )
                     div.indigo.super-hero.md-whiteframe-z1( layout="row" layout-align="center center" )
-                        md-card( flex="35" )
+                        md-card( flex="35" ng-controller="presentation" )
                             md-card-content.text-center
                                 img.rounded( src="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=196" alt="avatar" )
 
                             md-card-content.text-center
                                 h2.md-headline Florentin DUBOIS
 
-                            md-card-actions( ng-controller="presentation" )
+                            md-card-actions
                                 md-card-icon-actions( layout="row" layout-align="center center" )
                                     md-button.md-icon-button( ng-click="open( icon.link )" ng-repeat="icon in icons" )
                                         md-icon.black-text( md-svg-icon="{{ icon.path }}" )
