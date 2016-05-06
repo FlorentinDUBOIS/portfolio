@@ -1,0 +1,55 @@
+doctype html
+html( ng-app="florentindubois.portfolio" )
+    head
+        meta( charset="utf-8" )
+        meta( http-equiv="content-type"  content="text/html; charset=utf-8" )
+        meta( http-equiv="default-style" content="text/css; charset=utf-8" )
+
+        meta( name="author"           content="Florentin DUBOIS" )
+        meta( name="keywords"         content="Florentin, DUBOIS, Portfolio" )
+        meta( name="description"      content="" )
+        meta( name="application-name" content="Florentin DUBOIS | Portfolio" )
+
+        title Florentin DUBOIS | Portfolio
+
+        link( rel="icon" href="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=16" )
+        link( rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" )
+        link( rel="stylesheet" href="angular/angular-material.min.css" )
+        link( rel="stylesheet" href="imports.min.css" )
+
+    body
+        main
+            section.fheight( flex layout="row" )
+                md-sidenav.md-sidenav-left.md-whiteframe-z2.fheight( md-is-locked-open="$mdMedia( 'gt-xs' )" )
+                    header.indigo.text-center( layout-padding )
+                        img.rounded( src="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=128" alt="avatar" )
+
+                        h1.white-text.md-headline Florentin DUBOIS
+
+                    md-content( layout-padding )
+
+                md-content( flex )
+                    div.indigo.super-hero.md-whiteframe-z1( flex layout-align="center center" )
+                        md-card
+                            md-card-title
+                                md-card-title-text
+                                    h2.md-headline Florentin DUBOIS
+
+                            md-card-content
+
+                            md-card-actions( layout="row" layout-align="center center" )
+                                md-card-icon-actions
+                                    md-button.md-icon-button
+                                        md-icon( md-svg-icon="" )
+
+                    div( flex )
+
+        script( type="application/javascript" src="angular/angular.min.js" )
+        script( type="application/javascript" src="angular/angular-animate.min.js" )
+        script( type="application/javascript" src="angular/angular-aria.min.js" )
+        script( type="application/javascript" src="angular/angular-material.min.js" )
+        script( type="application/javascript" src="angular/angular-messages.min.js" )
+        script( type="application/javascript" src="angular/angular-route.min.js" )
+        script( type="application/javascript" src="angular/angular-sanitize.min.js" )
+        script( type="application/javascript" src="angular/angular-translate.min.js" )
+        script( type="application/javascript" src="app.min.js" )

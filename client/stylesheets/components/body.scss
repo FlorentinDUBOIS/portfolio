@@ -1,0 +1,16 @@
+html, body {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh;
+
+    & > main {
+        flex: 1 0 auto;
+        height: 100%;
+    }
+
+    & md-content {
+        height: 100%;
+    }
+}
