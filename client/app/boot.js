@@ -5,7 +5,6 @@ var app = angular.module( 'florentindubois.portfolio', [
     'ngAnimate',
     'ngMaterial',
     'ngMessages',
-    'ngRoute',
     'ngSanitize',
     'pascalprecht.translate'
 ]);

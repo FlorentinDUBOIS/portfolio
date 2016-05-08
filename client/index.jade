@@ -7,7 +7,7 @@ html( ng-app="florentindubois.portfolio" )
 
         meta( name="author"           content="Florentin DUBOIS" )
         meta( name="keywords"         content="Florentin, DUBOIS, Portfolio" )
-        meta( name="description"      content="" )
+        meta( name="description"      content="{{ 'about.text' | translate }}" )
         meta( name="application-name" content="Florentin DUBOIS | Portfolio" )
 
         title Florentin DUBOIS | Portfolio
@@ -20,27 +20,64 @@ html( ng-app="florentindubois.portfolio" )
     body
         main
             section.fheight( flex layout="row" )
-                md-sidenav.md-sidenav-left.md-whiteframe-z2.fheight( md-is-locked-open="$mdMedia( 'gt-md' )" ng-controller="navigation" )
+                md-sidenav.md-sidenav-left.md-whiteframe-z2.fheight( md-is-locked-open="$mdMedia( 'gt-md' )" )
                     header.indigo.text-center( layout-padding )
                         img.rounded( src="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=128" alt="avatar" )
 
-                        h1.white-text.md-headline Florentin DUBOIS
+                        h2.white-text.md-headline {{ 'me.name' | translate }}
 
-                    md-content( layout-padding )
+                    md-content( ng-controller="navigation" )
+                        md-list( ng-cloak )
+                            md-list-item( ng-repeat="item in menu" )
 
                 md-content( flex )
-                    div.indigo.super-hero.md-whiteframe-z1( layout="row" layout-align="center center" )
-                        md-card( flex="35" ng-controller="presentation" )
-                            md-card-content.text-center
-                                img.rounded( src="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=196" alt="avatar" )
+                    div.indigo.super-hero.md-whiteframe-z1( layout="column" layout-align="center center" ng-controller="presentation" )
+                        img.rounded( src="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=196" alt="avatar" )
 
-                            md-card-content.text-center
-                                h2.md-headline Florentin DUBOIS
+                        h1.white-text.md-headline.no-margin-bottom {{ 'me.name' | translate }}
+                        h2.white-text.md-subhead {{ 'me.job' | translate | ucfirst }}
 
-                            md-card-actions
-                                md-card-icon-actions( layout="row" layout-align="center center" )
-                                    md-button.md-icon-button( ng-click="open( icon.link )" ng-repeat="icon in icons" )
-                                        md-icon.black-text( md-svg-icon="{{ icon.path }}" )
+                        md-button.md-raised {{ 'presentation.started' | translate }}
+
+                        md-fab-speed-dial.md-scale.md-fab-bottom-right( md-open="fab.isOpen" md-direction="left" ng-mouseenter="fab.isOpen = true" ng-mouseleave="fab.isOpen = false" ng-class="{ 'md-hover-full': fab.hover }" )
+                            md-fab-trigger
+                                md-button.md-fab.md-warn( aria-label="menu" )
+                                    md-tooltip( md-direction="top" md-visible="tooltipVisible" ) {{ 'presentation.contact' | translate }}
+                                    md-icon( md-font-set="material-icons" ) contacts
+
+                            md-fab-actions
+                                div( ng-repeat="item in fab" )
+                                    md-button.md-fab.md-raised.md-mini( aria-label="{{ item.name | translate }}" ng-click="open( item.link )" )
+                                        md-tooltip( md-direction="bottom" md-visible="tooltipVisible" md-autohide="false" ) {{ item.name | translate }}
+                                        md-icon( md-svg-src="{{ item.path }}" aria-label="{{ item.name | translate }}" )
+
+                    div.margin-bottom( layout="row" layout-padding layout-align="center start" )
+                        md-card.overflow( flex="60" )
+                            md-card-content
+                                h2.md-headline {{ 'about.me' | translate }}
+
+                                div.md-subhead( ng-bind-html="'about.text' | translate" )
+
+                    div( layout="column" )
+                        div( flex="100" layout="row" layout-align="center start" )
+                            img.present( src="assets/devices.svg" )
+
+                        div.text-center( flex="100" layout="row" layout-align="center start" )
+                            div( flex="40" layout-padding )
+                                h3.md-headline {{ 'skills.server.title' | translate }}
+                                p.md-subhead {{ 'skills.server.content' | translate }}
+
+                            div( flex="40" layout-padding )
+                                h3.md-headline {{ 'skills.web.title' | translate }}
+                                p.md-subhead {{ 'skills.web.content' | translate }}
+
+                    // div( layout="row" layout-padding layout-align="center start" ng-controller="about" )
+                        md-list( flex="40"  )
+                            md-subheader.md-no-sticky {{ 'about.twitter' | translate }}
+                            md-list-item.md-2-line( ng-repeat="tweet in tweets" )
+                                img.md-avatar( ng-src="{{ tweet.user.profile_image_url }}" )
+                                div.md-list-item-text( layout="column" layout-align="center start" )
+                                    p( ng-bind-html="tweet.text | pseudo | hashtag | url" )
 
                     div( flex )
 
@@ -49,7 +86,6 @@ html( ng-app="florentindubois.portfolio" )
         script( type="application/javascript" src="angular/angular-aria.min.js" )
         script( type="application/javascript" src="angular/angular-material.min.js" )
         script( type="application/javascript" src="angular/angular-messages.min.js" )
-        script( type="application/javascript" src="angular/angular-route.min.js" )
         script( type="application/javascript" src="angular/angular-sanitize.min.js" )
         script( type="application/javascript" src="angular/angular-translate.min.js" )
         script( type="application/javascript" src="app.min.js" )

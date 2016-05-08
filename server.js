@@ -5,6 +5,7 @@ const helmet  = require( 'helmet' );
 const http    = require( 'http' );
 const path    = require( 'path' );
 const walk    = require( 'walk' );
+const morgan  = require( 'morgan' );
 const app     = express();
 const logger  = require( 'printit' )({
     prefix: 'server',
@@ -29,6 +30,7 @@ app.set( 'view engine', 'jade' );
 logger.info( 'Load express modules' );
 
 app.use( helmet());
+app.use( morgan( 'dev' ));
 
 // ----------------------------------------------------------------------------
 // static routes

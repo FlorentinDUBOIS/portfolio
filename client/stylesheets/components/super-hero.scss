@@ -1,7 +1,19 @@
 .super-hero {
+    position: relative;
+
     background-image: url("assets/super-hero.png");
     background-repeat: no-repeat;
     background-position: bottom;
 
-    padding-bottom: 480px;
+    padding: 0;
+    padding-top: 60px;
+    padding-bottom: 240px;
+
+    margin: 0;
+    margin-bottom: 20px;
+
+    & > md-fab-speed-dial {
+        right: 4rem;
+        bottom: -34px;
+    }
 }

@@ -4,8 +4,8 @@
   "description": "This is my portfolio",
   "main": "server.js",
   "scripts": {
-    "start": "node --use_strict --harmony server.js",
-    "dev": "nodemon --use_strict --harmony server.js --ignore client"
+    "start": "node --harmony server.js",
+    "dev": "nodemon --harmony server.js --ignore client"
   },
   "repository": {
     "type": "git",
@@ -30,13 +30,17 @@
     "angular-aria": "^1.5.5",
     "angular-material": "^1.0.8",
     "angular-messages": "^1.5.5",
+    "angular-mocks": "^1.5.5",
     "angular-route": "^1.5.5",
     "angular-sanitize": "^1.5.5",
     "angular-translate": "^2.11.0",
     "express": "^4.13.4",
+    "github": "^0.2.4",
     "helmet": "^2.0.0",
     "jade": "^1.11.0",
+    "morgan": "^1.7.0",
     "printit": "^0.1.20",
+    "twitter": "^1.2.5",
     "walk": "^2.3.9"
   },
   "devDependencies": {
