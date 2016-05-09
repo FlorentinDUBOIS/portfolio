@@ -23,23 +23,18 @@ module.exports = {
 
     "skills": {
         "server": {
-            "title": "Server-side developments"
-        },
-
-        "operating": {
-            "title": "Operating system"
-        },
-
-        "web": {
-            "title": "Web developments"
+            "title": "Server-side developments",
+            "content": ""
         },
 
         "network": {
-            "title": "Network knowledge"
+            "title": "Network knowledge",
+            "content": ""
         },
 
-        "local": {
-            "title": "Involved in local community"
+        "web": {
+            "title": "Web developments",
+            "content": ""
         }
     }
 };
