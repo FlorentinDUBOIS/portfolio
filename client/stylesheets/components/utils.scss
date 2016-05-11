@@ -18,6 +18,11 @@
 .margin-left { margin-left: 60px; }
 .margin-right { margin-right: 60px; }
 .margin-bottom { margin-bottom: 60px; }
+.margin-left-8 { margin-left: 8px; }
+
+.padding-side-8 { padding: 0 8px; }
+
+.lite-border-radius { border-radius: 5px; }
 
 .tabs { margin-left: 30px; }
 .overflow { z-index: 1; margin-top: -54px; }
@@ -36,6 +41,10 @@ a {
     &, &:visited, &:hover, &:active {
         text-decoration: none;
         font-weight: bold;
+
+        &.md-title {
+            font-weight: bold;
+        }
 
         @extend .blue-text;
     }

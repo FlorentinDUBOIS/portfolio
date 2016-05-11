@@ -14,7 +14,7 @@
    version="1.1"
    id="svg2"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="responsive-framework.svg">
+   sodipodi:docname="devices.svg">
   <metadata
      id="metadata240">
     <rdf:RDF>
@@ -36,12 +36,12 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1012"
+     inkscape:window-height="1048"
      id="namedview238"
      showgrid="false"
-     inkscape:zoom="0.87945824"
-     inkscape:cx="657.14831"
-     inkscape:cy="379.5"
+     inkscape:zoom="1.2437418"
+     inkscape:cx="728.21312"
+     inkscape:cy="271.09835"
      inkscape:window-x="0"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
@@ -650,6 +650,14 @@
         </g>
       </g>
     </g>
+    <rect
+       style="fill:#eaeaeb;fill-opacity:1"
+       id="rect3466"
+       width="141.28017"
+       height="85.99044"
+       x="475.57687"
+       y="466.77463"
+       rx="3.8314822" />
   </g>
   <rect
      style="fill:#eaeaeb;fill-opacity:1"

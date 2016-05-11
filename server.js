@@ -43,6 +43,9 @@ let routes = [
     { syml: '/angular', real: 'node_modules/angular-route' },
     { syml: '/angular', real: 'node_modules/angular-sanitize' },
     { syml: '/angular', real: 'node_modules/angular-translate/dist' },
+    { syml: '/angular', real: 'node_modules/angular-loading-bar/build' },
+
+    { syml: '/markdown', real: 'node_modules/markdown/lib' },
 
     { syml: '/assets',  real: 'client/assets' },
 

@@ -15,6 +15,7 @@ html( ng-app="florentindubois.portfolio" )
         link( rel="icon" href="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=16" )
         link( rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" )
         link( rel="stylesheet" href="angular/angular-material.min.css" )
+        link( rel="stylesheet" href="angular/loading-bar.min.css" )
         link( rel="stylesheet" href="imports.min.css" )
 
     body
@@ -28,7 +29,10 @@ html( ng-app="florentindubois.portfolio" )
 
                     md-content( ng-controller="navigation" )
                         md-list( ng-cloak )
-                            md-list-item( ng-repeat="item in menu" )
+                            md-list-item.md-clickable( ng-repeat="item in menu" md-ink-ripple )
+                                a( ng-href="{{ item.link }}" )
+                                    md-icon {{ item.icon }}
+                                    span.md-subhead {{ item.translate | translate }}
 
                 md-content( flex )
                     div.indigo.super-hero.md-whiteframe-z1( layout="column" layout-align="center center" ng-controller="presentation" )
@@ -52,30 +56,129 @@ html( ng-app="florentindubois.portfolio" )
                                         md-icon( md-svg-src="{{ item.path }}" aria-label="{{ item.name | translate }}" )
 
                     div.margin-bottom( layout="row" layout-padding layout-align="center start" )
-                        md-card.overflow( flex="60" )
+                        md-card.overflow( flex="60" flex-md="70" flex-sm="80" flex-xs="80" id="about" )
                             md-card-content
                                 h2.md-headline {{ 'about.me' | translate }}
 
                                 div.md-subhead( ng-bind-html="'about.text' | translate" )
 
-                    div( layout="column" )
-                        div( flex="100" layout="row" layout-align="center start" )
+                    div.margin-bottom( layout="column" )
+                        div( flex="100" layout="row" layout-align="center start" id="skills" )
                             img.present( src="assets/devices.svg" )
 
-                        div.text-center( flex="100" layout="row" layout-align="center start" )
-                            div( flex="33" layout-padding )
+                        div.text-center( flex="100" layout="row" layout-align="center start" layout-wrap )
+                            div( flex="33" flex-sm="100" flex-xs="100" layout-padding )
                                 h3.md-headline {{ 'skills.server.title' | translate }}
-                                p.md-subhead {{ 'skills.server.content' | translate }}
+                                p.md-subhead.text-justify( ng-bind-html="'skills.server.content' | translate" )
 
-                            div( flex="33" layout-padding )
+                            div( flex="33" flex-sm="100" flex-xs="100" layout-padding )
                                 h3.md-headline {{ 'skills.web.title' | translate }}
-                                p.md-subhead {{ 'skills.web.content' | translate }}
+                                p.md-subhead.text-justify( ng-bind-html="'skills.web.content' | translate" )
 
-                            div( flex="33" layout-padding )
+                            div( flex="33" flex-sm="100" flex-xs="100" layout-padding )
                                 h3.md-headline {{ 'skills.network.title' | translate }}
-                                p.md-subhead {{ 'skills.network.content' | translate }}
+                                p.md-subhead.text-justify( ng-bind-html="'skills.network.content' | translate" )
 
-                    // div( layout="row" layout-padding layout-align="center start" ng-controller="about" )
+                    div.margin-bottom( layout="column" ng-controller="github" )
+                        div.margin-bottom( flex="100" layout="column" layout-align="start center" id="projects" )
+                            img.present.md-whiteframe-z1.lite-border-radius( src="assets/code.png" )
+
+                            p.md-headline {{ 'github.projects' | translate }}
+
+                        div( flex="100" layout="row" layout-align="center start" layout-wrap )
+                            div( flex="33" flex-md="50" flex-sm="100" flex-xs="100" ng-repeat="repo in repositories"  )
+                                md-card
+                                    md-card-header
+                                        md-card-header
+                                            md-card-avatar
+                                                img.rounded( ng-src="{{ repo.owner.avatar_url }}" )
+
+                                            md-card-header-text
+                                                a.md-title( ng-href="{{ repo.html_url }}" target="_blank" ) {{ repo.full_name }}
+                                                span.md-subhead {{ repo.description }}
+
+                                    md-card-actions
+                                        md-card-icon-actions( layout="row" layout-align="center center" )
+                                            md-button
+                                                md-icon call_split
+                                                span.margin-left-8 {{ repo.forks_count }}
+
+                                            md-button
+                                                md-icon star
+                                                span.margin-left-8 {{ repo.stargazers_count }}
+
+                                            md-button
+                                                md-icon visibility
+                                                span.margin-left-8 {{ repo.watchers }}
+
+                                            md-button
+                                                md-icon report_problem
+                                                span.margin-left-8 {{ repo.open_issues_count }}
+
+                                    md-card-content( layout="row" layout-align="center center" )
+                                        md-button.md-raised.md-primary( ng-click="open( repo.html_url )" )
+                                            {{ 'github.view' | translate }}
+
+                                        md-button.md-raised.md-primary( ng-click="readme( $event, repo.name )" )
+                                            {{ 'github.readme' | translate }}
+
+                        div( flex="100" layout="row" layout-align="center start" )
+                                div( flex="33" flex-md="50" flex-sm="100" flex-xs="100" )
+                                    md-card
+                                        md-card-header
+                                                md-card-header
+                                                    md-card-avatar
+                                                        img.rounded( ng-src="{{ user.avatar_url }}" )
+
+                                                    md-card-header-text
+                                                        a.md-title( ng-href="{{ user.html_url }}" target="_blank" ) {{ user.login }}
+                                                        span.md-subhead {{ user.email }}
+
+                                        md-card-actions
+                                            md-card-icon-actions( layout="row" layout-align="center center" )
+                                                md-button
+                                                    md-tooltip( md-direction="bottom" ) {{ 'github.public' | translate }}
+                                                    md-icon( md-svg-src="assets/github.svg" )
+                                                    span.margin-left-8 {{ user.public_repos }}
+
+                                                md-button
+                                                    md-tooltip( md-direction="bottom" ) {{ 'github.gists' | translate }}
+                                                    md-icon( md-svg-src="assets/github.svg" )
+                                                    span.margin-left-8 {{ user.public_gists }}
+
+                                                md-button
+                                                    md-tooltip( md-direction="bottom" ) {{ 'github.following' | translate }}
+                                                    md-icon account_circle
+                                                    span.margin-left-8 {{ user.following }}
+
+                                                md-button
+                                                    md-tooltip( md-direction="bottom" ) {{ 'github.followers' | translate }}
+                                                    md-icon account_circle
+                                                    span.margin-left-8 {{ user.followers }}
+
+                                        md-card-content( layout="row" layout-align="center center" )
+                                            md-button.md-raised.md-primary.padding-side-8( ng-click="open( user.html_url )" ) {{ 'github.all' | translate }}
+
+                    div.margin-bottom.indigo( layout="row" layout-align="center center" layout-align-md="end end" layout-align-sm="end end" layout-align-xs="end end" layout-padding id="timeline" )
+                        div( flex="40" flex-md="60" flex-sm="60" flex-xs="60" )
+                            ul.timeline.md-whiteframe-z1
+                                li.event( data-date="{{ 'experiences.sii.date' | translate }}" )
+                                    h2.md-headline( ng-bind-html="'experiences.sii.header' | translate" )
+                                    div.md-subhead( ng-bind-html="'experiences.sii.content' | translate" )
+
+                                li.event( data-date="{{ 'experiences.ac3.date' | translate }}" )
+                                    h2.md-headline( ng-bind-html="'experiences.ac3.header' | translate" )
+                                    div.md-subhead( ng-bind-html="'experiences.ac3.content' | translate" )
+
+                                li.event( data-date="{{ 'experiences.ac3Stage.date' | translate }}" )
+                                    h2.md-headline( ng-bind-html="'experiences.ac3Stage.header' | translate" )
+                                    div.md-subhead( ng-bind-html="'experiences.ac3Stage.content' | translate" )
+
+                                li.event( data-date="{{ 'experiences.isen.date' | translate }}" )
+                                    h2.md-headline( ng-bind-html="'experiences.isen.header' | translate" )
+                                    div.md-subhead( ng-bind-html="'experiences.isen.content' | translate" )
+
+                    //- div( layout="row" layout-padding layout-align="center start" ng-controller="about" )
                         md-list( flex="40"  )
                             md-subheader.md-no-sticky {{ 'about.twitter' | translate }}
                             md-list-item.md-2-line( ng-repeat="tweet in tweets" )
@@ -92,4 +195,6 @@ html( ng-app="florentindubois.portfolio" )
         script( type="application/javascript" src="angular/angular-messages.min.js" )
         script( type="application/javascript" src="angular/angular-sanitize.min.js" )
         script( type="application/javascript" src="angular/angular-translate.min.js" )
+        script( type="application/javascript" src="angular/loading-bar.min.js" )
+        script( type="application/javascript" src="markdown/markdown.js" )
         script( type="application/javascript" src="app.min.js" )
