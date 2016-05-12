@@ -9,7 +9,8 @@ module.exports = {
         "skills": "Skills",
         "resume": "Resume",
         "projects": "Projects",
-        "timeline": "Educations"
+        "timeline": "When, Where, What",
+        "contact": "Contacts"
     },
 
     "presentation": {
@@ -85,6 +86,24 @@ module.exports = {
             "date": "September 2012 to October 2017",
             "header": "Study to became software engineer at <a href=\"http://www.isen.fr\" target=\"_blank\" >ISEN Brest</a>",
             "content": "Technical courses across Computer and Network Cycle (3 years) and Specialization in Software Engineering (2 years):<br /><br />Advanced Java (JSP/JSF/Spring/Spring Boot)<br />Android<br />JEE<br />Distributed Systems in Java<br />Digital algorithm<br />Linux-based systems<br />Cisco-based courses: Network Basics/Routing and Switching/Scaling Networks (CCNA 1, 2, 3)<br />Databases<br />C, C++, Java<br />PHP, Javascript, HTML5, CSS"
+        }
+    },
+
+    "contact": {
+        "tweets": "Tweets",
+        "followers": "Followers",
+        "followings": "Followings",
+        "header": "Contact me",
+        "subhead": "Use the contact form below to get in touch, I will reply as soon as possible and don't be afraid to just send me a “Hi!”. I look forward to hearing from you!",
+        "email": "Your email",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send",
+        "success": "Message sent successfuly",
+        "error": {
+            "required": "This is required",
+            "email": "This email is not valid",
+            "sent": "Cannot sent message"
         }
     }
 };

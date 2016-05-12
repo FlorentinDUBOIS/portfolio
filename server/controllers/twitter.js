@@ -16,7 +16,7 @@ const client = new twitter({
 
 // ----------------------------------------------------------------------------
 // routes
-router.get( '/twitter', ( req, res ) => {
+router.get( '/twitter/tweets', ( req, res ) => {
     client.get( 'statuses/user_timeline', { screen_name: 'FlorentinDUBOIS' }, ( errors, tweets, response ) => {
         if( errors ) {
             for( var i in errors ) {
@@ -29,6 +29,20 @@ router.get( '/twitter', ( req, res ) => {
         res.json( tweets.slice( 0, 6 ));
     });
 });
+
+router.get( '/twitter/user', ( req, res ) => {
+    client.get( 'users/show', { screen_name: 'FlorentinDUBOIS' }, ( errors, data, response ) => {
+        if( errors ) {
+            for( var i in errors ) {
+                logger.error( errors[i].message );
+            }
+
+            return res.sendStatus( 500 );
+        }
+
+        res.json( data );
+    });
+})
 
 // ----------------------------------------------------------------------------
 // exports

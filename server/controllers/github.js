@@ -5,7 +5,7 @@ const logger = require( 'printit' )({ date: true, prefix: 'GitHub' });
 const github = new (require( 'github' ))({
     version: '3.0.0',
     protocol: 'https',
-    debug: true
+    debug: false
 });
 
 github.authenticate({

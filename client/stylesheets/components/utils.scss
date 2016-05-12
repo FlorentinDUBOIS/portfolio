@@ -49,3 +49,15 @@ a {
         @extend .blue-text;
     }
 }
+
+button {
+    & > a {
+        &, &:visited, &:hover, &:active {
+            text-decoration: none;
+            color: inherit;
+            font-weight: inherit;
+
+            @extend .black-text;
+        }
+    }
+}

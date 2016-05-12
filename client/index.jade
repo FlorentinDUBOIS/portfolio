@@ -41,7 +41,8 @@ html( ng-app="florentindubois.portfolio" )
                         h1.white-text.md-headline.no-margin-bottom {{ 'me.name' | translate }}
                         h2.white-text.md-subhead {{ 'me.job' | translate | ucfirst }}
 
-                        md-button.md-raised {{ 'presentation.started' | translate }}
+                        md-button.md-raised
+                            a( ng-href="#contact" ) {{ 'presentation.started' | translate }}
 
                         md-fab-speed-dial.md-scale.md-fab-bottom-right( md-open="fab.isOpen" md-direction="left" ng-mouseenter="fab.isOpen = true" ng-mouseleave="fab.isOpen = false" ng-class="{ 'md-hover-full': fab.hover }" )
                             md-fab-trigger
@@ -136,22 +137,22 @@ html( ng-app="florentindubois.portfolio" )
 
                                         md-card-actions
                                             md-card-icon-actions( layout="row" layout-align="center center" )
-                                                md-button
+                                                md-button( aria-label="{{ 'github.public' | translate }}" )
                                                     md-tooltip( md-direction="bottom" ) {{ 'github.public' | translate }}
                                                     md-icon( md-svg-src="assets/github.svg" )
                                                     span.margin-left-8 {{ user.public_repos }}
 
-                                                md-button
+                                                md-button( aria-label="{{ 'github.gists' | translate }}" )
                                                     md-tooltip( md-direction="bottom" ) {{ 'github.gists' | translate }}
                                                     md-icon( md-svg-src="assets/github.svg" )
                                                     span.margin-left-8 {{ user.public_gists }}
 
-                                                md-button
+                                                md-button( aria-label="{{ 'github.following' | translate }}" )
                                                     md-tooltip( md-direction="bottom" ) {{ 'github.following' | translate }}
                                                     md-icon account_circle
                                                     span.margin-left-8 {{ user.following }}
 
-                                                md-button
+                                                md-button( aria-label="{{ 'github.followers' | translate }}" )
                                                     md-tooltip( md-direction="bottom" ) {{ 'github.followers' | translate }}
                                                     md-icon account_circle
                                                     span.margin-left-8 {{ user.followers }}
@@ -178,13 +179,77 @@ html( ng-app="florentindubois.portfolio" )
                                     h2.md-headline( ng-bind-html="'experiences.isen.header' | translate" )
                                     div.md-subhead( ng-bind-html="'experiences.isen.content' | translate" )
 
-                    //- div( layout="row" layout-padding layout-align="center start" ng-controller="about" )
-                        md-list( flex="40"  )
-                            md-subheader.md-no-sticky {{ 'about.twitter' | translate }}
-                            md-list-item.md-2-line( ng-repeat="tweet in tweets" )
-                                img.md-avatar( ng-src="{{ tweet.user.profile_image_url }}" )
-                                div.md-list-item-text( layout="column" layout-align="center start" )
-                                    p( ng-bind-html="tweet.text | pseudo | hashtag | url" )
+                    div.margin-bottom( layout="row" layout-padding layout-align="center start" ng-controller="contact" id="contact" )
+                        div( flex="60" )
+                            md-card
+                                md-card-content
+                                    h3.md-headline {{ 'contact.header' | translate }}
+                                    p.md-subhead {{ 'contact.subhead' | translate }}
+
+                                    form( name="mailForm" ng-submit="submit()" )
+                                        md-input-container.md-block
+                                            label {{ 'contact.email' | translate }}
+                                            input( type="text" name="address" ng-model="mail.address" required pattern="[A-Z0-9a-z\._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,6}" )
+                                            div( ng-messages="mailForm.address.$error" )
+                                                div( ng-message="required" ) {{ 'contact.error.required' | translate  }}
+                                                div( ng-message="pattern" ) {{ 'contact.error.email' | translate  }}
+
+                                        md-input-container.md-block
+                                            label {{ 'contact.subject' | translate }}
+                                            input( type="text" name="subject" ng-model="mail.subject" required )
+                                            div( ng-messages="mailForm.subject.$error" )
+                                                div( ng-message="required" ) {{ 'contact.error.required' | translate  }}
+
+                                        md-input-container.md-block
+                                            label {{ 'contact.message' | translate }}
+                                            textarea( name="message" ng-model="mail.message" required )
+                                            div( ng-messages="mailForm.message.$error" )
+                                                div( ng-message="required" ) {{ 'contact.error.required' | translate  }}
+
+                                        div( layout="row" layout-align="end end" )
+                                            md-button.md-raised.md-primary( type="submit" ) {{ 'contact.send' | translate }}
+
+                        div( flex="40" )
+                            md-card
+                                md-card-content
+                                    h3.md-headline Twitter
+                                    p.md-subhead I am also on twitter, you can send me a tweet or a private message.
+
+                                md-card-header
+                                    md-card-header
+                                        md-card-avatar
+                                            img.rounded( ng-src="{{ user.profile_image_url_https }}" )
+
+                                        md-card-header-text
+                                            a.md-title( ng-href="{{ user.url }}" target="_blank" ) {{ user.screen_name }}
+                                            span.md-subhead( ng-bind-html="user.description | url | hashtag | pseudo" )
+
+                                md-card-actions
+                                    md-card-icon-actions( layout="row" layout-align="center center" )
+                                        md-button( aria-label="{{ 'contact.tweets' | translate }}" )
+                                            md-tooltip( md-direction="bottom" ) {{ 'contact.tweets' | translate }}
+                                            md-icon( md-svg-src="assets/tweet.svg" )
+                                            span.margin-left-8 {{ user.statuses_count }}
+
+                                        md-button( aria-label="{{ 'github.gists' | translate }}" )
+                                            md-tooltip( md-direction="bottom" ) {{ 'contact.followers' | translate }}
+                                            md-icon account_circle
+                                            span.margin-left-8 {{ user.friends_count }}
+
+                                        md-button( aria-label="{{ 'github.following' | translate }}" )
+                                            md-tooltip( md-direction="bottom" ) {{ 'contact.followings' | translate }}
+                                            md-icon account_circle
+                                            span.margin-left-8 {{ user.followers_count }}
+
+                                md-card-content
+                                    md-list
+                                        md-subheader.md-no-sticky {{ 'about.twitter' | translate }}
+                                        md-list-item.md-2-line( ng-repeat="tweet in tweets" )
+                                            img.md-avatar( ng-src="{{ tweet.user.profile_image_url }}" )
+                                            div.md-list-item-text( layout="column" layout-align="center start" )
+                                                p( ng-bind-html="tweet.text | url | pseudo | hashtag" )
+
+                    footer.blue-grey.darken-4.white-text( layout="row" layout-padding layout-align="center start" )
 
                     div( flex )
 

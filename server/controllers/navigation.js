@@ -10,6 +10,7 @@ router.get( '/navigation', ( req, res ) => {
         { link: '#skills',           icon: 'devices',         translate: 'navigation.skills' },
         { link: '#projects',         icon: 'polymer',         translate: 'navigation.projects' },
         { link: '#timeline',         icon: 'business_center', translate: 'navigation.timeline' },
+        { link: '#contact',          icon: 'send',            translate: 'navigation.contact' },
         { link: 'assets/resume.pdf', icon: 'file_download',   translate: 'navigation.resume' }
     ]);
 });

@@ -5,6 +5,8 @@ const helmet  = require( 'helmet' );
 const http    = require( 'http' );
 const path    = require( 'path' );
 const walk    = require( 'walk' );
+const cpress  = require( 'compression' );
+const bparser = require( 'body-parser' );
 const morgan  = require( 'morgan' );
 const app     = express();
 const logger  = require( 'printit' )({
@@ -30,6 +32,9 @@ app.set( 'view engine', 'jade' );
 logger.info( 'Load express modules' );
 
 app.use( helmet());
+app.use( cpress());
+app.use( bparser.urlencoded({ extended: true }));
+app.use( bparser.json());
 app.use( morgan( 'dev' ));
 
 // ----------------------------------------------------------------------------
