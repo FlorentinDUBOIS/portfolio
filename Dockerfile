@@ -1,3 +1,3 @@
-FROM node:lastest
+FROM node:latest
 
 EXPOSE 80
