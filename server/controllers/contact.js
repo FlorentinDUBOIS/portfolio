@@ -13,7 +13,7 @@ router.post( '/contact/send', ( req, res ) => {
     try {
         mailer.send({
             from: process.env.CONTACT_EMAIL,
-            recipients: [res.body.address],
+            recipients: [req.body.address],
             date: (new Date()).toISOString(),
             subject: req.body.subject,
             message: req.body.message

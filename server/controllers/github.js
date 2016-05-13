@@ -45,15 +45,13 @@ router.get( '/github/repositories/:repo/readme', ( req, res ) => {
         repo: req.params.repo
     };
 
-    github.repos.getReadme( flags, ( errors, data ) => {
-         if( errors ) {
-            for( let error in errors ) {
-                logger.error( error.message );
-            }
+    github.repos.getReadme( flags, ( error, data ) => {
+         if( error ) {
+            logger.error( error.message );
 
-            res.sendStatus( 500 );
+            res.sendStatus( 404 );
 
-            throw errors;
+            throw error;
         }
 
         res.json( data );

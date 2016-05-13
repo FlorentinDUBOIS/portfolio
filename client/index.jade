@@ -41,14 +41,14 @@ html( ng-app="florentindubois.portfolio" )
                         h1.white-text.md-headline.no-margin-bottom {{ 'me.name' | translate }}
                         h2.white-text.md-subhead {{ 'me.job' | translate | ucfirst }}
 
-                        md-button.md-raised
-                            a( ng-href="#contact" ) {{ 'presentation.started' | translate }}
+                        a( ng-href="#contact" )
+                            md-button.md-raised {{ 'presentation.started' | translate }}
 
                         md-fab-speed-dial.md-scale.md-fab-bottom-right( md-open="fab.isOpen" md-direction="left" ng-mouseenter="fab.isOpen = true" ng-mouseleave="fab.isOpen = false" ng-class="{ 'md-hover-full': fab.hover }" )
                             md-fab-trigger
                                 md-button.md-fab.md-warn( aria-label="menu" )
                                     md-tooltip( md-direction="top" md-visible="tooltipVisible" ) {{ 'presentation.contact' | translate }}
-                                    md-icon( md-font-set="material-icons" ) contacts
+                                    md-icon contacts
 
                             md-fab-actions
                                 div( ng-repeat="item in fab" )
@@ -179,8 +179,8 @@ html( ng-app="florentindubois.portfolio" )
                                     h2.md-headline( ng-bind-html="'experiences.isen.header' | translate" )
                                     div.md-subhead( ng-bind-html="'experiences.isen.content' | translate" )
 
-                    div.margin-bottom( layout="row" layout-padding layout-align="center start" ng-controller="contact" id="contact" )
-                        div( flex="60" )
+                    div.margin-bottom( layout="row" layout-md="column" layout-sm="column" layout-xs="column" layout-padding layout-align-lg="center start" ng-controller="contact" id="contact" )
+                        div( flex="60" flex-md="100" flex-sm="100" flex-xs="100" )
                             md-card
                                 md-card-content
                                     h3.md-headline {{ 'contact.header' | translate }}
@@ -209,7 +209,7 @@ html( ng-app="florentindubois.portfolio" )
                                         div( layout="row" layout-align="end end" )
                                             md-button.md-raised.md-primary( type="submit" ) {{ 'contact.send' | translate }}
 
-                        div( flex="40" )
+                        div( flex="40" flex-md="100" flex-sm="100" flex-xs="100" )
                             md-card
                                 md-card-content
                                     h3.md-headline Twitter
@@ -250,6 +250,7 @@ html( ng-app="florentindubois.portfolio" )
                                                 p( ng-bind-html="tweet.text | url | pseudo | hashtag" )
 
                     footer.blue-grey.darken-4.white-text( layout="row" layout-padding layout-align="center start" )
+                        div( flex="80" )
 
                     div( flex )
 

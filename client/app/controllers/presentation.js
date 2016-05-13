@@ -7,8 +7,6 @@ app.controller( 'presentation', ['$scope', '$window', '$http', function( $scope,
     };
 
     $http.get( '/presentation' ).then( function( res ) {
-        if( res.status == 200 ) {
-            $scope.fab = res.data;
-        }
+        $scope.fab = res.data;
     });
 }]);

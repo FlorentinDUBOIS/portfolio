@@ -56,7 +56,10 @@ module.exports = {
         "gists": "Public gists",
         "public": "Public repository",
         "all": "All repositories",
-        "projects": "Projects which I work at this time"
+        "projects": "Projects which I work at this time",
+        "error": {
+            "readme": "No readme found"
+        }
     },
 
     "modal": {
