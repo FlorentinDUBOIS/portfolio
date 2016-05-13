@@ -117,11 +117,8 @@ html( ng-app="florentindubois.portfolio" )
                                                 span.margin-left-8 {{ repo.open_issues_count }}
 
                                     md-card-content( layout="row" layout-align="center center" )
-                                        md-button.md-raised.md-primary( ng-click="open( repo.html_url )" )
-                                            {{ 'github.view' | translate }}
-
-                                        md-button.md-raised.md-primary( ng-click="readme( $event, repo.name )" )
-                                            {{ 'github.readme' | translate }}
+                                        md-button.md-raised.md-primary( ng-click="open( repo.html_url )" ) {{ 'github.view' | translate }}
+                                        md-button.md-raised.md-primary( ng-click="readme( $event, repo.name )" ) {{ 'github.readme' | translate }}
 
                         div( flex="100" layout="row" layout-align="center start" )
                                 div( flex="33" flex-md="50" flex-sm="100" flex-xs="100" )
