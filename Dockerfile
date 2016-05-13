@@ -1,5 +1,3 @@
-FROM node:latest
+FROM node:onbuild
 
 EXPOSE 80
-
-CMD ["npm start"]
