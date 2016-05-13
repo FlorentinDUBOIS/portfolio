@@ -10,7 +10,7 @@ html( ng-app="florentindubois.portfolio" )
         meta( name="description"      content="{{ 'about.text' | translate }}" )
         meta( name="application-name" content="Florentin DUBOIS | Portfolio" )
 
-        title Florentin DUBOIS | Portfolio
+        title {{ 'me.name' | translate }} | Portfolio
 
         link( rel="icon" href="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=16" )
         link( rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" )
@@ -246,8 +246,26 @@ html( ng-app="florentindubois.portfolio" )
                                             div.md-list-item-text( layout="column" layout-align="center start" )
                                                 p( ng-bind-html="tweet.text | url | pseudo | hashtag" )
 
-                    footer.blue-grey.darken-4.white-text( layout="row" layout-padding layout-align="center start" )
-                        div( flex="80" )
+                    footer.indigo( layout="column" )
+                        div( flex="100" layout="row" layout-xs="column" layout-sm="column" layout-align-gt="center start" layout-align-md="center start" )
+                            div( flex="40" flex-sm="100" flex-xs="100" layout-align="center start" layout-padding )
+                                h3.text-center.md-headline.white-text {{ 'me.name' | translate }} | Portfolio
+
+                            div( flex="20" flex-sm="100" flex-xs="100" layout-align="center start" layout-padding ng-controller="links" )
+                                md-list.beautify( ng-cloak )
+                                    md-list-item.md-clickable( ng-repeat="item in items" )
+                                        a( ng-href="{{ item.link }}" target="_blank" )
+                                            span.md-subhead.white-text {{ item.translate | translate }}
+
+                            div( flex="20" flex-sm="100" flex-xs="100" ng-controller="navigation" layout-padding )
+                                md-list.beautify( ng-cloak )
+                                    md-list-item.md-clickable( ng-repeat="item in menu" )
+                                        a( ng-href="{{ item.link }}" )
+                                            md-icon.white-text {{ item.icon }}
+                                            span.md-subhead.white-text {{ item.translate | translate }}
+
+                        div.indigo.darken-1( flex="100" layout="row" layout-xs="column" layout-sm="column" layout-align="center start" )
+                            h4.md-subhead.white-text Copyright © 2016 {{ 'me.name' | translate }} - Lincence MIT - Google Inc.
 
                     div( flex )
 
@@ -261,21 +279,3 @@ html( ng-app="florentindubois.portfolio" )
         script( type="application/javascript" src="angular/loading-bar.min.js" )
         script( type="application/javascript" src="markdown/markdown.js" )
         script( type="application/javascript" src="app.min.js" )
-
-        //- Piwik
-        script( type="application/javascript" )
-            | var _paq = _paq || [];
-            | _paq.push(['trackPageView']);
-            | _paq.push(['enableLinkTracking']);
-            | (function() {
-            |    var u="//piwik/";
-            |    _paq.push(['setTrackerUrl', u+'piwik.php']);
-            |    _paq.push(['setSiteId', 1]);
-            |    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            |    g.type='application/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-            | })();
-
-        noscript
-            p
-                img( src="//piwik/piwik.php?idsite=1" style="border:0;" alt="" )
-        //- Piwik
