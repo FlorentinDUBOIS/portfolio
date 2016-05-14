@@ -13,6 +13,11 @@ module.exports = {
         "contact": "Contacts"
     },
 
+    "app": {
+        "licence": "License MIT (some parts provided by Google Inc. and powered by Angular Material)",
+        "language": "en"
+    },
+
     "presentation": {
         "started": "Get in touch",
         "github": "GitHub",

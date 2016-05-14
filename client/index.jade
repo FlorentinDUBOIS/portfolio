@@ -1,24 +1,25 @@
 doctype html
-html( ng-app="florentindubois.portfolio" )
+html( ng-app="florentindubois.portfolio" lang="{{ 'app.language' | translate }}" )
     head
-        meta( charset="utf-8" )
-        meta( http-equiv="content-type"  content="text/html; charset=utf-8" )
-        meta( http-equiv="default-style" content="text/css; charset=utf-8" )
+        meta( charset="utf-8" lang="{{ 'app.language' | translate }}" )
+        meta( http-equiv="content-type"  content="text/html; charset=utf-8" lang="{{ 'app.language' | translate }}" )
+        meta( http-equiv="default-style" content="text/css; charset=utf-8" lang="{{ 'app.language' | translate }}" )
 
-        meta( name="author"           content="Florentin DUBOIS" )
-        meta( name="keywords"         content="Florentin, DUBOIS, Portfolio" )
-        meta( name="description"      content="{{ 'about.text' | translate }}" )
-        meta( name="application-name" content="Florentin DUBOIS | Portfolio" )
+        meta( name="author"           content="Florentin DUBOIS" lang="{{ 'app.language' | translate }}" )
+        meta( name="keywords"         content="{{ 'me.name' }}, Portfolio, {{ 'me.name' }} | Portfolio" lang="{{ 'app.language' | translate }}" )
+        meta( name="description"      content="{{ 'about.text' | translate }}" lang="{{ 'app.language' | translate }}" )
+        meta( name="application-name" content="{{ 'me.name' }} | Portfolio" lang="{{ 'app.language' | translate }}" )
+        meta( name="viewport"         content="width=device-width, initial-scale=1.0" )
 
         title {{ 'me.name' | translate }} | Portfolio
 
-        link( rel="icon" href="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=16" )
-        link( rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" )
-        link( rel="stylesheet" href="angular/angular-material.min.css" )
-        link( rel="stylesheet" href="angular/loading-bar.min.css" )
-        link( rel="stylesheet" href="imports.min.css" )
+        link( rel="icon" href="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=16" lang="{{ 'app.language' | translate }}" )
+        link( rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" lang="{{ 'app.language' | translate }}" )
+        link( rel="stylesheet" href="angular/angular-material.min.css" lang="{{ 'app.language' | translate }}"  )
+        link( rel="stylesheet" href="angular/loading-bar.min.css" lang="{{ 'app.language' | translate }}" )
+        link( rel="stylesheet" href="imports.min.css" lang="{{ 'app.language' | translate }}" )
 
-    body
+    body( lang="{{ 'app.language' | translate }}" )
         main
             section.fheight( flex layout="row" )
                 md-sidenav.md-sidenav-left.md-whiteframe-z2.fheight( md-is-locked-open="$mdMedia( 'gt-md' )" )
@@ -265,7 +266,7 @@ html( ng-app="florentindubois.portfolio" )
                                             span.md-subhead.white-text {{ item.translate | translate }}
 
                         div.indigo.darken-1( flex="100" layout="row" layout-xs="column" layout-sm="column" layout-align="center start" )
-                            h4.md-subhead.white-text Copyright © 2016 {{ 'me.name' | translate }} - Lincence MIT - Google Inc.
+                            h4.md-subhead.white-text Copyright © 2016 {{ 'me.name' | translate }} - {{ 'app.licence' | translate }}
 
                     div( flex )
 
