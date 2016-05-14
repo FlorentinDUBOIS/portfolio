@@ -11,21 +11,13 @@ const mailer = require( 'directmail' )({
 // routes
 router.post( '/contact/send', ( req, res ) => {
     try {
-        logger.info( 'send mail' );
-        logger.info({
-            from: process.env.CONTACT_EMAIL,
-            recipients: [req.body.address],
-            date: (new Date()).toISOString(),
-            subject: req.body.subject,
-            message: req.body.message
-        });
+        logger.info( `Send mail from ${ req.body.address } to ${ process.env.CONTACT_EMAIL }` );
 
         mailer.send({
-            from: process.env.CONTACT_EMAIL,
-            recipients: [req.body.address],
+            from: req.body.address,
+            recipients: [process.env.CONTACT_EMAIL],
             date: (new Date()).toISOString(),
-            subject: req.body.subject,
-            message: req.body.message
+            message: `subject=${ req.body.subject }&body=${ req.body.message }`
         });
 
         res.sendStatus( 200 );
