@@ -6,9 +6,9 @@ html( ng-app="florentindubois.portfolio" lang="{{ 'app.language' | translate }}"
         meta( http-equiv="default-style" content="text/css; charset=utf-8" lang="{{ 'app.language' | translate }}" )
 
         meta( name="author"           content="Florentin DUBOIS" lang="{{ 'app.language' | translate }}" )
-        meta( name="keywords"         content="{{ 'me.name' }}, Portfolio, {{ 'me.name' }} | Portfolio" lang="{{ 'app.language' | translate }}" )
-        meta( name="description"      content="{{ 'about.text' | translate }}" lang="{{ 'app.language' | translate }}" )
-        meta( name="application-name" content="{{ 'me.name' }} | Portfolio" lang="{{ 'app.language' | translate }}" )
+        meta( name="keywords"         content="Florentin DUBOIS, Portfolio, {{ 'me.name' }} | Portfolio" lang="{{ 'app.language' | translate }}" )
+        meta( name="description"      content="Hi ! I am Florentin DUBOIS, I am currently studying at ISEN Brest school that allows me to study one of my passions, IT technologies.I discovered this wonderful domain in high school and since I constantly interested in new technologies. I love discovering new languages and frameworks by myself, even if sometimes I discover them by my friends. I am a big fan of C, C++ and JavaScript to create web applications or software. I consider myself as a developer that can touch all parts of a projet and who can work on a project at any level. Personally I turn to the Arch Linux distributions or CoreOS using Docker to virtualize my developments." lang="en" )
+        meta( name="application-name" content="Florentin DUBOIS | Portfolio" lang="{{ 'app.language' | translate }}" )
         meta( name="viewport"         content="width=device-width, initial-scale=1.0" )
 
         title {{ 'me.name' | translate }} | Portfolio
@@ -211,7 +211,7 @@ html( ng-app="florentindubois.portfolio" lang="{{ 'app.language' | translate }}"
                             md-card
                                 md-card-content
                                     h3.md-headline Twitter
-                                    p.md-subhead I am also on twitter, you can send me a tweet or a private message.
+                                    p.md-subhead {{ 'twitter.also' | translate }}
 
                                 md-card-header
                                     md-card-header
@@ -243,7 +243,7 @@ html( ng-app="florentindubois.portfolio" lang="{{ 'app.language' | translate }}"
                                     md-list
                                         md-subheader.md-no-sticky {{ 'about.twitter' | translate }}
                                         md-list-item.md-2-line( ng-repeat="tweet in tweets" )
-                                            img.md-avatar( ng-src="{{ tweet.user.profile_image_url }}" )
+                                            img.md-avatar( ng-src="{{ tweet.user.profile_image_url_https }}" )
                                             div.md-list-item-text( layout="column" layout-align="center start" )
                                                 p( ng-bind-html="tweet.text | url | pseudo | hashtag" )
 

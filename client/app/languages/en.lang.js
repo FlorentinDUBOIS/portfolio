@@ -67,6 +67,10 @@ module.exports = {
         }
     },
 
+    "twitter": {
+        "also": "I am also on twitter, you can send me a tweet or a private message."
+    },
+
     "modal": {
         "dismiss": "Dismiss"
     },
