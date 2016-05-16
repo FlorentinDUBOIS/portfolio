@@ -22,7 +22,7 @@ process.on( 'uncaughtException', ( e ) => logger.error( e.message ));
 // configurations
 logger.info( 'Set definition of express framework' );
 
-app.engine( 'jade', require( 'jade' ).__express );
+app.engine( 'jade', require( 'pug' ).__express );
 
 app.set( 'views', path.join( __dirname, 'client' ));
 app.set( 'view engine', 'jade' );
