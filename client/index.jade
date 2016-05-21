@@ -1,25 +1,25 @@
 doctype html
-html( ng-app="florentindubois.portfolio" lang="{{ 'app.language' | translate }}" )
+html( ng-app="florentindubois.portfolio" )
     head
-        meta( charset="utf-8" lang="{{ 'app.language' | translate }}" )
-        meta( http-equiv="content-type"  content="text/html; charset=utf-8" lang="{{ 'app.language' | translate }}" )
-        meta( http-equiv="default-style" content="text/css; charset=utf-8" lang="{{ 'app.language' | translate }}" )
+        meta( charset="utf-8" )
+        meta( http-equiv="content-type"  content="text/html; charset=utf-8" )
+        meta( http-equiv="default-style" content="text/css; charset=utf-8" )
 
-        meta( name="author"           content="Florentin DUBOIS" lang="{{ 'app.language' | translate }}" )
-        meta( name="keywords"         content="Florentin DUBOIS, Portfolio, {{ 'me.name' }} | Portfolio" lang="{{ 'app.language' | translate }}" )
+        meta( name="author"           content="Florentin DUBOIS"  )
+        meta( name="keywords"         content="Florentin DUBOIS, Portfolio, Florentin DUBOIS | Portfolio" )
         meta( name="description"      content="Hi ! I am Florentin DUBOIS, I am currently studying at ISEN Brest school that allows me to study one of my passions, IT technologies.I discovered this wonderful domain in high school and since I constantly interested in new technologies. I love discovering new languages and frameworks by myself, even if sometimes I discover them by my friends. I am a big fan of C, C++ and JavaScript to create web applications or software. I consider myself as a developer that can touch all parts of a projet and who can work on a project at any level. Personally I turn to the Arch Linux distributions or CoreOS using Docker to virtualize my developments." lang="en" )
-        meta( name="application-name" content="Florentin DUBOIS | Portfolio" lang="{{ 'app.language' | translate }}" )
+        meta( name="application-name" content="Florentin DUBOIS | Portfolio"  )
         meta( name="viewport"         content="width=device-width, initial-scale=1.0" )
 
-        title {{ 'me.name' | translate }} | Portfolio
+        title Florentin DUBOIS | Portfolio
 
-        link( rel="icon" href="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=16" lang="{{ 'app.language' | translate }}" )
-        link( rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" lang="{{ 'app.language' | translate }}" )
-        link( rel="stylesheet" href="angular/angular-material.min.css" lang="{{ 'app.language' | translate }}"  )
-        link( rel="stylesheet" href="angular/loading-bar.min.css" lang="{{ 'app.language' | translate }}" )
-        link( rel="stylesheet" href="imports.min.css" lang="{{ 'app.language' | translate }}" )
+        link( rel="icon"       href="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=16"  )
+        link( rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"  )
+        link( rel="stylesheet" href="angular/angular-material.min.css"   )
+        link( rel="stylesheet" href="angular/loading-bar.min.css"  )
+        link( rel="stylesheet" href="imports.min.css"  )
 
-    body( lang="{{ 'app.language' | translate }}" )
+    body
         main
             section.fheight( flex layout="row" )
                 md-sidenav.md-sidenav-left.md-whiteframe-z2.fheight( md-is-locked-open="$mdMedia( 'gt-md' )" )
@@ -39,7 +39,7 @@ html( ng-app="florentindubois.portfolio" lang="{{ 'app.language' | translate }}"
                     div.indigo.super-hero.md-whiteframe-z1( layout="column" layout-align="center center" ng-controller="presentation" )
                         img.rounded( src="https://gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=196" alt="avatar" )
 
-                        h1.white-text.md-headline.no-margin-bottom {{ 'me.name' | translate }}
+                        h1.white-text.md-headline.no-margin-bottom Florentin DUBOIS
                         h2.white-text.md-subhead {{ 'me.job' | translate | ucfirst }}
 
                         a( ng-href="#contact" )
