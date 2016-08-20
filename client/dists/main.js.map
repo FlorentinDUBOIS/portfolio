@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.jsx"],"names":[],"mappings":";;AAAA;;;;AACA;;;;AAEA,sBAAQ;AAAA;AAAA;AAAA;AAAA,CAAR,EAA8B,OAAO,QAAP,CAAgB,IAA9C","file":"main.js","sourcesContent":["import React      from 'react';\nimport { render } from 'react-dom';\n\nrender( <h1>Hello World</h1>, window.document.body );\n"],"sourceRoot":"/source/"}
