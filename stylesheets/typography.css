@@ -1,0 +1,113 @@
+.mdl-font-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  font-smooth: always;
+}
+
+.mdl-display-4 {
+  color: black;
+  filter: contrast(0.54);
+  font-weight: lighter;
+  font-size: 112px;
+}
+
+.mdl-display-3 {
+  color: black;
+  filter: contrast(0.54);
+  font-size: 56px;
+  font-weight: normal;
+}
+
+.mdl-display-2 {
+  color: black;
+  filter: contrast(0.54);
+  font-size: 45px;
+  font-weight: normal;
+  line-height: 48px;
+}
+
+.mdl-display-1 {
+  color: black;
+  filter: contrast(0.54);
+  font-size: 34px;
+  font-weight: normal;
+  line-height: 40px;
+}
+
+.mdl-headline {
+  color: black;
+  filter: contrast(0.87);
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 32px;
+}
+
+.mdl-title {
+  color: black;
+  filter: contrast(0.87);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mdl-subheading {
+  color: black;
+  filter: contrast(0.87);
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+}
+
+.mdl-body-2 {
+  color: black;
+  filter: contrast(0.87);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.mdl-body-1 {
+  color: black;
+  filter: contrast(0.87);
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+.mdl-caption {
+  color: black;
+  filter: contrast(0.54);
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.mdl-menu {
+  color: black;
+  filter: contrast(0.87);
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.mdl-button {
+  color: black;
+  filter: contrast(0.87);
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mdl-text-center {
+  text-align: center;
+}
+
+.mdl-text-justify {
+  text-align: justify;
+}
+
+.mdl-vertical-middle {
+  vertical-align: middle;
+}
+
+.mdl-vertical-text-top {
+  vertical-align: text-top;
+}

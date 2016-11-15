@@ -1,0 +1,13 @@
+.mdl-card {
+  width: initial;
+}
+
+.mdl-card__media {
+  text-align: center;
+  background: transparent;
+  padding: 20px;
+}
+
+.mdl-card__media--img {
+  border-radius: 50%;
+}

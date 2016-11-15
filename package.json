@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "version": "5.0.0",
+  "description": "florentin dubois' portfolio host at https://florentin-dubois.fr",
+  "main": "",
+  "scripts": {
+    "start": "http-server -p 80",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "url": "git@github.com:FlorentinDUBOIS/portfolio.git",
+    "type": "git"
+  },
+  "author": "Florentin DUBOIS <contact@florentin-dubois.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "material-design-lite": "^1.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.0",
+    "eslint-config-google": "^0.7.0",
+    "gulp": "^3.9.1",
+    "lite-server": "^2.2.2",
+    "sw-precache": "^4.2.1"
+  }
+}
