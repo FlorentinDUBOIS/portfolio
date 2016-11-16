@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/node_modules/material-design-lite/gulpfile.babel.js","d55399a523725054d8905062299e93ba"],["/node_modules/material-design-lite/material.css","57313781c72269db589ebea903725dcc"],["/node_modules/material-design-lite/material.js","d4d04abe369dc10ce86e42c00ee62ccd"],["/node_modules/material-design-lite/material.min.css","8ce4631006b601c6253396365879a7a9"],["/node_modules/material-design-lite/material.min.js","df211fcb13a5c100eeb182f14fd37b44"],["/scripts/service-worker-registration.js","f34b81421d415a324e83422e299f63af"],["/stylesheets/main.css","d41d8cd98f00b204e9800998ecf8427e"]];
+var precacheConfig = [["/images/heart.svg","4c27a80f3956a02fe7d1df6cd5419948"],["/node_modules/material-design-lite/gulpfile.babel.js","d55399a523725054d8905062299e93ba"],["/node_modules/material-design-lite/material.css","57313781c72269db589ebea903725dcc"],["/node_modules/material-design-lite/material.js","d4d04abe369dc10ce86e42c00ee62ccd"],["/node_modules/material-design-lite/material.min.css","8ce4631006b601c6253396365879a7a9"],["/node_modules/material-design-lite/material.min.js","df211fcb13a5c100eeb182f14fd37b44"],["/scripts/service-worker-registration.js","374f50c5c5a909295bb9e08f33c80cfb"],["/stylesheets/main.css","494a83d1f2f00b5e5c56f9bde340a3d8"],["/stylesheets/mdl-card.css","d0f8c7562dcda6aadec1d52826a77f86"],["/stylesheets/page-content.css","7998594c9bece47288f928c912e6fa0d"],["/stylesheets/typography.css","817fe95f467828d9f47c0b56a12d947f"]];
 var cacheName = 'sw-precache-v2--' + (self.registration ? self.registration.scope : '');
 
 

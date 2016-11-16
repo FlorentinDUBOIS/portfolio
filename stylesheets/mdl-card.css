@@ -11,3 +11,7 @@
 .mdl-card__media--img {
   border-radius: 50%;
 }
+
+.mdl-card__supporting-text-full-width {
+  width: calc(100% - 32px);
+}

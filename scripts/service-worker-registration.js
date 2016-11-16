@@ -13,7 +13,9 @@ if ('serviceWorker' in navigator) {
  * @param {Error} error error thrown from the registration
  */
 function cannotRegisterServiceWorker(error) {
-  // console.error(error);
+  if (window.location.hostname === 'localhost') {
+    console.error(error);
+  }
 }
 
 /**
@@ -21,5 +23,7 @@ function cannotRegisterServiceWorker(error) {
  * @param {any} registration
  */
 function serviceWorkerRegistered(registration) {
-  // console.log(`Service worker started with scope ${registration.scope}`);
+  if (window.location.hostname === 'localhost') {
+    console.log(`Service worker started with scope ${registration.scope}`);
+  }
 }
