@@ -3,13 +3,17 @@ let path = require('path');
 let swPrecache = require('sw-precache');
 
 gulp.task('generate-service-worker', function(callback) {
-  let rootDir = __dirname;
+  let rootDir = '.';
 
   swPrecache.write(path.join(rootDir, 'service-worker.js'), {
-    stripPrefix: rootDir,
     staticFileGlobs: [
-      rootDir + '/!(node_modules)/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}',
-      rootDir + '/node_modules/material-design-lite/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}',
+      `${rootDir}/images/**/*.*`,
+      `${rootDir}/scripts/**/*.*`,
+      `${rootDir}/stylesheets/**/*.*`,
+      `${rootDir}/index.html`,
+      `${rootDir}/manifest.json`,
+      `${rootDir}/service-worker.js`,
+      `${rootDir}/node_modules/material-design-lite/*.*`,
     ],
   }, callback);
 });
