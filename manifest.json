@@ -1,6 +1,6 @@
 {
   "name": "Florentin DUBOIS | Portfolio",
-  "short_name": "Florentin DUBOIS",
+  "short_name": "F. DUBOIS",
   "start_url": "https://florentin-dubois.fr",
   "display": "standalone",
   "lang": "en-US",
@@ -33,6 +33,7 @@
   }],
 
   "background_color": "white",
+  "theme_color": "#3f51b5",
   "related_applications": [{
     "platform": "web",
     "url": "https://florentin-dubois.fr"
