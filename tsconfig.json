@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "charset": "utf-8",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es6",
+        "sourceMap": true,
+        "allowJs": false,
+        "allowUnreachableCode": false,
+        "allowSyntheticDefaultImports": true,
+        "allowUnusedLabels": true,
+        "alwaysStrict": true,
+        "jsx": "preserve",
+        "newLine": "LF",
+        "noFallthroughCasesInSwitch": false,
+        "noImplicitReturns": true,
+        "noUnusedLocals": false,
+        "noImplicitThis": true,
+        "outDir": "built",
+        "removeComments": true
+    },
+
+    "exclude": [
+        "node_modules"
+    ],
+
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ]
+}
