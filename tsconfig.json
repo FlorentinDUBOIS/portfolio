@@ -15,7 +15,6 @@
         "noFallthroughCasesInSwitch": false,
         "noImplicitReturns": true,
         "noUnusedLocals": false,
-        "noImplicitThis": true,
         "outDir": "built",
         "removeComments": true
     },
