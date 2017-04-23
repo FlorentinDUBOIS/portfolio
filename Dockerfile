@@ -8,8 +8,6 @@ ADD Caddyfile /etc/Caddyfile
 COPY . /srv/http
 WORKDIR /srv/http
 
-RUN yarn install && yarn compile:p
-
 VOLUME /root/.caddy
 
 EXPOSE 80 443 2015
