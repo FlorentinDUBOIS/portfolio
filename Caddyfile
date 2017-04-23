@@ -1,4 +1,4 @@
 localhost {
-  root .
+  root /srv/http
   gzip
 }
