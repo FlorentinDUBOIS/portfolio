@@ -1,2 +1,6 @@
 export * from './Root'
 export * from './Layout'
+export * from './Hero'
+export * from './Translate'
+export * from './Heading'
+export * from './tchat'

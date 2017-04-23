@@ -1,0 +1,7 @@
+export * from './Tchat'
+export * from './TchatBox'
+export * from './TchatBody'
+export * from './TchatHead'
+export * from './TchatInput'
+export * from './TchatAnswer'
+export * from './TchatQuestion'

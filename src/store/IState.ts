@@ -1,5 +1,7 @@
-import {IIntl} from '../intl'
+import {IIntl, ITchat, IAi} from '.'
 
 export interface IState {
-  intl?: IIntl
+  intl?: IIntl,
+  tchat?: ITchat,
+  ai?: IAi
 }

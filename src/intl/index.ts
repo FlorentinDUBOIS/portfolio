@@ -1,5 +1,6 @@
 import {translations as en} from './en'
 import {translations as fr} from './fr'
+import {IIntl} from '../store'
 
 // Create a mapper language => translations
 const translations = new Map<string, Map<string, string>>();
@@ -8,16 +9,10 @@ const translations = new Map<string, Map<string, string>>();
 translations.set('en', en)
 translations.set('fr', fr)
 
-// Define an interface for i18n
-export interface IIntl {
-  translations: Map<string, Map<string, string>>
-  currentLanguage: string
-  fallbackLanguage: string
-}
 
 // export default data
 export default {
   translations,
-  currentLanguage: navigator.language || 'en',
+  currentLanguage: navigator.language.substring(0, 2) || 'en',
   fallbackLanguage: 'en'
 } as IIntl

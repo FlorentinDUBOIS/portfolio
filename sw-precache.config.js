@@ -6,6 +6,8 @@ module.exports = {
     'manifest.json'
   ],
 
+  maximumFileSizeToCacheInBytes: 3145728,
+
   runtimeCaching: [{
     urlPattern: /fonts\.googleapis\.com/,
     handler: 'networkFirst'

@@ -1,5 +1,6 @@
 import * as actions from '../actions'
-import {default as init, IIntl} from '../intl'
+import init from '../intl'
+import {IIntl} from '../store'
 
 export namespace intl {
   export function reducer(state: IIntl = init, action: actions.intl.IAction): IIntl {
