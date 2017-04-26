@@ -61,7 +61,6 @@ typings/
 # dotenv environment variables file
 .env
 
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -69,7 +68,10 @@ typings/
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Project
-/src/config/ai.ts
+## old sources
+*.old/
+
+## configs
+/src/configs/ai.ts
 
 # End of https://www.gitignore.io/api/node,visualstudiocode

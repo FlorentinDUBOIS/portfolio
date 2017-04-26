@@ -1,20 +1,21 @@
-export * from './IState'
-export * from './IIntl'
-export * from './ITchat'
-export * from './IAi'
+import { Store, createStore, combineReducers, applyMiddleware } from 'redux'
+import { routerMiddleware, routerReducer, RouterState } from 'react-router-redux'
+import createBrowserHistory from 'history/createBrowserHistory'
 
-import {createBrowserHistory} from 'history'
-import {createStore, combineReducers, compose, applyMiddleware} from 'redux'
-import {routerMiddleware, routerReducer} from 'react-router-redux'
+import * as intl from './intl'
+import * as ai from './ai'
+import * as tchat from './tchat'
 
-import {IState} from './IState'
-import {ai, intl, tchat} from '../reducers'
-import {redux} from '../tools'
+export interface State {
+  ai?: ai.State
+  intl?: intl.State
+  tchat?: tchat.State
+  router?: RouterState
+}
 
 export const history = createBrowserHistory()
-const middleware = routerMiddleware(history)
-
-export const store = createStore<IState>(
+export const middleware = routerMiddleware(history)
+export const store: Store<State> = createStore(
   combineReducers({
     ai: ai.reducer,
     intl: intl.reducer,
@@ -22,6 +23,5 @@ export const store = createStore<IState>(
     router: routerReducer
   }),
 
-  applyMiddleware(middleware),
-  compose(redux.DevTools.instrument())
+  applyMiddleware(middleware)
 )

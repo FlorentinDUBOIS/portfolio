@@ -1,22 +1,20 @@
-import {Store} from 'redux'
+import { Store } from 'redux'
 
-import {IState} from '../store'
+import { State } from '../store'
 
-export namespace intl {
-  export function translate(store: Store<IState>, name: string): string {
-    const state: IState = store.getState()
-    const {currentLanguage, fallbackLanguage, translations} = state.intl
+export function translate(store: Store<State>, name: string): string {
+  const state = store.getState()
+  const { currentLanguage, fallbackLanguage, translations } = state.intl
 
-    if (translations.has(currentLanguage)) {
-      if (translations.get(currentLanguage).has(name)) {
-        return translations.get(currentLanguage).get(name)
-      }
-    } else if (translations.has(fallbackLanguage)) {
-      if (translations.get(fallbackLanguage).has(name)) {
-        return translations.get(fallbackLanguage).get(name)
-      }
+  if (translations.has(currentLanguage)) {
+    if (translations.get(currentLanguage).has(name)) {
+      return translations.get(currentLanguage).get(name)
     }
-
-    return name
+  } else if (translations.has(fallbackLanguage)) {
+    if (translations.get(fallbackLanguage).has(name)) {
+      return translations.get(fallbackLanguage).get(name)
+    }
   }
+
+  return name
 }
