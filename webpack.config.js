@@ -1,5 +1,4 @@
 const {resolve} = require('path')
-const {optimize} = require('webpack')
 
 module.exports = {
   entry: resolve(__dirname, 'src/app.tsx'),
