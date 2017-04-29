@@ -5,14 +5,13 @@ import { Subscription } from 'rxjs'
 import { Context } from '../context'
 import { translate } from '../../helpers/intl'
 import { fromReduxStore } from '../../helpers/rx'
+import { GenericProps } from '../generic-props'
 
-export interface Props {
-  [x: string]: any
-
+interface Props extends GenericProps {
   name: string
 }
 
-export interface State {
+interface State {
   translation: string
 }
 

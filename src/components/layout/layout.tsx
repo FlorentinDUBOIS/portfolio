@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types'
 import { RouteComponentProps } from 'react-router'
 
 import * as heading from '../heading/heading.hlps'
+import { Resume } from '../resume/resume'
 import { Hero } from '../hero/hero'
 import { Translate } from '../translate/translate'
 import { Context } from '../context'
@@ -24,6 +25,7 @@ export class Layout extends React.Component<Props, void> {
         </Hero>
 
         <Tchat />
+        <Resume />
       </div>
     )
   }
