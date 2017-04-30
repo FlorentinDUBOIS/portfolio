@@ -797,6 +797,10 @@ dev-ip@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/dev-ip/-/dev-ip-1.0.1.tgz#a76a3ed1855be7a012bb8ac16cb80f3c00dc28f0"
 
+dexie@^2.0.0-beta:
+  version "2.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/dexie/-/dexie-2.0.0-beta.10.tgz#ea8aca645c1994f7f10156d7f163e4190e37cf1b"
+
 diffie-hellman@^5.0.0:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.2.tgz#b5835739270cfe26acf632099fded2a07f209e5e"

@@ -44,7 +44,7 @@ export class Tchat extends React.Component<GenericProps, void> {
   private readonly style: React.CSSProperties = {
     position: 'fixed',
     bottom: 16,
-    right: 16
+    right: 32
   }
 
   private readonly windowStyle: React.CSSProperties = {

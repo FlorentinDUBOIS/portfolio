@@ -31,8 +31,8 @@ export class TchatWindow extends React.Component<GenericProps, State> {
     const { store }: Context = this.context
 
     this.subscription = fromReduxStore(store)
-      .subscribe(state => {
-        const { messages } = state.ai
+      .subscribe(async state => {
+        const { messages } = await state.ai
         const { hidden } = state.tchat
 
         this.setState({ messages, hidden })
