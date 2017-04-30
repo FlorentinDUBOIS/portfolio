@@ -10,13 +10,14 @@
         "allowSyntheticDefaultImports": true,
         "allowUnusedLabels": true,
         "alwaysStrict": true,
-        "jsx": "preserve",
+        "jsx": "react",
         "newLine": "LF",
         "noFallthroughCasesInSwitch": false,
         "noImplicitReturns": true,
         "noUnusedLocals": false,
         "outDir": "built",
-        "removeComments": true
+        "removeComments": true,
+        "skipLibCheck": true
     },
 
     "exclude": [
