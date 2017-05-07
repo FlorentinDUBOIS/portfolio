@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import { fade } from 'material-ui/utils/colorManipulator'
 import { darkBlack, white } from 'material-ui/styles/colors'
-import { Observable, Subscription } from 'rxjs'
+import CloseIcon from 'material-ui/svg-icons/navigation/close'
 
 import { GenericProps } from '../generic-props'
 import { Context } from '../context'
@@ -10,33 +10,19 @@ import { Translate } from '../translate/translate'
 import { Types } from '../../store/tchat'
 
 export class TchatHead extends React.Component<GenericProps, void> {
-  public componentDidMount() {
-    this.subscription = Observable
-      .fromEvent(this.close, 'click')
-      .subscribe(event => {
-        const { store }: Context = this.context
-        const type = Types.HIDE
-
-        store.dispatch({ type })
-      })
-  }
-
-  public componentWillUnmount() {
-    this.subscription.unsubscribe()
-  }
-
   public render() {
+    const { store }: Context = this.context
+    const type = Types.HIDE
+
     return (
       <div style={ this.style } >
         <Translate name='tchat.head' />
         <span style={{ flex: 1 }} ></span>
-        <i ref={ close => this.close = close } style={{ cursor: 'pointer' }} className="material-icons">close</i>
+        <CloseIcon onClick={ () => store.dispatch({ type }) } style={{ color: 'white', cursor: 'pointer' }} />
       </div>
     )
   }
 
-  private close: HTMLElement
-  private subscription: Subscription
   private readonly style: React.CSSProperties = {
     display: 'flex',
 

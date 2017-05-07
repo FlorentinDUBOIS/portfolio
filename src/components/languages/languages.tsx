@@ -45,33 +45,36 @@ export class Languages extends React.Component<GenericProps, State> {
 
   public async fetch() {
     const { store }: Context = this.context
-    const response = await fetch('https://api.github.com/users/FlorentinDUBOIS/repos', {
-      headers: {
-        Authorization: `token ${ token }`
-      }
-    })
 
-    const repositories = await response.json()
-
-    repositories.forEach(async (repository: IRepository) => {
-      const response = await fetch(repository.languages_url, {
+    try {
+      const response = await fetch('https://api.github.com/users/FlorentinDUBOIS/repos', {
         headers: {
-          Authorization: `token ${ token }`
+          Authorization: `token ${ window.atob(token) }`
         }
       })
 
-      const languages: ILanguage = await response.json()
+      const repositories = await response.json()
 
-      for (const language in languages) {
-        store.dispatch({
-          type: github.Types.ADD_LANGUAGE,
-          language: {
-            name: language,
-            line: languages[language]
+      repositories.forEach(async (repository: IRepository) => {
+        const response = await fetch(repository.languages_url, {
+          headers: {
+            Authorization: `token ${ window.atob(token) }`
           }
         })
-      }
-    })
+
+        const languages: ILanguage = await response.json()
+
+        for (const language in languages) {
+          store.dispatch({
+            type: github.Types.ADD_LANGUAGE,
+            language: {
+              name: language,
+              line: languages[language]
+            }
+          })
+        }
+      })
+    } catch (e) { }
   }
 
   public render() {
