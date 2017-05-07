@@ -13,7 +13,6 @@
     <link rel="favicon" href="image/png" href="//secure.gravatar.com/avatar/4ee6863b50bd08aa0f487ad06ef67d79?s=32">
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,500,700">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <style type="text/css">
       html, body, #react-root, [data-reactroot] {
         display: block;
@@ -31,15 +30,36 @@
 
         overflow: auto;
       }
+
+      .text {
+        font-size: 1rem;
+
+        text-align: justify;
+      }
+
+      .text i {
+        font-style: italic;
+      }
+
+      .text b {
+        font-weight: bold;
+      }
+
+      .text a {
+        font-style: inherit;
+        font-weight: inherit;
+
+        text-decoration: inherit;
+        color: inherit;
+      }
     </style>
   </head>
 
   <body>
     <div id="react-root"></div>
 
-    <script type="application/javascript" src="//unpkg.com/dexie@latest/dist/dexie.js" defer></script>
-    <script type="application/javascript" src="built/app.bundle.js" defer></script>
-    <script type="application/javascript" defer>
+    <script src="built/app.bundle.js" defer></script>
+    <script defer>
       const host = location.hostname;
 
       if (host !== '127.0.0.1' && host !== 'localhost') {

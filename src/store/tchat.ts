@@ -1,8 +1,4 @@
 import * as redux from 'redux'
-import { ApiAiClient } from 'api-ai-javascript'
-
-import { store } from '.'
-import { token } from '../configs/ai'
 
 export enum Types {
   HIDE = '@@tchat/HIDE' as any,

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
-import { Subscription } from 'rxjs'
+import MessageIcon from 'material-ui/svg-icons/communication/message'
 
 import { TchatWindow } from './tchat-window'
 import { Context } from '../context'
@@ -33,18 +33,18 @@ export class Tchat extends React.Component<GenericProps, void> {
             secondary={ true }
           >
 
-          <i className="material-icons">message</i>
+          <MessageIcon />
         </FloatingActionButton>
       </div>
     )
   }
 
   private button: FloatingActionButton
-  private subscription: Subscription
   private readonly style: React.CSSProperties = {
     position: 'fixed',
     bottom: 16,
-    right: 32
+    right: 32,
+    zIndex: 100
   }
 
   private readonly windowStyle: React.CSSProperties = {

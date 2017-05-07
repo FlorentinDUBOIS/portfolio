@@ -1,7 +1,6 @@
 import * as redux from 'redux'
 
 import { translations as en } from './en'
-import { translations as fr } from './fr'
 
 export enum Types {
   CHANGE_CURRENT_LANGUAGE = '@@intl/CHANGE_CURRENT_LANGUAGE' as any,
@@ -9,8 +8,7 @@ export enum Types {
 }
 
 export enum Languages {
-  ENGLISH = 'en' as any,
-  FRENCH = 'fr' as any
+  ENGLISH = 'en' as any
 }
 
 export interface Action extends redux.Action {
@@ -27,7 +25,6 @@ export interface State {
 export const translations = new Map<Languages, Map<string, string>>()
 
 translations.set(Languages.ENGLISH, en)
-translations.set(Languages.FRENCH, fr)
 
 export function reducer(state: State = void 0, action: Action): State {
   if (state === void 0) {

@@ -10,7 +10,9 @@ export function translate(store: Store<State>, name: string): string {
     if (translations.get(currentLanguage).has(name)) {
       return translations.get(currentLanguage).get(name)
     }
-  } else if (translations.has(fallbackLanguage)) {
+  }
+
+  if (translations.has(fallbackLanguage)) {
     if (translations.get(fallbackLanguage).has(name)) {
       return translations.get(fallbackLanguage).get(name)
     }

@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["built/app.bundle.js","de5e3f7ca6a0461a89759e7c0702cb8d"],["index.html","6bc52af0f4e5dff95582dc03554d08af"],["manifest.json","55743877f3ffd5fc834e97bc43a6e7bd"]];
+var precacheConfig = [["built/app.bundle.js","f8fbde0be1ecc7450635c4767addf2e2"],["index.html","78ce9ab5f7904c1a2d07d2b216ffcf64"],["manifest.json","55743877f3ffd5fc834e97bc43a6e7bd"]];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
 
 
@@ -283,7 +283,7 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get(/fonts\.googleapis\.com/, toolbox.networkFirst, {});
+toolbox.router.get(/fonts\.googleapis\.com|secure\.gravatar\.com|assets\/images/, toolbox.cacheFirst, {});
 
 
 

@@ -46,7 +46,7 @@ export class Translate extends React.Component<Props, State> {
 
   public render() {
     const { translation } = this.state
-    const { name, ...rest } = this.props
+    const { name, children, ...rest } = this.props
 
     return (
       <span { ...rest }>{ translation }</span>

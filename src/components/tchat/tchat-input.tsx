@@ -18,7 +18,9 @@ export class TchatInput extends React.Component<GenericProps, void> {
           const type = Types.POST_MESSAGE
           const message = this.textarea.value
 
-          store.dispatch({ type, message })
+          if (message.trim() !== '') {
+            store.dispatch({ type, message })
+          }
 
           this.textarea.value = ''
         }
@@ -46,7 +48,7 @@ export class TchatInput extends React.Component<GenericProps, void> {
     border: 'none',
     outline: 'none',
     resize: 'none',
-    boxShadow: '0 0 4px rgba(0, 0, 0, 0.2)',
+    boxShadow: '0 -2px 4px rgba(0, 0, 0, 0.2)',
     fontSize: '1.2rem',
     padding: 5
   }

@@ -4,20 +4,25 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "target": "es6",
-        "sourceMap": true,
+        "sourceMap": false,
         "allowJs": false,
         "allowUnreachableCode": false,
         "allowSyntheticDefaultImports": true,
         "allowUnusedLabels": true,
-        "alwaysStrict": true,
         "jsx": "react",
         "newLine": "LF",
         "noFallthroughCasesInSwitch": false,
         "noImplicitReturns": true,
-        "noUnusedLocals": false,
         "outDir": "built",
         "removeComments": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "alwaysStrict": false,
+        "noImplicitUseStrict": true,
+        "diagnostics": true,
+        "pretty": true,
+        "typeRoots": [
+            "node_modules/@types"
+        ]
     },
 
     "exclude": [

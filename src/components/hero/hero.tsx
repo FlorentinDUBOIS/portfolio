@@ -29,7 +29,7 @@ export class Hero extends React.Component<Props, void> {
     margin: 0,
     padding: 0,
 
-    backgroundImage: 'url(assets/images/hero.png)',
+    backgroundImage: 'url(assets/images/06426EBD25E125C5FF771CE3A4F18172.png)',
     backgroundPosition: 'bottom',
     backgroundRepeat: 'no-repeat'
   }

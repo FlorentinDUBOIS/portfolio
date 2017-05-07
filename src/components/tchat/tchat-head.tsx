@@ -30,7 +30,7 @@ export class TchatHead extends React.Component<GenericProps, void> {
       <div style={ this.style } >
         <Translate name='tchat.head' />
         <span style={{ flex: 1 }} ></span>
-        <i ref={ close => this.close = close } className="material-icons">close</i>
+        <i ref={ close => this.close = close } style={{ cursor: 'pointer' }} className="material-icons">close</i>
       </div>
     )
   }
