@@ -4,17 +4,16 @@
   "description": "Personnal portfolio",
   "main": "index.html",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "compile": "webpack",
+    "compile:w": "webpack -w",
+    "compile:p": "webpack -p"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FlorentinDUBOIS/portfolio.git"
   },
-  "keywords": [
-    "personnal",
-    "portfolio",
-    "material-ui",
-    "react"
-  ],
+  "keywords": ["personnal", "portfolio", "material-ui", "react"],
   "author": "Florentin Dubois <contact@florentin-dubois.fr>",
   "license": "MIT",
   "bugs": {
@@ -22,11 +21,22 @@
   },
   "homepage": "https://github.com/FlorentinDUBOIS/portfolio#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.9.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.0",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "material-ui": "^1.0.0-beta.17",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.8",
+    "redux": "^3.7.2",
+    "webpack": "^3.8.1"
   }
 }
