@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "8.0.0",
+  "description": "Personnal portfolio",
+  "main": "index.html",
+  "private": true,
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorentinDUBOIS/portfolio.git"
+  },
+  "keywords": [
+    "personnal",
+    "portfolio",
+    "material-ui",
+    "react"
+  ],
+  "author": "Florentin Dubois <contact@florentin-dubois.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FlorentinDUBOIS/portfolio/issues"
+  },
+  "homepage": "https://github.com/FlorentinDUBOIS/portfolio#readme"
+}
