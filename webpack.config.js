@@ -5,5 +5,14 @@ module.exports = {
   output: {
     filename: "portfolio.bundle.js",
     path: resolve(__dirname, "dist")
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: "babel-loader"
+      }
+    ]
   }
 };
